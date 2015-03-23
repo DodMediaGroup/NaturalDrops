@@ -1,0 +1,87 @@
+// DIMENTIONS
+@page-width: 1020px;
+
+// COLORS
+@color-gray: #aaaaaa;
+@color-gray-dark: #827f80;
+@color-gray-light: #efefef;
+@color-green-dark: #487228;
+//@color-green-dark: #487228;
+@color-green-light: rgb(159, 194, 58);
+//@color-green-light: #abc100;
+@color-purple: rgb(80, 59, 105);
+//@color-purple-dark: darken(@color-purple, 10%);
+@color-purple-dark: rgb(80, 59, 105);
+@color-white: #FFFFFF;
+
+// FONTS
+@font-title: 'yanone_kaffeesatz', sans-serif;
+@font-text: 'ColabLig', Arial;
+
+
+*{
+	box-sizing: border-box;
+	color: @color-gray;
+	font-family: @font-text;
+	font-size: 20px;
+	//letter-spacing: 0.5px;
+	line-height: 22px;
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	overflow-y: hidden;
+}
+a{
+	&:hover{
+		color: @color-purple;
+		text-decoration: none;
+	}
+}
+h1{
+	margin: 0px;
+}
+svg{
+	.line_1, .line_3{
+		fill: @color-green-light !important;
+	}
+	.line_2{
+		fill: @color-green-dark !important;
+	}
+}
+.container{
+	margin: auto;
+	max-width: @page-width;
+	padding: 0px 15px;
+	width: 100%;
+}
+.super-div{
+	height: 100%;
+	left: 0px;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+}
+.parallax {
+	background: transparent;
+	&.divisor{
+		min-height: 100px;
+	}
+}
+.divisor:not(.parallax){
+	background-color: @color-green-light;
+	height: 15px;
+}
+
+.modal-loading{
+	background: url(../images/loading.gif) no-repeat center center;
+	background-color: @color-white;
+	display: none;
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	z-index: 9999;
+	&.active{
+		display: block;
+	}
+}

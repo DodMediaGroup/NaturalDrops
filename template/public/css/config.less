@@ -1,0 +1,75 @@
+// DIMENTIONS
+@page-width: 1020px;
+
+// COLORS
+@color-gray: #aaaaaa;
+@color-gray-dark: #827f80;
+@color-gray-light: #efefef;
+@color-green-dark: #517846;
+@color-green-light: saturate(#abd04b, 10%);
+@color-purple: saturate(#594870, 20%);
+@color-purple-dark: darken(@color-purple, 10%);
+@color-white: #FFFFFF;
+
+// FONTS
+@font-title: 'Yanone Kaffeesatz', sans-serif;
+@font-text: 'ColabLig', Arial;
+
+
+*{
+	box-sizing: border-box;
+	color: @color-gray;
+	font-family: @font-text;
+	font-size: 20px;
+	line-height: 22px;
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	overflow-y: hidden;
+}
+a{
+	&:hover{
+		color: @color-white;
+		text-decoration: none;
+	}
+}
+h1{
+	margin: 0px;
+}
+.container{
+	margin: auto;
+	max-width: @page-width;
+	padding: 0px 15px;
+	width: 100%;
+}
+.super-div{
+	height: 100%;
+	left: 0px;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+}
+.parallax {
+	background: transparent;
+	&.divisor{
+		min-height: 100px;
+	}
+}
+.divisor:not(.parallax){
+	background-color: @color-green-light;
+	height: 15px;
+}
+
+.modal-loading{
+	background: url(../images/loading.gif) no-repeat center center;
+	background-color: @color-white;
+	display: none;
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	z-index: 9999;
+	&.active{
+		display: block;
+	}
+}

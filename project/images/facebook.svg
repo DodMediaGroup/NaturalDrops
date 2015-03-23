@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="73.034752"
+   height="73.031128"
+   id="svgfacebook"
+   viewBox="0 0 73.034752 73.031128">
+  <defs
+     id="defs4889">
+    <clipPath
+       id="clipPath590">
+      <path
+         d="m 0,5556.226 1400,0 L 1400,0 0,0 0,5556.226 z"
+         id="path592" />
+    </clipPath>
+    <clipPath
+       id="clipPath598">
+      <path
+         d="m 1006.3,391.392 58.44,0 0,-58.426 -58.44,0 0,58.426 z"
+         id="path600" />
+    </clipPath>
+    <clipPath
+       id="clipPath614">
+      <path
+         d="m 1103.62,392.058 58.43,0 0,-58.425 -58.43,0 0,58.425 z"
+         id="path616" />
+    </clipPath>
+  </defs>
+  <metadata
+     id="metadata4892">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-327.1617,-181.14403)"
+     id="layer1">
+    <g
+       transform="matrix(1.25,0,0,-1.25,-1052.3633,671.21641)"
+       id="g610">
+      <g
+         id="g612" />
+      <g
+         id="g618">
+        <g
+           clip-path="url(#clipPath614)"
+           id="g620"
+           style="opacity:0.80000299">
+          <g
+             transform="translate(1143.0918,376.6709)"
+             id="g622">
+            <path
+               d="m 0,0 -3.862,0 c -3.03,0 -3.62,-1.44 -3.62,-3.556 l 0,-4.66 7.233,0 -0.006,-7.301 -7.227,0 0,-18.732 -7.536,0 0,18.732 -6.303,0 0,7.301 6.303,0 0,5.383 c 0,6.248 3.814,9.652 9.388,9.652 L 0,6.813 0,0 z m -10.255,15.387 c -16.138,0 -29.219,-13.077 -29.219,-29.214 0,-16.133 13.081,-29.211 29.219,-29.211 16.135,0 29.211,13.078 29.211,29.211 0,16.137 -13.076,29.214 -29.211,29.214"
+               id="path624"
+               style="fill:#594870;fill-opacity:1;fill-rule:nonzero;stroke:none" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

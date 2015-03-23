@@ -1,0 +1,127 @@
+@media (max-width: 768px){
+	.principal-menu{
+		height: 50px;
+		overflow-x: hidden;
+		position: initial;
+		h1{
+			bottom: inherit;
+			height: 170px;
+			left: 0px;
+			right: 0px;
+			top: 15px;
+			width: 130px;
+		}
+		nav{
+			background: transparent;
+			height: auto;
+			min-height: 32px;
+			padding: 0px;
+			position: absolute;
+			right: 15px;
+			top: 30px;
+			width: 36px;
+			z-index: 9990;
+			&.active{
+				position: fixed;
+				.button{
+					.bar{
+						background-color: @color-green-light;
+						box-shadow: none;
+						&:nth-child(1){
+							transform: translateY(5px) rotate(45deg);
+						}
+						&:nth-child(2){
+							transform: translateY(-5px) rotate(-45deg);
+							box-shadow: none;
+						}
+						&:nth-child(3){
+							display: none;
+						}
+					}
+				}
+			}
+		}
+		ul{
+			display: none;
+		}
+		.social{
+			display: none;
+		}
+		.button{
+			display: block;
+		}
+		.menu_responsive{
+			ul{
+				display: block;
+			}
+		}
+	}
+	.home-beneficios{
+		.link-to-shop{
+			margin-left: 0px;
+			margin-top: 40px;
+			padding: 0px 7.5%;
+			width: 100%;
+		}
+		.beneficio-product{
+			width: 50%;
+			.product{
+				height: 280px;
+				left: 5px;
+				width: 110px;
+			}
+			.circle svg{
+				height: 190px;
+				margin-left: 40px;
+				width: 190px;
+			}
+			.text{
+				left: 100px;
+				top: 30%;
+				p{
+					font-size: 23px;
+					line-height: 23px;
+				}
+			}
+		}
+	}
+	.testimonials{
+		.testimony{
+			width: 50%;
+		}
+	}
+	.blog-article{
+		header{
+			padding-left: 8px;
+			.img{
+				float: left;
+				margin-right: 8px;
+				margin-top: -55px;
+				position: initial;
+			}
+		}
+	}
+	.suscription{
+		.container{
+			h1{
+				background-position: 0% center, 100% center;
+			}
+		}
+	}
+	.principal-footer{
+		& > div{
+			height: 330px;
+			width: 100%;
+		}
+		.contact{
+			.filter{
+				.container{
+					max-width: none;
+					padding: 15px;
+					top: 0px;
+					transform: inherit;
+				}
+			}
+		}
+	}
+}

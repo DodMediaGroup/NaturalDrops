@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Natural Drops</title>
+
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="vendor/custom_scrollbar/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="css/main.css">
+	
+	<link rel="shortcut icon" href="images/logos/favicon.ico">
+	
+	<script src="js/config.js"></script>
+	<script src="vendor/js/jquery-1.11.1.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	
+	<!-- Maps -->
+    <script src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.7"></script>
+    <script type="text/javascript" src="vendor/js/maplace-0.1.3.min.js"></script>
+</head>
+<body>
+	<div class="modal-loading active"></div>
+	<header class="principal-header" style="background-image:url(images/slide.jpg)">
+		<div class="container principal-menu">
+			<h1 class="principal-logo"><a class="super-div" href="index.html"></a></h1>
+			<nav>
+				<ul>
+					<li><a href="#">NOSOTROS</a></li>
+					<li><a href="#">BENEFICIOS</a></li>
+					<li><a href="#">PRODUCTOS</a></li>
+					<li><a href="#">PUNTOS DE VENTA</a></li>
+					<li><a href="#">BLOG</a></li>
+					<li><a href="#">PREGUNTAS FRECUENTES</a></li>
+				</ul>
+				<div class="social">
+					<a href="#"><img src="images/twitter.svg" class="js-img-to-svg" alt="Twitter"></a>
+					<a href="#"><img src="images/facebook.svg" class="js-img-to-svg" alt="Facebook"></a>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<section class="section page-contact">
+		<div class="container">
+			<header>
+				<h1 class="principal-title btn-green-light efect-bottom">
+					<span><img src="images/icons/maps.svg" class="js-img-to-svg" alt="Puntos de venta"></span>
+					PUNTOS DE VENTA
+				</h1>
+			</header>
+			<div class="contain">
+				<div class="directions">
+					<div class="container">
+						<h2>BÚSQUEDA</h2>
+						<div class="input">
+							<select>
+								<option value="0">Ciudad</option>
+								<option value="1">Medellin</option>
+							</select>
+						</div>
+						<div class="input">
+							<select>
+								<option value="0">Tienda</option>
+								<option value="1">Centro</option>
+							</select>
+						</div>
+						<h2>RESULTADOS</h2>
+						<div class="results js-custom-scroll">
+							<div class="result">
+								<h3>ECOTIENDA</h3>
+								<address>
+									<p>Dirección: Calle 13 # 45 - 46</p>
+									<p>Teléfono: 564 7890</p>
+									<p>hola@ecotiendas.co</p>
+									<a href="www.ecotiendas.co">www.ecotiendas.co</a>
+								</address>
+							</div>
+							<div class="result">
+								<h3>ECOTIENDA</h3>
+								<address>
+									<p>Dirección: Calle 13 # 45 - 46</p>
+									<p>Teléfono: 564 7890</p>
+									<p>hola@ecotiendas.co</p>
+									<a href="www.ecotiendas.co">www.ecotiendas.co</a>
+								</address>
+							</div>
+							<div class="result">
+								<h3>ECOTIENDA</h3>
+								<address>
+									<p>Dirección: Calle 13 # 45 - 46</p>
+									<p>Teléfono: 564 7890</p>
+									<p>hola@ecotiendas.co</p>
+									<a href="www.ecotiendas.co">www.ecotiendas.co</a>
+								</address>
+							</div>
+							<div class="result">
+								<h3>ECOTIENDA</h3>
+								<address>
+									<p>Dirección: Calle 13 # 45 - 46</p>
+									<p>Teléfono: 564 7890</p>
+									<p>hola@ecotiendas.co</p>
+									<a href="www.ecotiendas.co">www.ecotiendas.co</a>
+								</address>
+							</div>
+						</div>
+						<div class="footer">
+							<span>CLICK</span>
+							<p>Encuentra la tienda más cercana</p>
+						</div>
+					</div>
+				</div>
+				<div class="map">
+					<div>
+						<div class="show-map"></div>
+					</div>
+				</div>
+				<script>
+					mapLocations.push(
+						{
+					        lat: 45.9,
+					        lon: 10.9,
+					        html: '<h3>Content A1</h3>',
+					        icon: 'images/icon-map.png',
+					        animation: google.maps.Animation.DROP
+					    },
+					    {
+					        lat: 44.8,
+					        lon: 1.7,
+					        html: '<h3>Content B1</h3>',
+					        icon: 'images/icon-map.png',
+					        animation: google.maps.Animation.DROP
+					    },
+					    {
+					        lat: 51.5,
+					        lon: -1.1,
+					        html: [
+					            '<h3>Content C1</h3>',
+					            '<p>Lorem Ipsum..</p>'
+					        ].join(''),
+					        icon: 'images/icon-map.png',
+					        animation: google.maps.Animation.DROP
+					    }
+					);
+				</script>
+			</div>
+		</div>
+	</section>
+
+	<div class="divisor"></div>
+
+	<section class="section principal-footer">
+		<div id="map-footer" class="map" data-icon="images/icon-map.png">
+			<a href="#" class="link">
+				<p><span></span><strong>Encuentre la</strong><br>tienda mas cercana</p>
+			</a>
+		</div>
+		<div class="contact">
+			<div class="filter">
+				<div class="container">
+					<div class="col-md-6 col-izq">
+						<div class="contain">
+							<h2>MENÚ</h2>
+							<ul>
+								<li><a href="#">Nosotros</a></li>
+								<li><a href="#">Beneficios</a></li>
+								<li><a href="#">Productos</a></li>
+								<li><a href="#">Blog</a></li>
+								<li><a href="#">Puntos de venta</a></li>
+								<li><a href="#">Preguntas frecuentes</a></li>
+							</ul>
+							<h2>CONTÁCTANOS</h2>
+							<address>
+								<p>correo@gamil.com</p>
+								<p>Av. Primavera 45 Of. 302</p>
+								<p>(+57) 456 4312</p>
+							</address>
+						</div>
+					</div>
+					<div class="col-md-6 col-der">
+						<div class="contain social">
+							<div>
+								<h2>ENCUENTRANOS</h2>
+								<a href="#" class="facebook"><img src="images/facebook.svg" class="js-img-to-svg"></a>
+								<a href="#" class="twitter"><img src="images/twitter.svg" class="js-img-to-svg"></a>
+							</div>
+						</div>
+						<div class="contain form-contact">
+							<div>
+								<h2>ESCRÍBENOS</h2>
+								<form action="#">
+									<input type="text" placeholder="Nombre">
+									<input type="text" placeholder="Correo electrónico">
+									<textarea placeholder="Comentario"></textarea>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer><p>Natural Drops © Todos los derechos reservados 2015</p></footer>
+	</section>
+	
+	<script src="vendor/smoove/jquery.smoove.min.js"></script>
+	<script src="vendor/parallax/parallax.min.js"></script>
+	<script src="vendor/elevate_zoom/jquery.elevateZoom-3.0.8.min.js"></script>
+	<script src="vendor/custom_scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+	<script src="js/main.js"></script>
+</body>
+</html>

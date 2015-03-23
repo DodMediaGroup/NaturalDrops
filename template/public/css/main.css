@@ -1,0 +1,1347 @@
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,700,200);
+/*@font-face {
+	font-family: 'YanoneKaffeesatz';
+	src: url('fonts/YanoneKaffeesatz.svg') format('svg');
+    src: url('fonts/YanoneKaffeesatz.eot') format('embedded-opentype'),
+        url('fonts/YanoneKaffeesatz.woff') format('woff'),
+        url('fonts/YanoneKaffeesatz.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}*/
+@font-face {
+  font-family: 'ColabLig';
+  src: url('fonts/ColabLig.svg') format('svg');
+  src: url('fonts/ColabLig.eot') format('embedded-opentype'), url('fonts/ColabLig.woff') format('woff'), url('fonts/ColabLig.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@-webkit-keyframes left {
+  0% {
+    -webkit-transform: translateX(-200px);
+    transform: translateX(-200px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+@keyframes left {
+  0% {
+    -webkit-transform: translateX(-200px);
+    transform: translateX(-200px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #aaaaaa;
+  font-family: 'ColabLig', Arial;
+  font-size: 20px;
+  line-height: 22px;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  overflow-y: hidden;
+}
+a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+h1 {
+  margin: 0px;
+}
+.container {
+  margin: auto;
+  max-width: 1020px;
+  padding: 0px 15px;
+  width: 100%;
+}
+.super-div {
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.parallax {
+  background: transparent;
+}
+.parallax.divisor {
+  min-height: 100px;
+}
+.divisor:not(.parallax) {
+  background-color: #b0db40;
+  height: 15px;
+}
+.modal-loading {
+  background: url(../images/loading.gif) no-repeat center center;
+  background-color: #ffffff;
+  display: none;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+}
+.modal-loading.active {
+  display: block;
+}
+li {
+  list-style-image: url(../images/item.png);
+}
+.principal-title {
+  background: url('../images/bracket-left.png') 8% center no-repeat, url('../images/bracket-right.png') 92% center no-repeat;
+  -webkit-background-size: auto 80%;
+  background-size: auto 80%;
+  display: inline-block;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 24px;
+  margin-bottom: 45px;
+  padding: 15px 45px 20px;
+  text-align: center;
+}
+.principal-title span {
+  display: block;
+  font-size: 20px;
+  text-align: center;
+}
+.principal-title span svg {
+  height: 22px;
+  width: auto;
+}
+.btn-green-light {
+  background-color: #b0db40;
+  color: #ffffff;
+}
+.btn-green-light svg path {
+  fill: #ffffff !important;
+}
+.my-col-md-1,
+.my-col-md-2,
+.my-col-md-3,
+.my-col-md-4,
+.my-col-md-5,
+.my-col-md-6,
+.my-col-md-7,
+.my-col-md-8,
+.my-col-md-9,
+.my-col-md-10,
+.my-col-md-11,
+.my-col-md-12 {
+  display: inline-block;
+  vertical-align: top;
+}
+.my-col-md-5 {
+  width: 41.66666667%;
+}
+.my-col-md-6 {
+  width: 50%;
+}
+.my-col-md-7 {
+  width: 58.33333333%;
+}
+.principal-header {
+  background-position: center top;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 202px;
+  padding-top: 15px;
+}
+.principal-header.slide-container {
+  max-height: 800px;
+  min-height: 600px;
+}
+.principal-menu {
+  display: block;
+  margin-top: 60px;
+  position: relative;
+}
+.principal-menu .social {
+  display: table-cell;
+  padding-top: 5px;
+  vertical-align: top;
+}
+.principal-menu .social a {
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+}
+.principal-menu .social a svg {
+  height: 100%;
+  width: 100%;
+}
+.principal-menu .social a svg path {
+  fill: #b0db40 !important;
+}
+.principal-menu h1 {
+  background: url(../images/logos/logo.png) no-repeat left center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  bottom: 0px;
+  height: 172px;
+  left: 15px;
+  margin: auto;
+  position: absolute;
+  top: 0px;
+  width: 120px;
+}
+.principal-menu nav {
+  background-color: #ffffff;
+  display: table;
+  height: 56px;
+  padding-left: 130px;
+  padding-top: 10px;
+  vertical-align: top;
+  width: 100%;
+}
+.principal-menu ul {
+  display: table-cell;
+  padding: 0px;
+}
+.principal-menu ul li {
+  border: 2px solid #b0db40;
+  border-radius: 6px;
+  display: inline-block;
+  list-style: none;
+  margin-right: 1%;
+  padding: 0px 4px;
+}
+.principal-menu ul li a {
+  background-color: #ffffff;
+  color: #517846;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 33px;
+  padding: 6px 4px;
+  text-decoration: none;
+}
+.principal-slide {
+  margin-top: 30px;
+  position: relative;
+}
+.principal-slide .item-slide {
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0px;
+  text-align: center;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.principal-slide .item-slide img {
+  display: inline-block;
+  left: 50%;
+  margin: 0px;
+  max-height: 80%;
+  max-width: 80%;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: auto;
+}
+.principal-slide .item-slide:not(.active) {
+  opacity: 0;
+  z-index: 1;
+}
+.principal-slide .item-slide:not(.active) img {
+  left: 50%;
+}
+.principal-slide .item-slide.active {
+  opacity: 1;
+  z-index: 5;
+}
+.principal-slide .item-slide.active img {
+  left: 0px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.principal-slide .item-slide.active img:nth-child(1) {
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+.principal-slide .item-slide.active img:nth-child(2) {
+  -webkit-transition: all .8s ease;
+  transition: all .8s ease;
+}
+.principal-slide .item-slide.active img:nth-child(3) {
+  -webkit-transition: all 1.2s ease;
+  transition: all 1.2s ease;
+}
+.principal-slide .item-slide.active img:nth-child(4) {
+  -webkit-transition: all 1.4s ease;
+  transition: all 1.4s ease;
+}
+.principal-slide .item-slide.active.change {
+  opacity: 0;
+}
+.principal-slide .item-slide.active.change img {
+  left: -50%;
+}
+.principal-slide .slide-pagination {
+  bottom: 0px;
+  display: block;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  z-index: 99;
+}
+.principal-slide .slide-pagination .pagination-item {
+  background-color: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  display: inline-block;
+  height: 10px;
+  margin: 0px 6px;
+  width: 10px;
+}
+.principal-slide .slide-pagination .pagination-item.active {
+  background-color: #b0db40;
+  border: 1px solid #ffffff;
+}
+.section {
+  padding: 45px 0px;
+}
+.section header {
+  text-align: center;
+}
+.section .container {
+  font-size: 0px;
+}
+.home-beneficios li {
+  line-height: 24px;
+}
+.home-beneficios .beneficio-product {
+  position: relative;
+}
+.home-beneficios .beneficio-product .circle svg {
+  height: 50%;
+  margin-left: 40%;
+  margin-top: 10%;
+  width: 50%;
+}
+.home-beneficios .beneficio-product .product {
+  background: url(../images/product.png) top center no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  height: 410px;
+  left: 32%;
+  opacity: 1 !important;
+  position: absolute;
+  top: 0px;
+  width: 30%;
+}
+.home-beneficios .beneficio-product .text {
+  left: 58%;
+  position: absolute;
+  top: 32%;
+}
+.home-beneficios .beneficio-product .text p {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 35px;
+}
+.home-beneficios .beneficio-product .text p:nth-child(1) {
+  padding-left: 12px;
+}
+.home-beneficios .beneficio-product .text p:nth-child(2) {
+  padding-left: 8px;
+}
+.home-beneficios .beneficio-product .text p:nth-child(3) {
+  padding-left: 4px;
+}
+.home-beneficios .beneficio-product .text p small {
+  display: block;
+  line-height: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+.home-beneficios .link-to-shop {
+  background-color: rgba(86, 54, 130, 0.8);
+  margin-left: 45%;
+  width: 55%;
+}
+.home-beneficios .link-to-shop .block {
+  padding: 12px;
+  position: relative;
+  width: 459px;
+}
+.home-beneficios .link-to-shop .block > p {
+  color: #ffffff;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-weight: 600;
+  padding-right: 100px;
+}
+.home-beneficios .link-to-shop .block .link {
+  bottom: 0px;
+  height: 150px;
+  margin: auto;
+  position: absolute;
+  right: -10%;
+  top: 0px;
+  width: 150px;
+}
+.home-beneficios .link-to-shop .block .link svg {
+  height: 100%;
+  width: 100%;
+}
+.home-beneficios .link-to-shop .block .link a {
+  bottom: 0px;
+  display: block;
+  height: 92px;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 0px;
+  width: 100%;
+}
+.home-beneficios .link-to-shop .block .link a svg {
+  height: 32px;
+}
+.home-beneficios .link-to-shop .block .link a p,
+.home-beneficios .link-to-shop .block .link a strong {
+  color: #b0db40;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  line-height: 26px;
+}
+.home-beneficios .link-to-shop .block .link a p {
+  font-size: 24px;
+  font-weight: 300;
+}
+.home-beneficios .link-to-shop .block .link a strong {
+  font-size: 28px;
+}
+.home_question {
+  min-height: 400px;
+}
+.home_question .container {
+  background-color: rgba(86, 54, 130, 0.9);
+  max-width: 714px;
+  padding: 30px 15px;
+  text-align: center;
+  width: 95%;
+}
+.home_question .container header svg path {
+  fill: #ffffff !important;
+}
+.home_question .container header h1 {
+  color: #ffffff;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 42px;
+  padding: 15px 0px;
+}
+.home_question .container .btn-green-light {
+  background-position: 5% center,
+								95% center;
+  font-size: 24px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  text-decoration: none;
+}
+.home_question .container .btn-green-light p {
+  color: #ffffff;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+.home_question .container .link {
+  height: 180px;
+  margin: auto;
+  position: relative;
+  width: 180px;
+}
+.home_question .container .link > svg {
+  height: 100%;
+  width: 100%;
+}
+.home_question .container .link > svg .line_2,
+.home_question .container .link > svg .line_3 {
+  fill: #b0db40 !important;
+}
+.home_question .container .link a {
+  display: block;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  top: 15%;
+  width: 100%;
+}
+.home_question .container .link a svg {
+  height: 36px;
+}
+.home_question .container .link a p,
+.home_question .container .link a strong {
+  color: #b0db40;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 30px;
+  line-height: 28px;
+}
+.home_question .container .link a p {
+  font-weight: 300;
+  margin-top: 5px;
+}
+.testimonials {
+  font-size: 0px;
+  position: relative;
+  text-align: center;
+}
+.testimonials .testimony {
+  display: inline-block;
+  float: none;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  vertical-align: top;
+}
+.testimonials .testimony .name {
+  background-color: rgba(86, 54, 130, 0.8);
+  bottom: 0px;
+  color: #ffffff;
+  display: block;
+  font-weight: 300;
+  left: 0px;
+  padding: 10px 12px;
+  position: absolute;
+  -webkit-transition: all .1s ease;
+  transition: all .1s ease;
+  width: 100%;
+  z-index: 3;
+}
+.testimonials .testimony .text {
+  background-color: rgba(86, 54, 130, 0.9);
+  height: 100%;
+  left: 0px;
+  padding: 15px 12px;
+  position: absolute;
+  top: 100%;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  width: 100%;
+  z-index: 5;
+}
+.testimonials .testimony .text .mCSB_container {
+  margin: 0px !important;
+}
+.testimonials .testimony .text .mCSB_scrollTools {
+  width: 2px !important;
+}
+.testimonials .testimony .text .mCSB_draggerRail {
+  margin: 0px !important;
+}
+.testimonials .testimony .text p {
+  font-size: 32px;
+  font-weight: 400;
+}
+.testimonials .testimony .text p,
+.testimonials .testimony .text p * {
+  color: #ffffff;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  line-height: 36px;
+}
+.testimonials .testimony .text p strong {
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 40px;
+}
+.testimonials .testimony .text p strong small {
+  font-weight: 400;
+}
+.testimonials .testimony .text:not(.js-custom-scroll) > div {
+  margin-top: 50%;
+  position: relative;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.testimonials .testimony .img,
+.testimonials .testimony .filter {
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.testimonials .testimony .img {
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-filter: url("data:image/svg xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  filter: url("data:image/svg xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+  /* Firefox 10  */
+  -webkit-filter: gray;
+  filter: gray;
+  /*IE6-9*/
+  -webkit-filter: grayscale(90%);
+  filter: grayscale(90%);
+  z-index: 1;
+}
+.testimonials .testimony .filter {
+  background-color: rgba(82, 26, 158, 0.2);
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 2;
+}
+.testimonials .testimony:hover .name,
+.testimonials .testimony.active .name {
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+}
+.testimonials .testimony:hover .text,
+.testimonials .testimony.active .text {
+  top: 0px;
+}
+.blog-article {
+  margin-bottom: 60px;
+}
+.blog-article .header {
+  background: url(../images/marihuana.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 80px;
+}
+.blog-article header {
+  padding-left: 145px;
+  position: relative;
+  text-align: left;
+}
+.blog-article header h1 {
+  color: #3e275e;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 36px;
+  line-height: 36px;
+  padding-top: 5px;
+}
+.blog-article header .img {
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  border: 5px solid #b0db40;
+  bottom: 0px;
+  height: 125px;
+  left: 10px;
+  position: absolute;
+  width: 125px;
+}
+.blog-article .text {
+  margin-top: 20px;
+}
+.blog-article .text p {
+  margin-top: 20px;
+}
+.blog-article .text img {
+  display: block;
+  margin: auto;
+  max-width: 80%;
+}
+.blog-article .text ul {
+  padding-left: 25px;
+}
+.blog-article .link {
+  text-align: right;
+}
+.blog-article .link a {
+  -webkit-background-size: auto 70%;
+  background-size: auto 70%;
+  font-size: 18px;
+  padding: 8px 45px 8px;
+  margin-bottom: 0px;
+}
+.blog-article footer {
+  border-bottom: 1px solid #aaaaaa;
+  border-top: 1px solid #aaaaaa;
+  margin-top: 30px;
+  padding: 15px 0px;
+}
+.blog-article footer p {
+  color: #aaaaaa;
+}
+.blog-article footer p a {
+  color: #aaaaaa;
+  font-style: italic;
+  text-decoration: none;
+}
+.blog-article footer p span {
+  margin-right: 8px;
+}
+.blog-article footer p strong {
+  color: #563682;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 22px;
+  margin-right: 8px;
+}
+.suscription {
+  min-height: 200px;
+}
+.suscription .container {
+  background-color: rgba(86, 54, 130, 0.9);
+  max-width: 714px;
+  padding: 30px 15px;
+  text-align: center;
+  width: 95%;
+}
+.suscription .container h1 {
+  background: url('../images/bracket-left.png') 8% center no-repeat, url('../images/bracket-right.png') 92% center no-repeat;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+  color: #ffffff;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 55px;
+  line-height: 70px;
+}
+.suscription .container p {
+  background: url('../images/bracket-left.png') 0% center no-repeat, url('../images/bracket-right.png') 100% center no-repeat;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+  color: #ffffff;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  line-height: 1.1em;
+  padding-top: 50px;
+  position: relative;
+  text-align: center;
+}
+.suscription .container p span {
+  height: 61px;
+  left: 0px;
+  margin: auto;
+  position: absolute;
+  right: 0px;
+  top: -8px;
+  width: 65px;
+}
+.suscription .container p span svg {
+  width: 100%;
+  height: 100%;
+}
+.suscription .container p.sin-border {
+  background: transparent;
+  padding: 30px 15px;
+}
+.suscription .container .form-group {
+  font-size: 0px;
+  margin: auto;
+  max-width: 400px;
+  text-align: center;
+}
+.suscription .container .form-group > div {
+  display: inline-block;
+  vertical-align: top;
+}
+.suscription .container .form-group input,
+.suscription .container .form-group button {
+  border: 0px;
+  outline: none;
+  padding: 12px 15px;
+  width: 100%;
+}
+.suscription .container .form-group .input {
+  width: 70%;
+}
+.suscription .container .form-group .button {
+  width: 30%;
+}
+.suscription .container .form-group .button button {
+  background-color: #b0db40;
+  color: #ffffff;
+}
+.principal-footer {
+  font-size: 0px;
+  padding: 0px;
+}
+.principal-footer > div {
+  display: inline-block;
+  height: 400px;
+  vertical-align: top;
+  width: 50%;
+}
+.principal-footer .map .link {
+  background-color: #b0db40;
+  bottom: 0px;
+  padding: 8px 12px;
+  position: absolute;
+  right: 0px;
+  width: 100%;
+  z-index: 99;
+}
+.principal-footer .map .link p {
+  background: url(../images/search.png) no-repeat 14% top;
+  -webkit-background-size: auto 90%;
+  background-size: auto 90%;
+  color: #ffffff;
+  float: right;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 42px;
+  line-height: 38px;
+  max-width: 510px;
+  padding-top: 15px;
+  text-align: center;
+  width: 100%;
+}
+.principal-footer .map .link strong {
+  color: #ffffff;
+  font-size: 50px;
+  padding-left: 25px;
+}
+.principal-footer .contact {
+  background: url(../images/marihuana.jpg) no-repeat center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.principal-footer .contact .filter {
+  background-color: rgba(255, 255, 255, 0.75);
+  height: 100%;
+  position: relative;
+}
+.principal-footer .contact .filter .container {
+  margin: 0px;
+  max-width: 510px;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.principal-footer .contact .contain {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 0px 12px 15px;
+}
+.principal-footer .contact .col-izq {
+  padding: 0px;
+  padding-right: 6px;
+}
+.principal-footer .contact .col-der {
+  padding: 0px;
+  padding-left: 6px;
+}
+.principal-footer .contact .col-der .social {
+  font-size: 0px;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+.principal-footer .contact .col-der .social h2 {
+  text-align: left;
+}
+.principal-footer .contact .col-der .social a {
+  display: inline-block;
+  height: 51px;
+  margin: 0px 5px;
+  width: 51px;
+}
+.principal-footer .contact .col-der .social a svg {
+  height: 100%;
+  width: 100%;
+}
+.principal-footer .contact .col-der .form-contact {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding-bottom: 12px;
+}
+.principal-footer .contact .col-der .form-contact input,
+.principal-footer .contact .col-der .form-contact textarea {
+  border: 0px;
+  font-size: 18px;
+  margin-bottom: 5px;
+  outline: none;
+  padding: 3px 8px;
+  width: 100%;
+}
+.principal-footer .contact .col-der .form-contact textarea {
+  margin-bottom: 0px;
+  height: 55px;
+  rezise: none;
+}
+.principal-footer .contact address p {
+  font-style: normal;
+}
+.principal-footer .contact h2 {
+  color: #517846;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 24px;
+  padding-top: 15px;
+  margin-bottom: 5px;
+}
+.principal-footer .contact li {
+  list-style: none;
+}
+.principal-footer .contact li a {
+  color: #aaaaaa;
+  font-size: 18px;
+}
+.principal-footer footer {
+  background: #563682;
+}
+.principal-footer footer p {
+  color: #ffffff;
+  font-size: 14px;
+  padding: 12px;
+  text-align: center;
+}
+.article article {
+  margin-bottom: 60px;
+}
+.article * {
+  line-height: 1.1em;
+}
+.article h1,
+.article h2,
+.article h3 {
+  border-bottom: 1px solid #563682;
+  color: #563682;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 42px;
+  margin-bottom: 20px;
+  margin-top: 45px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.article h1 span,
+.article h2 span,
+.article h3 span {
+  background: url(../images/icons/title.svg) no-repeat left center;
+  -webkit-background-size: contain;
+  background-size: contain;
+  display: inline-block;
+  height: 38px;
+  width: 80px;
+}
+.article p {
+  padding-top: 20px;
+}
+.article .important {
+  background: url('../images/bracket-left-green.png') 0% center no-repeat, url('../images/bracket-right-green.png') 100% center no-repeat;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+  color: #b0db40;
+  display: block;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: .9em;
+  margin: auto;
+  max-width: 700px;
+  padding: 8px 15px;
+  text-align: center;
+}
+.formulacion {
+  margin-top: 60px;
+}
+.formulacion p {
+  color: #563682;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1.2em;
+  text-align: center;
+}
+.formulacion p small {
+  color: #b0db40;
+  margin: 0px 3%;
+}
+.formulacion .images {
+  font-size: 0px;
+  text-align: center;
+}
+.formulacion .images img {
+  display: inline-block;
+  height: 160px;
+}
+.page-beneficios .producto {
+  margin-bottom: 60px;
+  margin-left: 16.66666667%;
+  margin-top: 90px;
+  position: relative;
+  width: 83.33333333%;
+}
+.page-beneficios .producto .text {
+  padding: 15px;
+  padding-left: 25%;
+}
+.page-beneficios .producto .text p {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1em;
+}
+.page-beneficios .producto .text.panel {
+  background-color: #563682;
+}
+.page-beneficios .producto .text.panel p {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 600;
+}
+.page-beneficios .producto .producto-graf {
+  left: -16.66666667%;
+  padding-left: 7%;
+  margin-top: -4.5%;
+  position: absolute;
+  top: 0px;
+}
+.page-beneficios .producto .producto-graf .img-prod {
+  -webkit-animation: .5s left 1;
+  animation: .5s left 1;
+  height: auto;
+  left: 0px;
+  position: absolute;
+  top: -28%;
+  width: 42%;
+  z-index: 2;
+}
+.page-beneficios .producto .producto-graf .circle {
+  height: 70%;
+  position: relative;
+  width: 70%;
+}
+.page-beneficios .producto .producto-graf .circle svg {
+  height: 100%;
+  width: 100%;
+}
+.page-beneficios .producto .producto-graf .circle .msj {
+  left: 50%;
+  margin: auto;
+  position: absolute;
+  top: 26%;
+  -webkit-transform: translateX(-25%);
+  -ms-transform: translateX(-25%);
+  transform: translateX(-25%);
+}
+.page-beneficios .producto .producto-graf .circle .msj p {
+  font-size: 31px;
+  line-height: 0.95em;
+}
+.page-beneficios .producto .producto-graf .circle .msj p:nth-child(1) {
+  padding-left: 9px;
+}
+.page-beneficios .producto .producto-graf .circle .msj p:nth-child(2) {
+  padding-left: 6px;
+}
+.page-beneficios .producto .producto-graf .circle .msj p:nth-child(3) {
+  padding-left: 3px;
+}
+.page-beneficios .producto .producto-graf .circle .msj p small {
+  display: block;
+  text-align: center;
+  font-size: .7em;
+}
+.treatments .testimonials {
+  display: table;
+  width: 100%;
+}
+.treatments .testimonials .testimony {
+  cursor: pointer;
+}
+.treatments .testimonials .testimony .info {
+  display: none;
+}
+.treatments .testimonials > .info {
+  background-color: #ffffff;
+  border: 1px solid rgba(86, 54, 130, 0.9);
+  padding: 0px 2.5%;
+  position: absolute;
+  text-align: left;
+  z-index: 999;
+}
+.treatments .testimonials > .info .col-md-6 {
+  padding: 30px 3.5%;
+}
+.treatments .testimonials > .info .used {
+  background: url('../images/bracket-left-green.png') 0% center no-repeat, url('../images/bracket-right-green.png') 100% center no-repeat;
+  -webkit-background-size: auto 100%;
+  background-size: auto 100%;
+  color: #827f80;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 38px;
+  line-height: .9em;
+  padding: 15px 4% 0px;
+  text-align: center;
+}
+.treatments .testimonials > .info h3 {
+  color: #b0db40;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+.treatments .testimonials > .info ul {
+  padding-left: 20px;
+}
+.treatments .testimonials > .info span {
+  display: block;
+  height: 32px;
+  text-align: center;
+}
+.treatments .testimonials > .info span svg {
+  height: 100%;
+}
+.products h2 {
+  color: #827f80;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 24px;
+  line-height: 1em;
+  margin-bottom: 8px;
+  margin-top: 15px;
+}
+.products ul {
+  margin: 15px 0px 30px;
+  padding-left: 28px;
+}
+.products .title {
+  background-color: #563682;
+  color: #ffffff;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 26px;
+  line-height: 1em;
+  padding: 4px 12px;
+}
+.products .title span {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 300;
+  float: right;
+  margin-top: 3px;
+}
+.products .description {
+  color: #563682;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 25px;
+  font-weight: 300;
+  line-height: 1em;
+  padding: 15px 8px 0px;
+}
+.products .presentations {
+  color: #563682;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+.products .img {
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  border: 1px solid #aaaaaa;
+  height: 400px;
+  padding: 12px;
+  text-align: center;
+  width: 100%;
+}
+.products .buttons {
+  margin-top: 16px;
+}
+.products .buttons .col-sm-6 {
+  padding: 0px;
+}
+.products .buttons .col-sm-6 a {
+  color: #ffffff;
+  display: block;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1em;
+  padding: 8px 8px;
+  text-align: center;
+}
+.products .buttons .col-sm-6 a span {
+  display: inline-block;
+  height: 28px;
+  margin-right: 8px;
+  position: relative;
+}
+.products .buttons .col-sm-6 a span svg {
+  height: 100%;
+}
+.products .buttons .col-sm-6:first-child {
+  padding-right: 8px;
+}
+.products .buttons .col-sm-6:first-child a {
+  background-color: #b0db40;
+}
+.products .buttons .col-sm-6:last-child {
+  padding-left: 8px;
+}
+.products .buttons .col-sm-6:last-child a {
+  background-color: #563682;
+}
+.link-marker {
+  display: table;
+  width: 100%;
+}
+.link-marker .panel {
+  background-color: rgba(86, 54, 130, 0.8);
+  float: right;
+  mix-width: 480px;
+  width: 53%;
+}
+.link-marker .contain {
+  padding: 12px;
+  position: relative;
+  width: 510px;
+}
+.link-marker .contain p {
+  color: #ffffff;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1em;
+  padding-right: 155px;
+}
+.link-marker .contain .link {
+  bottom: 0px;
+  height: 150px;
+  margin: auto;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 150px;
+}
+.link-marker .contain .link svg {
+  height: 100%;
+  width: 100%;
+}
+.link-marker .contain .link .text {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+}
+.link-marker .contain .link .text span {
+  display: block;
+  height: 32px;
+  text-align: center;
+}
+.link-marker .contain .link .text p {
+  color: #b0db40;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.3em;
+  padding: 0px;
+}
+.link-marker .contain .link .text p strong {
+  color: #b0db40;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1em;
+}
+.page-contact .contain {
+  display: table;
+  font-size: 0px;
+  width: 100%;
+}
+.page-contact .contain > div {
+  display: table-cell;
+  vertical-align: top;
+}
+.page-contact .contain .directions {
+  -webkit-animation: .5s left 1;
+  animation: .5s left 1;
+  padding-right: 15px;
+  width: 300px;
+}
+.page-contact .contain .directions .container {
+  background-color: #efefef;
+  padding: 12px;
+}
+.page-contact .contain .directions h2 {
+  color: #563682;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1em;
+  margin-bottom: 12px;
+}
+.page-contact .contain .directions .input {
+  margin-bottom: 8px;
+}
+.page-contact .contain .directions .input select {
+  background-color: #ffffff;
+  border: 0px;
+  font-size: 18px;
+  outline: none;
+  padding: 5px 12px;
+  width: 100%;
+}
+.page-contact .contain .directions .results {
+  background-color: #ffffff;
+  height: 250px;
+  padding: 12px 0px 12px 12px;
+}
+.page-contact .contain .directions .results .result {
+  border-bottom: 1px solid #563682;
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+.page-contact .contain .directions .results h3 {
+  background-color: #efefef;
+  color: #b0db40;
+  font-weight: bold;
+  margin-bottom: 5px;
+  padding: 4px 8px;
+}
+.page-contact .contain .directions .results address a {
+  color: #517846;
+  font-size: 16px;
+}
+.page-contact .contain .directions .results address p {
+  font-size: 16px;
+  font-style: normal;
+  line-height: 1.1em;
+}
+.page-contact .contain .directions .footer {
+  margin-top: 15px;
+}
+.page-contact .contain .directions .footer span {
+  color: #b0db40;
+  display: block;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 72px;
+  font-weight: 400;
+  line-height: .7em;
+  text-align: right;
+}
+.page-contact .contain .directions .footer p {
+  background: url('../images/bracket-left.png') 5% center no-repeat, url('../images/bracket-right.png') 95% center no-repeat;
+  background-color: #b0db40;
+  -webkit-background-size: auto 80%;
+  background-size: auto 80%;
+  color: #ffffff;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  margin: 0px -12px -12px -12px;
+  padding: 18px 12px;
+  text-align: center;
+}
+.page-contact .contain .map {
+  position: relative;
+}
+.page-contact .contain .map > div {
+  height: 100%;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+.page-contact .contain .map .show-map {
+  height: 100%;
+}

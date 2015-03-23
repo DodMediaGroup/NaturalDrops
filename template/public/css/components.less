@@ -1,0 +1,52 @@
+li{
+	list-style-image: url(../images/item.png);
+}
+
+.principal-title{
+	background: url('../images/bracket-left.png') 8% center no-repeat,
+				url('../images/bracket-right.png') 92% center no-repeat;
+	background-size: auto 80%;
+	display: inline-block;
+	font-family: @font-title;
+	font-size: 36px;
+	font-weight: 300;
+	line-height: 24px;
+	margin-bottom: 45px;
+	padding: 15px 45px 20px;
+	text-align: center;
+	span{
+		display: block;
+		font-size: 20px;
+		text-align: center;
+		svg{
+			height: 22px;
+			width: auto;
+		}
+	}
+}
+
+.btn-green-light{
+	background-color: @color-green-light;
+	color: @color-white;
+	svg{
+		path{
+			fill: @color-white !important;
+		}
+	}
+}
+
+
+
+.my-col-md-1, .my-col-md-2, .my-col-md-3, .my-col-md-4, .my-col-md-5, .my-col-md-6, .my-col-md-7, .my-col-md-8, .my-col-md-9, .my-col-md-10, .my-col-md-11, .my-col-md-12{
+	display: inline-block;
+	vertical-align: top;
+}
+.my-col-md-5{
+	width: (100% / 12%)*5;
+}
+.my-col-md-6{
+	width: (100% / 12%)*6;
+}
+.my-col-md-7{
+	width: (100% / 12%)*7;
+}
