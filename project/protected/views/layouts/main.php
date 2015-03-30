@@ -19,7 +19,8 @@
 	
 	<!-- Maps -->
     <script src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry&v=3.7"></script>
-    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/vendor/js/maplace-0.1.3.min.js"></script>
+    <!--<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/vendor/js/maplace-0.1.3.min.js"></script>-->
+    <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/vendor/gmap3/gmap3.min.js"></script>
 </head>
 <body>
 	<div class="modal-loading active"></div>

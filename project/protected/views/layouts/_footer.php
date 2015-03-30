@@ -1,12 +1,21 @@
 <section class="section principal-footer">
-	<div id="map-footer" class="map" data-icon="<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.png">
-		<div class="text">
-			<p>OFICINA</p>
-			<p><strong>PRINCIPAL</strong></p>
-		</div>
+	<div id="map-footer" class="map">
 		<a href="<?php echo $this->createUrl('puntos_venta/') ?>" class="link">
 			<p><span></span><strong>encuentra la</strong><br>tienda más cercana</p>
 		</a>
+		<script>
+			footerLocation = [{
+		        icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
+		        lat: 6.248365,
+		        lng: -75.594243,
+		        html: '<div class="text">'+
+		        		'<p>OFICINA</p>'+
+		        		'<p><strong>PRINCIPAL</strong></p>'+
+					'</div>',
+		        animation: google.maps.Animation.DROP,
+		        title: 'Oficina Principal'
+		    }];
+		</script>
 	</div>
 	<div class="contact">
 		<div class="filter">

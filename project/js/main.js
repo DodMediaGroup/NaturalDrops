@@ -68,7 +68,6 @@ jQuery(document).ready(function($) {
     // PAGE CONTACT
     if($('.page-contact').length > 0){
         map = $.loadMaps('.show-map', mapLocations);
-        map.Load();
     }
     // END PAGE CONTACT
 
@@ -116,6 +115,25 @@ jQuery(document).ready(function($) {
     // PARALLAX
     $('.parallax').parallax();
     // END PARALLAX
+
+    // SHOW MAP SALES
+    $('.js-tablet-map').on('click', function(event) {
+        event.preventDefault();
+
+        if($(this).hasClass('active')){
+            $(this).removeClass('active');
+            $('.directions').removeClass('active');
+        }
+        else{
+            $(this).addClass('active');
+            $('.directions').addClass('active');
+            setTimeout(function(){
+                map.gmap3({trigger:"resize"});
+                map.gmap3({trigger:"projection_changed"});
+            }, 800);
+        }
+    });
+    // END SHOW MAP SALES
 });
 
 $(window).on('load', function(event) {
@@ -240,38 +258,59 @@ $.principalSlide = function(){
 }
 // END PRINCIPAL SLIDE
 // MAPS
-$.loadMaps = function(div, locations){
-    if (typeof locations == 'undefined')
-        locations = mapLocations;
-    var map = new Maplace({
-        map_div: div,
-        locations: locations,
-        start: 1,
-        controls_on_map: false,
-        map_options: {
-            set_center: [6.250756, -75.602575],
-            zoom: 14,
-            scrollwheel: false,
-            zoomControl: true,
-            zoomControlOptions: {
-              style: google.maps.ZoomControlStyle.SMALL
-            },
-            panControl: false
-        }
+$.loadMaps = function(div, inLocations){
+    var locations = [],
+        overLayers = [];
+    
+    if ((typeof inLocations == 'undefined'))
+        inLocations = mapLocations;
+    $.each(inLocations, function(index, val) {
+        console.log(inLocations);
+        locations.push({
+            latLng: [$(this)[0].lat, $(this)[0].lng],
+            data: $(this)[0].title,
+            options:{
+                icon: $(this)[0].icon
+            }
+        });
+        overLayers.push({
+            latLng: [$(this)[0].lat, $(this)[0].lng],
+            options:{
+                content: $(this)[0].html,
+                offset:{
+                    y: 5,
+                    x: 45
+                }
+            }
+        });
     });
-    return map;
+    var map = $(div).gmap3({
+        map:{
+            options:{
+                center: [6.248365, -75.594243],
+                zoom: 6,
+                maxZoom: 16,
+                scrollwheel: false,
+                zoomControl: true,
+                zoomControlOptions: {
+                    style: google.maps.ZoomControlStyle.SMALL
+                },
+                panControl: false
+            }
+        },
+        marker:{
+            values: locations
+        },
+        overlay:{
+            values: overLayers
+        }
+    }, "autofit");
+
+    return $(div);
 }
 // END MAPS
 // MAP FOOTER
 $.showMapFooter = function(){
-    var locations = [{
-        icon: $("#map-footer").attr('data-icon'),
-        lat: 6.248365,
-        lon: -75.594243,
-        html: '<p>Dir: Carrera 18 # 11b-01</p><p>Tel: 770 5128</p>',
-        animation: google.maps.Animation.DROP
-    }];
-    var mapFooter = $.loadMaps('#map-footer', locations);
-    mapFooter.Load();
+    $.loadMaps('#map-footer', footerLocation);
 }
 // END MAP FOOTER

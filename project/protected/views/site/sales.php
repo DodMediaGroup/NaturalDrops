@@ -69,33 +69,52 @@
 			</div>
 			<div class="map">
 				<div>
+					<div class="arrow js-tablet-map hidden-lg hidden-md">
+						<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/arrow.svg" class="js-img-to-svg">
+					</div>
 					<div class="show-map"></div>
 				</div>
 			</div>
 			<script>
 				mapLocations.push(
 					{
-				        lat: 45.9,
-				        lon: 10.9,
-				        html: '<h3>Content A1</h3>',
-				        icon: 'images/icon-map.png',
+				        lat: 4.679616,
+				        lng: -74.053486,
+				        html: '',
+				        title: 'Oficina Principal',
+				        icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
 				        animation: google.maps.Animation.DROP
 				    },
 				    {
-				        lat: 44.8,
-				        lon: 1.7,
-				        html: '<h3>Content B1</h3>',
-				        icon: 'images/icon-map.png',
+				        lat: 4.630372,
+				        lng: -74.092668,
+				        html: '',
+				        title: 'Oficina Principal',
+				        icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
 				        animation: google.maps.Animation.DROP
 				    },
 				    {
-				        lat: 51.5,
-				        lon: -1.1,
-				        html: [
-				            '<h3>Content C1</h3>',
-				            '<p>Lorem Ipsum..</p>'
-				        ].join(''),
-				        icon: 'images/icon-map.png',
+				        lat: 6.248365,
+		        		lng: -75.594243,
+				        html: '',
+				        title: 'Oficina Principal',
+				        icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
+				        animation: google.maps.Animation.DROP
+				    },
+				    {
+				        lat: 6.222512,
+		        		lng: -75.587285,
+				        html: '',
+				        title: 'Oficina Principal',
+				        icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
+				        animation: google.maps.Animation.DROP
+				    },
+				    {
+				        lat: 3.430864,
+		        		lng: -76.522314,
+				        html: '',
+				        title: 'Oficina Principal',
+				        icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
 				        animation: google.maps.Animation.DROP
 				    }
 				);

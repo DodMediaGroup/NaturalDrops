@@ -970,15 +970,18 @@ li {
   vertical-align: top;
   width: 50%;
 }
+.principal-footer .map {
+  position: relative;
+}
 .principal-footer .map .text {
   background: url('../images/bracket-left.png') 8% center no-repeat, url('../images/bracket-right.png') 92% center no-repeat;
   background-color: rgba(80, 59, 105, 0.8);
   -webkit-background-size: auto 80%;
   background-size: auto 80%;
   padding: 30px 28px;
-  position: absolute;
-  right: 20px;
-  top: 50px;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
   z-index: 99;
 }
 .principal-footer .map .text p {
@@ -1523,6 +1526,7 @@ li {
 .page-contact .contain {
   display: table;
   font-size: 0px;
+  table-layout: fixed;
   width: 100%;
 }
 .page-contact .contain > div {
@@ -1532,12 +1536,16 @@ li {
 .page-contact .contain .directions {
   -webkit-animation: .5s left 1;
   animation: .5s left 1;
+  overflow: hidden;
   padding-right: 15px;
+  -webkit-transition: all .2s;
+  transition: all .2s;
   width: 300px;
 }
 .page-contact .contain .directions .container {
   background-color: #efefef;
   padding: 12px;
+  width: 300px;
 }
 .page-contact .contain .directions h2 {
   color: #503b69;
@@ -1607,18 +1615,43 @@ li {
   padding: 18px 12px;
   text-align: center;
 }
+.page-contact .contain .directions.active {
+  width: 30px;
+}
 .page-contact .contain .map {
   position: relative;
 }
 .page-contact .contain .map > div {
   height: 100%;
   left: 0px;
+  padding-left: 15px;
   position: absolute;
   top: 0px;
   width: 100%;
 }
 .page-contact .contain .map .show-map {
   height: 100%;
+  min-width: 300px;
+}
+.page-contact .contain .map .arrow {
+  background-color: rgba(159, 194, 58, 0.95);
+  height: 45px;
+  left: -30px;
+  padding: 7px;
+  position: absolute;
+  width: 45px;
+  z-index: 99;
+}
+.page-contact .contain .map .arrow svg {
+  height: 100%;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  width: 100%;
+}
+.page-contact .contain .map .arrow.active svg {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 @media (max-width: 992px) {
   .principal-menu ul li a {
@@ -1632,6 +1665,15 @@ li {
   .home-beneficios .beneficio-product .text p {
     font-size: 28px;
     line-height: 28px;
+  }
+  .page-beneficios .producto .text.panel p {
+    font-size: 28px;
+  }
+  .page-beneficios .producto .producto-graf {
+    margin-top: -3.5%;
+  }
+  .page-beneficios .producto .producto-graf .circle .msj {
+    top: 16%;
   }
   .page-beneficios .producto .producto-graf .circle .msj p {
     font-size: 30px;
@@ -1755,6 +1797,10 @@ li {
   }
   .suscription .container h1 {
     background-position: 0% center, 100% center;
+  }
+  .page-contact .contain .show-map {
+    border: 1px solid rgba(159, 194, 58, 0.9);
+    border-right: 0px;
   }
   .principal-footer > div {
     height: 330px;

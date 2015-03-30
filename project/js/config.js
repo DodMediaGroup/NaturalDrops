@@ -14,3 +14,5 @@ var tratInfo = null;
 // MAP
 var mapLocations = [];
 var map = null;
+// MAP FOOTER
+var footerLocation = null;

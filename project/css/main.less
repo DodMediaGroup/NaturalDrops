@@ -512,15 +512,14 @@
 		width: 50%;
 	}
 	.map{
+		position: relative;
 		.text{
 			background: url('../images/bracket-left.png') 8% center no-repeat,
 				url('../images/bracket-right.png') 92% center no-repeat;
 			background-color: fadeout(@color-purple, 20%);
 			background-size: auto 80%;
 			padding: 30px 28px;
-			position: absolute;
-			right: 20px;
-			top: 50px;
+			transform: translateY(-100%);
 			z-index: 99;
 			p{
 				color: @color-white;
@@ -1068,6 +1067,7 @@
 	.contain{
 		display: table;
 		font-size: 0px;
+		table-layout: fixed;
 		width: 100%;
 		&>div{
 			display: table-cell;
@@ -1075,11 +1075,14 @@
 		}
 		.directions{
 			animation: .5s left 1;
+			overflow: hidden;
 			padding-right: 15px;
+			transition: all .2s;
 			width: 300px;
 			.container{
 				background-color: @color-gray-light;
 				padding: 12px;
+				width: 300px;
 			}
 			h2{
 				color: @color-purple;
@@ -1151,18 +1154,42 @@
 					text-align: center;
 				}
 			}
+			&.active{
+				width: 30px;
+			}
 		}
 		.map{
 			position: relative;
 			&>div{
 				height: 100%;
 				left: 0px;
+				padding-left: 15px;
 				position: absolute;
 				top: 0px;
 				width: 100%;
 			}
 			.show-map{
 				height: 100%;
+				min-width: 300px;
+			}
+			.arrow{
+				background-color: fadeout(@color-green-light, 5%);
+				height: 45px;
+				left: -30px;
+				padding: 7px;
+				position: absolute;
+				width: 45px;
+				z-index: 99;
+				svg{
+					height: 100%;
+					transition: all .2s;
+					width: 100%;
+				}
+				&.active{
+					svg{
+						transform: rotate(180deg);
+					}
+				}
 			}
 		}
 	}
