@@ -46,7 +46,7 @@
 			</h1>
 		</header>
 		<div class="testimonials">
-			<div class="col-md-4 testimony js-show-info efect-scale">
+			<div class="col-md-4 testimony js-show-info efect-bottom">
 				<div class="img" style="background-image: url(images/treatments/1.jpg)"></div>
 				<h3 class="name">Problemas de circulación</h3>
 				<div class="filter"></div>
@@ -76,7 +76,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 testimony js-show-info efect-scale">
+			<div class="col-md-4 testimony js-show-info efect-bottom">
 				<div class="img" style="background-image: url(images/treatments/2.jpg)"></div>
 				<h3 class="name">Artritis & artrosis</h3>
 				<div class="filter"></div>
@@ -86,7 +86,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 testimony js-show-info efect-scale">
+			<div class="col-md-4 testimony js-show-info efect-bottom">
 				<div class="img" style="background-image: url(images/treatments/3.jpg)"></div>
 				<h3 class="name">Venas varices</h3>
 				<div class="filter"></div>
@@ -96,7 +96,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 testimony js-show-info efect-scale">
+			<div class="col-md-4 testimony js-show-info efect-bottom">
 				<div class="img" style="background-image: url(images/treatments/4.jpg)"></div>
 				<h3 class="name">Ematomas</h3>
 				<div class="filter"></div>
@@ -106,7 +106,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 testimony js-show-info efect-scale">
+			<div class="col-md-4 testimony js-show-info efect-bottom">
 				<div class="img" style="background-image: url(images/treatments/1.jpg)"></div>
 				<h3 class="name">Circulación</h3>
 				<div class="filter"></div>
@@ -136,7 +136,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 testimony js-show-info efect-scale">
+			<div class="col-md-4 testimony js-show-info efect-bottom">
 				<div class="img" style="background-image: url(images/treatments/2.jpg)"></div>
 				<h3 class="name">Psoriasis</h3>
 				<div class="filter"></div>
@@ -146,7 +146,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 testimony js-show-info efect-scale">
+			<div class="col-md-4 testimony js-show-info efect-bottom">
 				<div class="img" style="background-image: url(images/treatments/3.jpg)"></div>
 				<h3 class="name">Problemas de circulación</h3>
 				<div class="filter"></div>
@@ -156,7 +156,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 testimony js-show-info efect-scale">
+			<div class="col-md-4 testimony js-show-info efect-bottom">
 				<div class="img" style="background-image: url(images/treatments/4.jpg)"></div>
 				<h3 class="name">Artritis & artrosis</h3>
 				<div class="filter"></div>
@@ -166,7 +166,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 testimony js-show-info efect-scale">
+			<div class="col-md-4 testimony js-show-info efect-bottom">
 				<div class="img" style="background-image: url(images/treatments/1.jpg)"></div>
 				<h3 class="name">Venas varices</h3>
 				<div class="filter"></div>

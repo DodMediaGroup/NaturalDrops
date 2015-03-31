@@ -269,12 +269,13 @@ li {
   background: url(../images/logos/logo.svg) no-repeat left center;
   -webkit-background-size: contain;
   background-size: contain;
-  bottom: 0px;
   height: 172px;
   left: 15px;
-  margin: auto;
   position: absolute;
-  top: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   width: 120px;
 }
 .principal-menu ul {
@@ -532,12 +533,13 @@ li {
   padding-right: 100px;
 }
 .home-beneficios .link-to-shop .block .link {
-  bottom: 0px;
   height: 150px;
-  margin: auto;
   position: absolute;
   right: -10%;
-  top: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   width: 150px;
 }
 .home-beneficios .link-to-shop .block .link svg {
@@ -1256,7 +1258,7 @@ li {
   height: auto;
   left: 0px;
   position: absolute;
-  top: -28%;
+  top: -27.99999999%;
   width: 42%;
   z-index: 2;
 }
@@ -1472,12 +1474,13 @@ li {
   padding-right: 155px;
 }
 .link-marker .contain .link {
-  bottom: 0px;
   height: 150px;
-  margin: auto;
   position: absolute;
   right: 0px;
-  top: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
   width: 150px;
 }
 .link-marker .contain .link svg {
@@ -1706,8 +1709,12 @@ li {
     bottom: inherit;
     height: 170px;
     left: 0px;
+    margin: auto;
     right: 0px;
     top: 15px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
     width: 130px;
   }
   .principal-menu nav {
