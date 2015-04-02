@@ -57,10 +57,6 @@ class DefaultController extends Controller
 				$this->render('login',array('model'=>$model));
 			}
 			else{
-				if(Yii::app()->user->getState('_type') != 'admin'){
-					Yii::app()->user->logout();
-					$this->render('login',array('model'=>$model));
-				}
 				Yii::app()->user->setReturnUrl('index');
 				$this->redirect(Yii::app()->user->returnUrl);
 			}
