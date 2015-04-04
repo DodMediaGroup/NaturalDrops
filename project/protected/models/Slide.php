@@ -29,7 +29,6 @@ class Slide extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('link', 'required'),
 			array('status', 'numerical', 'integerOnly'=>true),
 			array('link', 'length', 'max'=>255),
 			// The following rule is used by search().

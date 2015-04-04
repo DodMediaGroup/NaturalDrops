@@ -7,6 +7,13 @@
 </li>
 
 <li>
+	<a href='<?php echo $this->createUrl('slide/admin') ?>' class="<?php echo (count($path) > 1)?((strtolower($path[1]) == 'slide')?'active':''):''; ?>">
+		<i class='icon-picture-2'></i>
+		<span>Slide principal</span>
+	</a>
+</li>
+
+<li>
 	<a href='<?php echo $this->createUrl('testimonials/admin') ?>' class="<?php echo (count($path) > 1)?((strtolower($path[1]) == 'testimonials')?'active':''):''; ?>">
 		<i class='icon-comment-3'></i>
 		<span>Testimonios</span>
