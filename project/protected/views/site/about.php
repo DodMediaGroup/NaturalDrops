@@ -25,7 +25,7 @@
 		<div class="testimonials">
 			<?php foreach ($team as $key => $integrant) { ?>
 				<div class="col-sm-4 testimony efect-bottom">
-					<div class="img" style="background-image: url(<?php echo Yii::app()->request->baseUrl; ?>/images/testimonials/<?php echo $integrant->image; ?>)"></div>
+					<div class="img" style="background-image: url(<?php echo Yii::app()->request->baseUrl; ?>/images/team/<?php echo $integrant->image; ?>)"></div>
 					<div class="filter"></div>
 					<div class="text">
 						<div>
