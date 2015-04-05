@@ -20,6 +20,13 @@
 	</a>
 </li>
 
+<li>
+	<a href='<?php echo $this->createUrl('questions/admin') ?>' class="<?php echo (count($path) > 1)?((strtolower($path[1]) == 'questions')?'active':''):''; ?>">
+		<i class='icon-help-circled-2'></i>
+		<span>Preguntas frecuentes</span>
+	</a>
+</li>
+
 <li class='has_sub'>
 	<a href='#'>
 		<i class='icon-monitor-1'></i>
