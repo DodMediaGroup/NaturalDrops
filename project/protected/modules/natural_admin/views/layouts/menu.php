@@ -14,6 +14,13 @@
 </li>
 
 <li>
+	<a href='<?php echo $this->createUrl('blog/admin') ?>' class="<?php echo (count($path) > 1)?((strtolower($path[1]) == 'blog')?'active':''):''; ?>">
+		<i class='icon-newspaper-1'></i>
+		<span>Entradas Blog</span>
+	</a>
+</li>
+
+<li>
 	<a href='<?php echo $this->createUrl('testimonials/admin') ?>' class="<?php echo (count($path) > 1)?((strtolower($path[1]) == 'testimonials')?'active':''):''; ?>">
 		<i class='icon-comment-3'></i>
 		<span>Testimonios</span>
