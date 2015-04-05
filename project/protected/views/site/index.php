@@ -56,10 +56,10 @@
 	<div class="container efect-bottom">
 		<header>
 			<span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/cannabis.svg" class="js-img-to-svg"></span>
-			<h1>¿LA CREMA TIENE EFECTOS SECUNDARIOS?</h1>
+			<h1><?php echo $question->question; ?></h1>
 		</header>
-		<a href="#" class="principal-title btn-green-light">
-			<p>No, la crema no tiene efectos ya que...</p>
+		<a href="<?php echo $this->createUrl('preguntas_frecuentes/#'.MyMethods::normalizarUrl($question->question)) ?>" class="principal-title btn-green-light">
+			<p><?php echo $question->precise; ?></p>
 			Clic acá para seguir leyendo
 		</a>
 		<div class="link">

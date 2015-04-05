@@ -1,3 +1,6 @@
 design/
 
 *.bak
+*.log
+*.psd
+*.ai

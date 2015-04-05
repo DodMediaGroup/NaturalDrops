@@ -31,10 +31,12 @@ class SiteController extends Controller
 
 		$testimonials = Testimonials::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_testimony DESC'));
 		$articles = BlogEntries::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_entry DESC'));
+		$question = Questions::model()->findByAttributes(array('status'=>1), array('order'=>'rand()'));
 
 		$this->render('index', array(
 			'testimonials'=>$testimonials,
-			'articles'=>$articles
+			'articles'=>$articles,
+			'question'=>$question
 		));
 	}
 
@@ -72,8 +74,9 @@ class SiteController extends Controller
 	}
 
 	public function actionPreguntas_frecuentes(){
+		$questions = Questions::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_question DESC'));
 		$this->render('question', array(
-
+			'questions'=>$questions
 		));
 	}
 

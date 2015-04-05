@@ -611,12 +611,13 @@ li {
   padding: 15px 0px;
 }
 .home_question .container .btn-green-light {
-  background-position: 5% center,
-								95% center;
+  background-position: 2% center,
+								98% center;
   font-size: 24px;
   font-weight: 300;
   margin-bottom: 10px;
   text-decoration: none;
+  width: 100%;
 }
 .home_question .container .btn-green-light:hover {
   color: #ffffff;
@@ -629,6 +630,10 @@ li {
   font-weight: 400;
   line-height: 1em;
   margin-top: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
 }
 .home_question .container .link {
   height: 180px;
