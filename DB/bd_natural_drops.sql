@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 05-04-2015 a las 06:33:59
+-- Tiempo de generación: 05-04-2015 a las 07:25:57
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -189,6 +189,32 @@ INSERT INTO `testimonials` (`id_testimony`, `name`, `testimony`, `image`, `statu
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `treatments`
+--
+
+CREATE TABLE IF NOT EXISTS `treatments` (
+`id_treatment` smallint(6) NOT NULL,
+  `treatment` varchar(255) NOT NULL,
+  `description` longtext NOT NULL,
+  `benefits` longtext NOT NULL,
+  `use` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `status` smallint(1) DEFAULT '1'
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `treatments`
+--
+
+INSERT INTO `treatments` (`id_treatment`, `treatment`, `description`, `benefits`, `use`, `image`, `status`) VALUES
+(1, 'Artritis & artrosis', '<p>La artritis involucra la degradaci&oacute;n del cart&iacute;lago. El cart&iacute;lago normal protege una articulaci&oacute;n y permite que &eacute;sta se mueva de forma suave. El cart&iacute;lago tambi&eacute;n absorbe el golpe cuando se ejerce presi&oacute;n sobre la articulaci&oacute;n, como sucede cuando usted camina. Sin la cantidad usual de cart&iacute;lago, los huesos se rozan. Esto causa dolor, hinchaz&oacute;n (inflamaci&oacute;n) y rigidez. La inflamaci&oacute;n de la articulaci&oacute;n puede ser consecuencia de una enfermedad autoinmunitaria (el sistema inmunitario del cuerpo ataca por error al tejido sano).</p>\r\n', '<ul>	<li>Disminuye el dolor en un 35%</li>	<li>Crema t&oacute;pica</li>	<li>Desinflamante</li>	<li>Encajan como llaves dentro dentro del sistema endocanabinoide</li></ul>', 'Aplicar en la zona afectada masajeando con cuidado', '4ea9796aa3768d6b32ebc22aa0fea8ef.jpg', 1),
+(2, 'Venas várices', '<p><span style="font-family:lucida grande,geneva,arial,helvetica,sans-serif; font-size:13.1199998855591px">Las venas varicosas (v&aacute;rices) son venas hinchadas, retorcidas y dilatadas que se pueden ver bajo la piel. Con frecuencia son de color rojo o azul. Generalmente aparecen en las piernas, pero pueden ocurrir en otras partes del cuerpo.&nbsp;</span></p>\r\n\r\n<p>Normalmente, las v&aacute;lvulas unidireccionales en las venas de la pierna impiden que la sangre suba hacia el coraz&oacute;n. Cuando las v&aacute;lvulas no funcionan correctamente, la sangre se represa en la vena. La vena se hincha por la sangre que se acumula all&iacute;, lo cual provoca las varices. Las peque&ntilde;as varices que se pueden ver en la superficie de la piel se llaman ara&ntilde;as vasculares.</p>\r\n\r\n<p>Las venas varicosas son comunes y afectan m&aacute;s a las mujeres que a los hombres. Generalmente no causan problemas para la mayor&iacute;a de la gente. Sin embargo, en algunas personas, pueden llevar a afecciones serias, como hinchaz&oacute;n y dolor en las piernas, co&aacute;gulos de sangre y cambios en la piel.</p>\r\n', '<ul>\r\n	<li>Disminuye el dolor en un 35%</li>\r\n	<li>Crema t&oacute;pica</li>\r\n	<li>Desinflamante</li>\r\n	<li>Encajan como llaves dentro dentro del sistema endocanabinoide</li>\r\n</ul>\r\n\r\n<p>&nbsp;</p>\r\n', 'Aplicar en la zona afectada masajeando con cuidado', 'eb5ec6442e1672c76eeb891aab5f72af.jpg', 1),
+(3, 'Problemas de circulación', '<p>El sistema vascular es la red de vasos sangu&iacute;neos del cuerpo. Incluye las arterias, las venas y los capilares y traslada la sangre desde y hasta el coraz&oacute;n. Los problemas del sistema vascular son comunes y pueden ser serios. Las arterias pueden engrosarse y ponerse r&iacute;gidas, un problema llamado arterioesclerosis. Los co&aacute;gulos sangu&iacute;neos pueden obstruir los vasos y bloquear el flujo al coraz&oacute;n o al cerebro. Los vasos sangu&iacute;neos debilitados pueden romperse, causando una hemorragia interna.</p>\r\n\r\n<p>A medida que se envejece aumentan las probabilidades de tener una enfermedad vascular.</p>\r\n', '<ul>\r\n	<li>Disminuye el dolor en un 35%</li>\r\n	<li>Crema t&oacute;pica</li>\r\n	<li>Desinflamante</li>\r\n	<li>Encajan como llaves dentro dentro del sistema endocanabinoide</li>\r\n</ul>\r\n', 'Aplicar en la zona afectada masajeando con cuidado', '9e70d9e03ecfa28ec90d9b600146d4e9.jpg', 1),
+(4, 'Ematomas', '<p>Un&nbsp;<strong>hematoma</strong>&nbsp;es una&nbsp;<strong>acumulaci&oacute;n de sangre</strong>&nbsp;en tejidos blandos (por ejemplo, tejido muscular o adiposo). Un hematoma se forma cuando la&nbsp;sangre&nbsp;sale de uno o m&aacute;svasos sangu&iacute;neos&nbsp;al tejido que los rodea. Hematomas que est&aacute;n relativamente cerca de la superficie de la piel muestran al cabo de poco tiempo la t&iacute;pica mancha colorada (<strong>morat&oacute;n</strong>). En algunos casos pueden sin embargo pasar unos d&iacute;as hasta que el hematoma se hace visible.</p>\r\n\r\n<p>Los diferentes tipos se diferencian por la zona del tejido donde se produce:</p>\r\n\r\n<ul>\r\n	<li><strong>Hematoma subcut&aacute;neo:</strong>&nbsp;directamente bajo la&nbsp;piel.</li>\r\n	<li><strong>Hematoma intramuscular:</strong>&nbsp;dentro del tejido del m&uacute;sculo.</li>\r\n	<li><strong>Hematoma peri&oacute;stico:</strong>&nbsp;en el tejido &oacute;seo.</li>\r\n</ul>\r\n', '<ul>\r\n	<li>Disminuye el dolor en un 35%</li>\r\n	<li>Crema t&oacute;pica</li>\r\n	<li>Desinflamante</li>\r\n	<li>Encajan como llaves dentro dentro del sistema endocanabinoide</li>\r\n</ul>\r\n', 'Aplicar en la zona afectada masajeando con cuidado', '8a3889d425802a61892c3c80c7ab53e2.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `users`
 --
 
@@ -276,6 +302,12 @@ ALTER TABLE `testimonials`
  ADD PRIMARY KEY (`id_testimony`);
 
 --
+-- Indices de la tabla `treatments`
+--
+ALTER TABLE `treatments`
+ ADD PRIMARY KEY (`id_treatment`);
+
+--
 -- Indices de la tabla `users`
 --
 ALTER TABLE `users`
@@ -326,6 +358,11 @@ MODIFY `id_integrant` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 ALTER TABLE `testimonials`
 MODIFY `id_testimony` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+--
+-- AUTO_INCREMENT de la tabla `treatments`
+--
+ALTER TABLE `treatments`
+MODIFY `id_treatment` smallint(6) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `users`
 --

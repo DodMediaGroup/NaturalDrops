@@ -1661,3 +1661,86 @@ Stack trace:
 REQUEST_URI=/dodmediagroup/projects/natural_drops/project/natural_admin/team/update/4
 HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/natural_admin/team/admin
 ---
+2015/04/05 06:47:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "natural_admin/treatments/admin".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('natural_admin/t...')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/admin
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/natural_admin/team/admin
+---
+2015/04/05 06:53:41 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('create')
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('natural_admin/t...')
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/create
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/admin
+---
+2015/04/05 07:05:46 [error] [exception.CException] exception 'CException' with message 'TreatmentsController cannot find the requested view "view".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php:878
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): CController->renderPartial('view', Array, true)
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/controllers/TreatmentsController.php(151): CController->render('view', Array)
+#2 [internal function]: TreatmentsController->actionView('1')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(TreatmentsController), Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(TreatmentsController), Object(ReflectionMethod), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(291): CFilterChain->run()
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('view')
+#14 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('natural_admin/t...')
+#15 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/1
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/create
+---
+2015/04/05 07:11:18 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('update')
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('natural_admin/t...')
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/update/1
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/admin
+---
+2015/04/05 07:13:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(291): CFilterChain->run()
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('update')
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('natural_admin/t...')
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/update/1
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/admin
+---

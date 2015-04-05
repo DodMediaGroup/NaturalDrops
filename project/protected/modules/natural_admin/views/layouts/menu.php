@@ -28,6 +28,13 @@
 </li>
 
 <li>
+	<a href='<?php echo $this->createUrl('treatments/admin') ?>' class="<?php echo (count($path) > 1)?((strtolower($path[1]) == 'treatments')?'active':''):''; ?>">
+		<i class='icon-droplet'></i>
+		<span>Tratamientos</span>
+	</a>
+</li>
+
+<li>
 	<a href='<?php echo $this->createUrl('questions/admin') ?>' class="<?php echo (count($path) > 1)?((strtolower($path[1]) == 'questions')?'active':''):''; ?>">
 		<i class='icon-help-circled-2'></i>
 		<span>Preguntas frecuentes</span>
