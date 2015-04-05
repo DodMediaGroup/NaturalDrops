@@ -90,6 +90,16 @@ jQuery(document).ready(function($) {
             tratInfo = info;
         }
     });
+    $(document).on('click', '.treatments .info .close', function(event) {
+        event.preventDefault();
+
+        if(tratItem != null){
+            tratItem.append(tratInfo);
+            tratItem.removeClass('active');
+            tratItem = null;
+            tratInfo = null;
+        }
+    });
     // END SHOW INFO TRATAMIENTO
 
     // IMAGES ZOOM

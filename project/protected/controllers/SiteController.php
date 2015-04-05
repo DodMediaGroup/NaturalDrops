@@ -49,8 +49,9 @@ class SiteController extends Controller
 	}
 
 	public function actionBeneficios(){
+		$treatments = Treatments::model()->findAllByAttributes(array('status'=>1));
 		$this->render('benefits', array(
-
+			'treatments'=>$treatments
 		));
 	}
 

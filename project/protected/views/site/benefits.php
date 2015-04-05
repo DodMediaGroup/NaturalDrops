@@ -46,156 +46,32 @@
 			</h1>
 		</header>
 		<div class="testimonials">
-			<div class="col-md-4 testimony js-show-info efect-bottom">
-				<div class="img" style="background-image: url(images/treatments/1.jpg)"></div>
-				<h3 class="name">Problemas de circulación</h3>
-				<div class="filter"></div>
-				<div class="text">
-					<div>
-						<p><strong>PROBLEMAS DE CIRCULACIÓN</strong></p>
+			<?php foreach ($treatments as $key => $treatment) { ?>
+				<div class="col-md-4 testimony js-show-info efect-bottom">
+					<div class="img" style="background-image: url(<?php echo Yii::app()->request->baseUrl; ?>/images/treatments/<?php echo $treatment->image; ?>)"></div>
+					<h3 class="name"><?php echo $treatment->treatment; ?></h3>
+					<div class="filter"></div>
+					<div class="text">
+						<div>
+							<p><strong><?php echo MyMethods::myStrtoupper($treatment->treatment); ?></strong></p>
+						</div>
+					</div>
+					<div class="info <?php echo ($key >= (count($treatments) - (count($treatments) - 3)))?'info-top':''; ?>">
+						<div class="col-md-6">
+							<?php echo $treatment->description; ?>
+						</div>
+						<div class="col-md-6">
+							<h3>Beneficios</h3>
+							<?php echo $treatment->benefits; ?>
+							<span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/cannabis.svg" class="js-img-to-svg"></span>
+							<p class="used">
+								<?php echo $treatment->use; ?>
+							</p>
+						</div>
+						<a href="#" class="close">X</a>
 					</div>
 				</div>
-				<div class="info">
-					<div class="col-md-6">
-						<p>
-							La artritis involucra la degradación del cartílago. El cartílago normal protege una articulación y permite que ésta se mueva de forma suave. El cartílago también absorbe el golpe cuando se ejerce presión sobre la articulación, como sucede cuando usted camina. Sin la cantidad usual de cartílago, los huesos se rozan. Esto causa dolor, hinchazón (inflamación) y rigidez. La inflamación de la articulación puede ser consecuencia de una enfermedad autoinmunitaria (el sistema inmunitario del cuerpo ataca por error al tejido sano).
-						</p>
-					</div>
-					<div class="col-md-6">
-						<h3>Beneficios</h3>
-						<ul>
-							<li>Disminuye el dolor en un 35%</li>
-							<li>Crema tópica</li>
-							<li>Desinflamante</li>
-							<li>Encajan como llaves dentro dentro del sistema endocanabinoide</li>
-						</ul>
-						<span><img src="images/icons/cannabis.svg" class="js-img-to-svg"></span>
-						<p class="used">
-							Aplicar en la zona afectada masajeando con cuidado
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 testimony js-show-info efect-bottom">
-				<div class="img" style="background-image: url(images/treatments/2.jpg)"></div>
-				<h3 class="name">Artritis & artrosis</h3>
-				<div class="filter"></div>
-				<div class="text">
-					<div>
-						<p><strong>ARTRITIS & ARTROSIS</strong></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 testimony js-show-info efect-bottom">
-				<div class="img" style="background-image: url(images/treatments/3.jpg)"></div>
-				<h3 class="name">Venas varices</h3>
-				<div class="filter"></div>
-				<div class="text">
-					<div>
-						<p><strong>VENAS VARICES</strong></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 testimony js-show-info efect-bottom">
-				<div class="img" style="background-image: url(images/treatments/4.jpg)"></div>
-				<h3 class="name">Ematomas</h3>
-				<div class="filter"></div>
-				<div class="text">
-					<div>
-						<p><strong>EMATOMAS</strong></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 testimony js-show-info efect-bottom">
-				<div class="img" style="background-image: url(images/treatments/1.jpg)"></div>
-				<h3 class="name">Circulación</h3>
-				<div class="filter"></div>
-				<div class="text">
-					<div>
-						<p><strong>CIRCULACIÓN</strong></p>
-					</div>
-				</div>
-				<div class="info">
-					<div class="col-md-6">
-						<p>
-							La artritis involucra la degradación del cartílago. El cartílago normal protege una articulación y permite que ésta se mueva de forma suave. El cartílago también absorbe el golpe cuando se ejerce presión sobre la articulación, como sucede cuando usted camina. Sin la cantidad usual de cartílago, los huesos se rozan. Esto causa dolor, hinchazón (inflamación) y rigidez. La inflamación de la articulación puede ser consecuencia de una enfermedad autoinmunitaria (el sistema inmunitario del cuerpo ataca por error al tejido sano).
-						</p>
-					</div>
-					<div class="col-md-6">
-						<h3>Beneficios</h3>
-						<ul>
-							<li>Disminuye el dolor en un 35%</li>
-							<li>Crema tópica</li>
-							<li>Desinflamante</li>
-							<li>Encajan como llaves dentro dentro del sistema endocanabinoide</li>
-						</ul>
-						<span><img src="images/icons/cannabis.svg" class="js-img-to-svg"></span>
-						<p class="used">
-							Aplicar en la zona afectada masajeando con cuidado
-						</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 testimony js-show-info efect-bottom">
-				<div class="img" style="background-image: url(images/treatments/2.jpg)"></div>
-				<h3 class="name">Psoriasis</h3>
-				<div class="filter"></div>
-				<div class="text">
-					<div>
-						<p><strong>PSORIASIS</strong></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 testimony js-show-info efect-bottom">
-				<div class="img" style="background-image: url(images/treatments/3.jpg)"></div>
-				<h3 class="name">Problemas de circulación</h3>
-				<div class="filter"></div>
-				<div class="text">
-					<div>
-						<p><strong>PROBLEMAS DE CIRCULACIÓN</strong></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 testimony js-show-info efect-bottom">
-				<div class="img" style="background-image: url(images/treatments/4.jpg)"></div>
-				<h3 class="name">Artritis & artrosis</h3>
-				<div class="filter"></div>
-				<div class="text">
-					<div>
-						<p><strong>ARTRITIS & ARTROSIS</strong></p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-4 testimony js-show-info efect-bottom">
-				<div class="img" style="background-image: url(images/treatments/1.jpg)"></div>
-				<h3 class="name">Venas varices</h3>
-				<div class="filter"></div>
-				<div class="text">
-					<div>
-						<p><strong>VENAS VARICES</strong></p>
-					</div>
-				</div>
-				<div class="info info-top">
-					<div class="col-md-6">
-						<p>
-							La artritis involucra la degradación del cartílago. El cartílago normal protege una articulación y permite que ésta se mueva de forma suave. El cartílago también absorbe el golpe cuando se ejerce presión sobre la articulación, como sucede cuando usted camina. Sin la cantidad usual de cartílago, los huesos se rozan. Esto causa dolor, hinchazón (inflamación) y rigidez. La inflamación de la articulación puede ser consecuencia de una enfermedad autoinmunitaria (el sistema inmunitario del cuerpo ataca por error al tejido sano).
-						</p>
-					</div>
-					<div class="col-md-6">
-						<h3>Beneficios</h3>
-						<ul>
-							<li>Disminuye el dolor en un 35%</li>
-							<li>Crema tópica</li>
-							<li>Desinflamante</li>
-							<li>Encajan como llaves dentro dentro del sistema endocanabinoide</li>
-						</ul>
-						<span><img src="images/icons/cannabis.svg" class="js-img-to-svg"></span>
-						<p class="used">
-							Aplicar en la zona afectada masajeando con cuidado
-						</p>
-					</div>
-				</div>
-			</div>
+			<?php } ?>
 		</div>
 	</div>
 </section>
