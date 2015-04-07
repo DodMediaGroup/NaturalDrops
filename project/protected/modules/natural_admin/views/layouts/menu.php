@@ -41,31 +41,36 @@
 	</a>
 </li>
 
-<li>
-	<a href='<?php echo $this->createUrl('team/admin') ?>' class="<?php echo (count($path) > 1)?((strtolower($path[1]) == 'team')?'active':''):''; ?>">
-		<i class='icon-users-1'></i>
-		<span>Equipo</span>
-	</a>
-</li>
-
 <li class='has_sub'>
-	<a href='#'>
-		<i class='icon-monitor-1'></i>
-		<span>Sitio</span>
+	<a href='#' class="<?php echo (count($path) > 1)?((strtolower($path[1]) == 'stores')?'active':''):''; ?>">
+		<i class='icon-basket-1'></i>
+		<span>Tiendas</span>
 		<span class="pull-right">
 			<i class="fa fa-angle-down"></i>
 		</span>
 	</a>
 	<ul>
 		<li>
-			<a href='<?php echo $this->createUrl('pages/admin') ?>' class="<?php echo (count($path) > 1)?((strtolower($path[1]) == 'pages')?'active':''):''; ?>">
-				<span>Paginas</span>
+			<a href='<?php echo $this->createUrl('stores/admin') ?>' class="">
+				<span>Tiendas</span>
 			</a>
 		</li>
 		<li>
-			<a href='<?php echo $this->createUrl('menus/admin') ?>' class="<?php echo (count($path) > 1)?((strtolower($path[1]) == 'menus')?'active':''):''; ?>">
-				<span>Menus</span>
+			<a href='<?php echo $this->createUrl('stores/cities') ?>' class="">
+				<span>Ciudades</span>
+			</a>
+		</li>
+		<li>
+			<a href='<?php echo $this->createUrl('stores/countries') ?>' class="">
+				<span>Paises</span>
 			</a>
 		</li>
 	</ul>
+</li>
+
+<li>
+	<a href='<?php echo $this->createUrl('team/admin') ?>' class="<?php echo (count($path) > 1)?((strtolower($path[1]) == 'team')?'active':''):''; ?>">
+		<i class='icon-users-1'></i>
+		<span>Equipo</span>
+	</a>
 </li>

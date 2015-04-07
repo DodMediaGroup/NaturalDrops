@@ -9,3 +9,6 @@ var loadAjax = null;
 
 //Mostra selector hora DateTimePicker
 var timePicker = false;
+
+//Markers
+var markers = [];
