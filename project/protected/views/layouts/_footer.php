@@ -8,7 +8,7 @@
 		        icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
 		        lat: 6.248365,
 		        lng: -75.594243,
-		        html: '<div class="text">'+
+		        html: '<div class="text map-overlay">'+
 		        		'<p>OFICINA</p>'+
 		        		'<p><strong>PRINCIPAL</strong></p>'+
 					'</div>',

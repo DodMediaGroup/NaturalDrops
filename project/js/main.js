@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-	//IMG TO SCG
+	//IMG TO SVG
 	$(".js-img-to-svg").each(function(index, el) {
 		$.imgToSvg($(this));
 	});
@@ -65,11 +65,46 @@ jQuery(document).ready(function($) {
     }
     // END MAP FOOTER
 
-    // PAGE CONTACT
+    // PAGE STORES
     if($('.page-contact').length > 0){
-        map = $.loadMaps('.show-map', mapLocations);
+        $.countries();
+        $.cities();
+        $.reDrawMap();
+        $.getLocation();
+
+        $('#stores-countries').change(function(event) {
+            var country = $(this).val();
+            $.each(countries, function(index, val) {
+                if(this.name != ""){
+                    if(this.id == country)
+                        this.show = true;
+                    else
+                        this.show = false;
+                    if(country == 0)
+                        this.show = true;
+                }
+            });
+            $.reDrawMap();
+            console.log(countries);
+        });
+
+        $('#stores-cities').change(function(event) {
+            var city = $(this).val();
+            $.each(cities, function(index, val) {
+                if(this.name != ""){
+                    if(this.id == city)
+                        this.show = true;
+                    else
+                        this.show = false;
+                    if(city == 0)
+                        this.show = true;
+                }
+            });
+            $.reDrawMap();
+            console.log(cities);
+        });
     }
-    // END PAGE CONTACT
+    // END PAGE STORES
 
     //MOSTRAR INFO TRATAMIENTO
     $(document).on('click', '.js-show-info', function(event) {
@@ -275,7 +310,6 @@ $.loadMaps = function(div, inLocations){
     if ((typeof inLocations == 'undefined'))
         inLocations = mapLocations;
     $.each(inLocations, function(index, val) {
-        console.log(inLocations);
         locations.push({
             latLng: [$(this)[0].lat, $(this)[0].lng],
             data: $(this)[0].title,
@@ -324,3 +358,134 @@ $.showMapFooter = function(){
     $.loadMaps('#map-footer', footerLocation);
 }
 // END MAP FOOTER
+
+// MAPS STORES
+$.countries = function(){
+    $.each(mapLocations, function(index, val) {
+        countries[this.country.id] = {
+            id: this.country.id,
+            name: this.country.name,
+            show: true
+        };
+    });
+    $('#stores-countries').append($('<option>',{
+        text: 'Pais'
+    }).attr('value', 0));
+    $.each(countries, function(index, val) {
+        if(this.name != ""){
+            $('#stores-countries').append($('<option>',{
+                text: this.name
+            }).attr('value', this.id));
+        }
+    });
+}
+$.cities = function(){
+    $.each(mapLocations, function(index, val) {
+        cities[this.city.id] = {
+            id: this.city.id,
+            name: this.city.name,
+            show: true
+        };
+    });
+    $('#stores-cities').append($('<option>',{
+        text: 'Ciudad'
+    }).attr('value', 0));
+    $.each(cities, function(index, val) {
+        if(this.name != ""){
+            $('#stores-cities').append($('<option>',{
+                text: this.name
+            }).attr('value', this.id));
+        }
+    });
+}
+$.activeShow = function(){
+    $.each(mapLocations, function(index, val) {
+        if(countries[this.country.id].show && cities[this.city.id].show)
+            this.show = true;
+        else
+            this.show = false;
+    });
+}
+$.showResultStore = function(){
+    $('.page-contact .directions .results .mCSB_container').html('');
+    $.each(mapLocations, function(index, val) {
+        if(this.show){
+            var store = $('<div>',{
+                class: 'result'
+            }).append($('<h3>',{
+                text: this.name
+            })).append($('<address>')
+                .append($('<p>',{
+                    text: this.city.name+' - '+this.country.name
+                })).append($('<p>',{
+                    text: 'Dirección: '+this.address
+                })).append($('<p>',{
+                    text: 'Horario Atención: '+this.attention
+                })));
+            if(this.website != ''){
+                store.find('address').append($('<a>',{
+                    text: this.website
+                }).attr('href', this.website));
+            }
+
+            $('.page-contact .directions .results .mCSB_container').append(store);
+        }
+    });
+}
+$.loadMapsStore = function(){
+    map = new GMaps({
+        div: '#show-map',
+        lat: -12.043333,
+        lng: -77.028333
+    });
+    $.each(mapLocations, function(index, val) {
+        if(this.show){
+            map.addMarker({
+                lat: this.lat,
+                lng: this.lng,
+                icon: this.icon,
+                animation: this.animation,
+                dataStore: this.id,
+                click: function(){
+                    if($('#store-overlay-'+this.dataStore).hasClass('active'))
+                        $('#store-overlay-'+this.dataStore).removeClass('active');
+                    else{
+                        $('.map-overlay').removeClass('active');
+                        $('#store-overlay-'+this.dataStore).addClass('active');
+                        map.setCenter(this.getPosition().lat(), this.getPosition().lng());
+                    }
+                }
+            });
+            map.drawOverlay({
+                lat: this.lat,
+                lng: this.lng,
+                content: '<div class="map-overlay" id="store-overlay-'+this.id+'">'+
+                        '<h2>'+this.name+'</h2>'+
+                        ((this.address != "")?('<p>Dirección: '+this.address+'</p>'):'')+
+                        ((this.locality != "")?('<p>Barrio/Localidad: '+this.locality+'</p>'):'')+
+                        ((this.attention != "")?('<p>Horario de Atencion: '+this.attention+'</p>'):'')+
+                        ((this.phone != "")?('<p>Teléfono: '+this.phone+'</p>'):'')+
+                        ((this.email != "")?('<p>'+this.email+'</p>'):'')+
+                        ((this.website != "")?('<a href="'+this.website+'">'+this.website+'</a>'):'')+
+                    '</div>'
+            });
+        }
+    });
+    map.fitZoom();
+}
+$.reDrawMap = function(){
+    $.activeShow();
+    $.showResultStore();
+    $.loadMapsStore();
+}
+
+$.getLocation = function(){
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showMyPosition);
+    }
+}
+function showMyPosition(position){
+    map.setCenter(position.coords.latitude, position.coords.longitude);
+    map.setZoom(15);
+}
+// END MAPS STORES

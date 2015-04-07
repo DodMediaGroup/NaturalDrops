@@ -11,55 +11,16 @@
 				<div class="container">
 					<h2>BÚSQUEDA</h2>
 					<div class="input">
-						<select>
-							<option value="0">Ciudad</option>
-							<option value="1">Medellin</option>
+						<select id="stores-countries">
 						</select>
 					</div>
 					<div class="input">
-						<select>
-							<option value="0">Tienda</option>
-							<option value="1">Centro</option>
+						<select id="stores-cities">
 						</select>
 					</div>
 					<h2>RESULTADOS</h2>
 					<div class="results js-custom-scroll">
-						<div class="result">
-							<h3>ECOTIENDA</h3>
-							<address>
-								<p>Dirección: Calle 13 # 45 - 46</p>
-								<p>Teléfono: 564 7890</p>
-								<p>hola@ecotiendas.co</p>
-								<a href="www.ecotiendas.co">www.ecotiendas.co</a>
-							</address>
-						</div>
-						<div class="result">
-							<h3>ECOTIENDA</h3>
-							<address>
-								<p>Dirección: Calle 13 # 45 - 46</p>
-								<p>Teléfono: 564 7890</p>
-								<p>hola@ecotiendas.co</p>
-								<a href="www.ecotiendas.co">www.ecotiendas.co</a>
-							</address>
-						</div>
-						<div class="result">
-							<h3>ECOTIENDA</h3>
-							<address>
-								<p>Dirección: Calle 13 # 45 - 46</p>
-								<p>Teléfono: 564 7890</p>
-								<p>hola@ecotiendas.co</p>
-								<a href="www.ecotiendas.co">www.ecotiendas.co</a>
-							</address>
-						</div>
-						<div class="result">
-							<h3>ECOTIENDA</h3>
-							<address>
-								<p>Dirección: Calle 13 # 45 - 46</p>
-								<p>Teléfono: 564 7890</p>
-								<p>hola@ecotiendas.co</p>
-								<a href="www.ecotiendas.co">www.ecotiendas.co</a>
-							</address>
-						</div>
+						
 					</div>
 					<div class="footer">
 						<span>CLICK</span>
@@ -72,52 +33,35 @@
 					<div class="arrow js-tablet-map hidden-lg hidden-md">
 						<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/arrow.svg" class="js-img-to-svg">
 					</div>
-					<div class="show-map"></div>
+					<div class="show-map" id="show-map"></div>
 				</div>
 			</div>
 			<script>
-				mapLocations.push(
-					{
-				        lat: 4.679616,
-				        lng: -74.053486,
-				        html: '',
-				        title: 'Oficina Principal',
-				        icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
-				        animation: google.maps.Animation.DROP
-				    },
-				    {
-				        lat: 4.630372,
-				        lng: -74.092668,
-				        html: '',
-				        title: 'Oficina Principal',
-				        icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
-				        animation: google.maps.Animation.DROP
-				    },
-				    {
-				        lat: 6.248365,
-		        		lng: -75.594243,
-				        html: '',
-				        title: 'Oficina Principal',
-				        icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
-				        animation: google.maps.Animation.DROP
-				    },
-				    {
-				        lat: 6.222512,
-		        		lng: -75.587285,
-				        html: '',
-				        title: 'Oficina Principal',
-				        icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
-				        animation: google.maps.Animation.DROP
-				    },
-				    {
-				        lat: 3.430864,
-		        		lng: -76.522314,
-				        html: '',
-				        title: 'Oficina Principal',
-				        icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
-				        animation: google.maps.Animation.DROP
-				    }
-				);
+				<?php foreach ($stores as $key => $store) { ?>
+					mapLocations.push({
+						lat: <?php echo $store->lat; ?>,
+						lng: <?php echo $store->lng; ?>,
+						id: <?php echo $store->id_store; ?>,
+						name: '<?php echo $store->name; ?>',
+						country: {
+							id: <?php echo $store->city0->country0->id_country; ?>,
+							name: '<?php echo $store->city0->country0->name; ?>'
+						},
+						city: {
+							id: <?php echo $store->city0->id_city; ?>,
+							name: '<?php echo $store->city0->name; ?>'
+						},
+						locality: '<?php echo $store->locality; ?>',
+						attention: '<?php echo $store->attention; ?>',
+						address: '<?php echo $store->address; ?>',
+						phone: '<?php echo $store->phone; ?>',
+						email: '<?php echo $store->email; ?>',
+						website: '<?php echo $store->website; ?>',
+						icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
+				        animation: google.maps.Animation.DROP,
+				        show: true
+					});
+				<?php } ?>
 			</script>
 		</div>
 	</div>

@@ -16,3 +16,7 @@ var mapLocations = [];
 var map = null;
 // MAP FOOTER
 var footerLocation = null;
+
+// STORES
+var countries = [];
+var cities = [];

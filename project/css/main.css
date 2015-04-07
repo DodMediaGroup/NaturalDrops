@@ -231,6 +231,43 @@ li {
 .my-col-md-7 {
   width: 58.33333333%;
 }
+.map-overlay {
+  background: url('../images/bracket-left.png') 8% center no-repeat, url('../images/bracket-right.png') 92% center no-repeat;
+  background-color: rgba(80, 59, 105, 0.8);
+  -webkit-background-size: auto 80%;
+  background-size: auto 80%;
+  padding: 30px 28px;
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  z-index: 99;
+}
+.map-overlay p {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1em;
+  text-align: center;
+}
+.map-overlay p strong {
+  color: #ffffff;
+  font-family: 'yanone_kaffeesatz', sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+.map-overlay:before {
+  border-color: transparent rgba(80, 59, 105, 0.8);
+  border-style: solid;
+  border-width: 20px 25px 5px 0px;
+  bottom: 10px;
+  content: "";
+  display: block;
+  height: 0px;
+  margin: auto;
+  left: -25px;
+  position: absolute;
+  z-index: 1;
+}
 .principal-header {
   background-position: center top;
   -webkit-background-size: cover;
@@ -983,43 +1020,6 @@ li {
 .principal-footer .map {
   position: relative;
 }
-.principal-footer .map .text {
-  background: url('../images/bracket-left.png') 8% center no-repeat, url('../images/bracket-right.png') 92% center no-repeat;
-  background-color: rgba(80, 59, 105, 0.8);
-  -webkit-background-size: auto 80%;
-  background-size: auto 80%;
-  padding: 30px 28px;
-  -webkit-transform: translateY(-100%);
-  -ms-transform: translateY(-100%);
-  transform: translateY(-100%);
-  z-index: 99;
-}
-.principal-footer .map .text p {
-  color: #ffffff;
-  font-size: 32px;
-  font-weight: 300;
-  line-height: 1em;
-  text-align: center;
-}
-.principal-footer .map .text p strong {
-  color: #ffffff;
-  font-family: 'yanone_kaffeesatz', sans-serif;
-  font-size: 1.2em;
-  font-weight: 400;
-}
-.principal-footer .map .text:before {
-  border-color: transparent rgba(80, 59, 105, 0.8);
-  border-style: solid;
-  border-width: 20px 25px 5px 0px;
-  bottom: 10px;
-  content: "";
-  display: block;
-  height: 0px;
-  margin: auto;
-  left: -25px;
-  position: absolute;
-  z-index: 1;
-}
 .principal-footer .map .link {
   background-color: #9fc23a;
   bottom: 0px;
@@ -1677,6 +1677,45 @@ li {
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+.page-contact .contain .map .map-overlay {
+  background: url('../images/bracket-left.png') 3% center no-repeat, url('../images/bracket-right.png') 97% center no-repeat;
+  background-color: rgba(80, 59, 105, 0.9);
+  -webkit-background-size: auto 85%;
+  background-size: auto 85%;
+  opacity: 0;
+  padding: 15px 8%;
+  -webkit-transform: translate(70%, -50%);
+  -ms-transform: translate(70%, -50%);
+  transform: translate(70%, -50%);
+  width: 300px;
+}
+.page-contact .contain .map .map-overlay.active {
+  opacity: 1;
+}
+.page-contact .contain .map .map-overlay:before {
+  border-color: transparent rgba(80, 59, 105, 0.9);
+}
+.page-contact .contain .map .map-overlay a {
+  color: #9fc23a;
+  font-size: 14px;
+  margin-top: 8px;
+  text-decoration: none;
+}
+.page-contact .contain .map .map-overlay h2 {
+  border-bottom: 2px solid #ffffff;
+  color: #9fc23a;
+  font-family: 'yanone_kaffeesatz', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1em;
+}
+.page-contact .contain .map .map-overlay p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: .8em;
+  margin-top: 8px;
+  text-align: left;
 }
 .page-error {
   padding: 30px 0px;

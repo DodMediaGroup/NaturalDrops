@@ -62,8 +62,9 @@ class SiteController extends Controller
 	}
 
 	public function actionPuntos_venta(){
+		$stores = Stores::model()->findAllByAttributes(array('status'=>1));
 		$this->render('sales', array(
-
+			'stores'=>$stores
 		));
 	}
 

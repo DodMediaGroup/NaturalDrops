@@ -54,3 +54,39 @@ li{
 .my-col-md-7{
 	width: (100% / 12%)*7;
 }
+
+.map-overlay{
+	background: url('../images/bracket-left.png') 8% center no-repeat,
+		url('../images/bracket-right.png') 92% center no-repeat;
+	background-color: fadeout(@color-purple, 20%);
+	background-size: auto 80%;
+	padding: 30px 28px;
+	transform: translateY(-100%);
+	z-index: 99;
+	p{
+		color: @color-white;
+		font-size: 32px;
+		font-weight: 300;
+		line-height: 1em;
+		text-align: center;
+		strong{
+			color: @color-white;
+			font-family: @font-title;
+			font-size: 1.2em;
+			font-weight: 400;
+		}
+	}
+	&:before{
+		border-color: transparent fadeout(@color-purple, 20%);
+		border-style: solid;
+		border-width: 20px 25px 5px 0px;
+		bottom: 10px;
+		content: "";
+		display: block;
+		height: 0px;
+		margin: auto;
+		left: -25px;
+		position: absolute;
+		z-index: 1;
+	}
+}
