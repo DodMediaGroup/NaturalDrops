@@ -48,13 +48,13 @@
 		display: table-cell;
 		padding: 0px;
 		li{
-			background: url('../images/bracket-left-green.png') 0% center no-repeat,
-				url('../images/bracket-right-green.png') 100% center no-repeat;
+			background: url('../images/bracket-left-green.png') 3% center no-repeat,
+				url('../images/bracket-right-green.png') 97% center no-repeat;
 			background-size: 4px 85%;
 			display: inline-block;
 			list-style: none;
-			margin-right: 1%;
-			padding: 0px 4px;
+			margin-right: 3px;
+			padding: 0px 6px;
 			transition: all .2s;
 			a{
 				color: @color-green-dark;
@@ -67,7 +67,8 @@
 				text-decoration: none;
 			}
 			&:hover{
-				transform: scale(1.02);
+				background-position: 0% center,
+									100% center;
 			}
 		}
 	}

@@ -104,7 +104,7 @@ jQuery(document).ready(function($) {
             $.reDrawMap();
             console.log(cities);
         });
-        $('.results .result').on('click', function(event) {
+        $(document).on('click', '.results .result', function(event) {
             event.preventDefault();
 
             $.showInfoMap({
@@ -388,6 +388,7 @@ $.countries = function(){
             }).attr('value', this.id));
         }
     });
+    $('#stores-countries').val(1);
 }
 $.cities = function(){
     $.each(mapLocations, function(index, val) {
@@ -502,6 +503,7 @@ $.showInfoMap = function(data){
         $('#store-overlay-'+data.dataStore).addClass('active');
         $('#item-result-'+data.dataStore).addClass('active');
         map.setCenter(data.lat, data.lng);
+        map.setZoom(15);
 
         $('#store-overlay-'+data.dataStore).parent().parent().addClass('content-overlay');
     }
