@@ -22,10 +22,12 @@ jQuery(document).ready(function($) {
         if(nav.hasClass('active')){
             nav.removeClass('active');
             $('.menu_responsive').removeClass('active');
+            $('body').css('overflowY', 'auto');
         }
         else{
             nav.addClass('active');
             $('.menu_responsive').addClass('active');
+            $('body').css('overflowY', 'hidden');
         }
     });
     // END SHOW MENU
@@ -87,7 +89,6 @@ jQuery(document).ready(function($) {
             $.reDrawMap();
             console.log(countries);
         });
-
         $('#stores-cities').change(function(event) {
             var city = $(this).val();
             $.each(cities, function(index, val) {
@@ -102,6 +103,15 @@ jQuery(document).ready(function($) {
             });
             $.reDrawMap();
             console.log(cities);
+        });
+        $('.results .result').on('click', function(event) {
+            event.preventDefault();
+
+            $.showInfoMap({
+                dataStore: $(this).attr('data-result'),
+                lat: $(this).attr('data-lat'),
+                lng: $(this).attr('data-lng')
+            });
         });
     }
     // END PAGE STORES
@@ -411,7 +421,12 @@ $.showResultStore = function(){
     $.each(mapLocations, function(index, val) {
         if(this.show){
             var store = $('<div>',{
-                class: 'result'
+                class: 'result',
+                id: 'item-result-'+this.id
+            }).attr({
+                'data-result': this.id,
+                'data-lat': this.lat,
+                'data-lng': this.lng
             }).append($('<h3>',{
                 text: this.name
             })).append($('<address>')
@@ -447,13 +462,11 @@ $.loadMapsStore = function(){
                 animation: this.animation,
                 dataStore: this.id,
                 click: function(){
-                    if($('#store-overlay-'+this.dataStore).hasClass('active'))
-                        $('#store-overlay-'+this.dataStore).removeClass('active');
-                    else{
-                        $('.map-overlay').removeClass('active');
-                        $('#store-overlay-'+this.dataStore).addClass('active');
-                        map.setCenter(this.getPosition().lat(), this.getPosition().lng());
-                    }
+                    $.showInfoMap({
+                        dataStore: this.dataStore,
+                        lat: this.getPosition().lat(),
+                        lng: this.getPosition().lng()
+                    });
                 }
             });
             map.drawOverlay({
@@ -477,6 +490,21 @@ $.reDrawMap = function(){
     $.activeShow();
     $.showResultStore();
     $.loadMapsStore();
+}
+$.showInfoMap = function(data){
+    if($('#store-overlay-'+data.dataStore).hasClass('active')){
+        $('#store-overlay-'+data.dataStore).removeClass('active');
+        $('#item-result-'+data.dataStore).removeClass('active');
+    }
+    else{
+        $('.map-overlay').removeClass('active');
+        $('.results .result').removeClass('active');
+        $('#store-overlay-'+data.dataStore).addClass('active');
+        $('#item-result-'+data.dataStore).addClass('active');
+        map.setCenter(data.lat, data.lng);
+
+        $('#store-overlay-'+data.dataStore).parent().parent().addClass('content-overlay');
+    }
 }
 
 $.getLocation = function(){

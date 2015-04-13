@@ -358,10 +358,14 @@ li {
   width: 100%;
 }
 .principal-menu .menu_responsive {
-  background: #FFF;
+  background: url(../images/logos/logo.svg) no-repeat 8px 8px;
+  background-color: rgba(159, 194, 58, 0.95);
+  -webkit-background-size: 70px auto;
+  background-size: 70px auto;
   height: 100%;
   left: 0px;
   opacity: 0;
+  padding-top: 118px;
   position: fixed;
   top: 0px;
   -webkit-transition: all .4s;
@@ -383,12 +387,35 @@ li {
   background: transparent;
   display: block;
   margin: 0px;
-  margin-top: 10px;
+  padding: 5px 0px;
   text-align: center;
 }
-.principal-menu .menu_responsive ul li a {
+.principal-menu .menu_responsive ul li > a {
+  background: url('../images/bracket-left-green-dark.svg') 2% center no-repeat, url('../images/bracket-right-green-dark.svg') 98% center no-repeat;
+  -webkit-background-size: 5px 90%;
+  background-size: 5px 90%;
+  color: #ffffff;
   font-size: 22px;
   font-weight: 400;
+  display: inline-block;
+  padding: 12px 15px;
+}
+.principal-menu .menu_responsive ul li.active {
+  background-color: #ffffff;
+}
+.principal-menu .menu_responsive ul li.active a {
+  color: #503b69;
+}
+.principal-menu .menu_responsive ul li .social a {
+  height: 45px;
+  padding: 0px;
+  width: 50px;
+}
+.principal-menu .menu_responsive ul li .social a svg g {
+  opacity: 1 !important;
+}
+.principal-menu .menu_responsive ul li .social a svg path {
+  fill: #ffffff !important;
 }
 .principal-menu .menu_responsive.active {
   opacity: 1;
@@ -1601,12 +1628,28 @@ li {
   margin-bottom: 15px;
   padding-bottom: 5px;
 }
+.page-contact .contain .directions .results .result.active,
+.page-contact .contain .directions .results .result:hover {
+  background-color: rgba(80, 59, 105, 0.85);
+  cursor: pointer;
+}
+.page-contact .contain .directions .results .result.active a,
+.page-contact .contain .directions .results .result:hover a {
+  color: #9fc23a;
+}
+.page-contact .contain .directions .results .result.active p,
+.page-contact .contain .directions .results .result:hover p {
+  color: #ffffff;
+}
 .page-contact .contain .directions .results h3 {
   background-color: #efefef;
   color: #9fc23a;
   font-weight: bold;
   margin-bottom: 5px;
   padding: 4px 8px;
+}
+.page-contact .contain .directions .results address {
+  padding: 0px 5px;
 }
 .page-contact .contain .directions .results address a {
   color: #487228;
@@ -1678,13 +1721,16 @@ li {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
+.page-contact .contain .map .content-overlay {
+  z-index: 9999 !important;
+}
 .page-contact .contain .map .map-overlay {
-  background: url('../images/bracket-left.png') 3% center no-repeat, url('../images/bracket-right.png') 97% center no-repeat;
-  background-color: rgba(80, 59, 105, 0.9);
-  -webkit-background-size: auto 85%;
-  background-size: auto 85%;
+  background: url('../images/bracket-purple-left.svg') 5% center no-repeat, url('../images/bracket-purple-right.svg') 95% center no-repeat;
+  background-color: #ffffff;
+  -webkit-background-size: auto 90%;
+  background-size: auto 90%;
   opacity: 0;
-  padding: 15px 8%;
+  padding: 15px 15%;
   -webkit-transform: translate(70%, -50%);
   -ms-transform: translate(70%, -50%);
   transform: translate(70%, -50%);
@@ -1694,7 +1740,7 @@ li {
   opacity: 1;
 }
 .page-contact .contain .map .map-overlay:before {
-  border-color: transparent rgba(80, 59, 105, 0.9);
+  border-color: transparent #ffffff;
 }
 .page-contact .contain .map .map-overlay a {
   color: #9fc23a;
@@ -1703,7 +1749,7 @@ li {
   text-decoration: none;
 }
 .page-contact .contain .map .map-overlay h2 {
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 2px solid rgba(80, 59, 105, 0.9);
   color: #9fc23a;
   font-family: 'yanone_kaffeesatz', sans-serif;
   font-size: 32px;
@@ -1711,6 +1757,7 @@ li {
   line-height: 1em;
 }
 .page-contact .contain .map .map-overlay p {
+  color: rgba(80, 59, 105, 0.9);
   font-size: 16px;
   font-weight: 400;
   line-height: .8em;
@@ -1895,11 +1942,6 @@ li {
   .principal-menu nav.active {
     position: fixed;
   }
-  .principal-menu nav.active .button .bar {
-    background-color: #9fc23a;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
   .principal-menu nav.active .button .bar:nth-child(1) {
     -webkit-transform: translateY(5px) rotate(45deg);
     -ms-transform: translateY(5px) rotate(45deg);
@@ -1925,6 +1967,9 @@ li {
     display: block;
   }
   .principal-menu .menu_responsive ul {
+    display: block;
+  }
+  .principal-menu .menu_responsive .social {
     display: block;
   }
   .home-beneficios .link-to-shop {

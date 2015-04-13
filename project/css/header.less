@@ -81,10 +81,13 @@
 		width: 100%;
 	}
 	.menu_responsive{
-		background: #FFF;
+		background: url(../images/logos/logo.svg) no-repeat 8px 8px;
+		background-color: fadeout(@color-green-light, 5%);
+		background-size: 70px auto;
 		height: 100%;
 		left: 0px;
 		opacity: 0;
+		padding-top: 118px;
 		position: fixed;
 		top: 0px;
 		transition: all .4s;
@@ -99,11 +102,38 @@
 				background: transparent;
 				display: block;
 				margin: 0px;
-				margin-top: 10px;
+				padding: 5px 0px;
 				text-align: center;
-				a{
+				&>a{
+					background: url('../images/bracket-left-green-dark.svg') 2% center no-repeat,
+						url('../images/bracket-right-green-dark.svg') 98% center no-repeat;
+					background-size: 5px 90%;
+					color: @color-white;
 					font-size: 22px;
 					font-weight: 400;
+					display: inline-block;
+					padding: 12px 15px;
+				}
+				&.active{
+					background-color: @color-white;
+					a{
+						color: @color-purple;
+					}
+				}
+				.social{
+					a{
+						height: 45px;
+						padding: 0px;
+  						width: 50px;
+  						svg{
+  							g{
+  								opacity: 1 !important;
+  							}
+  							path{
+  								fill: @color-white !important;
+  							}
+  						}
+					}
 				}
 			}
 		}

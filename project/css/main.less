@@ -1093,6 +1093,16 @@
 					border-bottom: 1px solid @color-purple;
 					margin-bottom: 15px;
 					padding-bottom: 5px;
+					&.active, &:hover{
+						background-color: fadeout(@color-purple, 15%);
+						cursor: pointer;
+						a{
+							color: @color-green-light;
+						}
+						p{
+							color: @color-white;
+						}
+					}
 				}
 				h3{
 					background-color: @color-gray-light;
@@ -1102,6 +1112,7 @@
 					padding: 4px 8px;
 				}
 				address{
+					padding: 0px 5px;
 					a{
 						color: @color-green-dark;
 						font-size: 16px;
@@ -1173,20 +1184,23 @@
 					}
 				}
 			}
+			.content-overlay{
+				z-index: 9999 !important;
+			}
 			.map-overlay{
-				background: url('../images/bracket-left.png') 3% center no-repeat,
-							url('../images/bracket-right.png') 97% center no-repeat;
-				background-color: fadeout(@color-purple, 10%);
-				background-size: auto 85%;
+				background: url('../images/bracket-purple-left.svg') 5% center no-repeat,
+							url('../images/bracket-purple-right.svg') 95% center no-repeat;
+				background-color: @color-white;
+				background-size: auto 90%;
 				opacity: 0;
-				padding: 15px 8%;
+				padding: 15px 15%;
 				transform: translate(70%, -50%);
 				width: 300px;
 				&.active{
 					opacity: 1;
 				}
 				&:before{
-					border-color: transparent fadeout(@color-purple, 10%);
+					border-color: transparent @color-white;
 				}
 				a{
 					color: @color-green-light;
@@ -1195,7 +1209,7 @@
 					text-decoration: none;
 				}
 				h2{
-					border-bottom: 2px solid @color-white;
+					border-bottom: 2px solid fadeout(@color-purple, 10%);
 					color: @color-green-light;
 					font-family: @font-title;
 					font-size: 32px;
@@ -1203,6 +1217,7 @@
 					line-height: 1em;
 				}
 				p{
+					color: fadeout(@color-purple, 10%);
 					font-size: 16px;
 					font-weight: 400;
 					line-height: .8em;
