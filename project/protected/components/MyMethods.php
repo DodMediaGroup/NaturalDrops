@@ -83,7 +83,7 @@ class MyMethods extends CApplicationComponent
 	}
 
 	public static function sentMail($subject, $from, $to, $content, $options=array()){
-		$fromName = (isset($options['fromName']))?$options['fromName']:'Centro Comercial Arrecife';
+		$fromName = (isset($options['fromName']))?$options['fromName']:'Natural Drops';
 
 		$subject='=?UTF-8?B?'.base64_encode($subject).'?=';
 		$headers="From: ".$fromName." <".$from.">\r\n".
@@ -103,12 +103,12 @@ class MyMethods extends CApplicationComponent
 			'<td style="background:#FFFFFF;padding-top:10px;padding-right:35px;padding-bottom:10px;padding-left:35px;" >'.
 			'<div style="word-wrap:break-word;line-height:19.600000381469727px;color:#444444;">'.
 			$content.'<br>'.
-			'Enviado desde sitio web Explorer<br><br>'.
+			'Enviado desde sitio web Natural Drops<br><br>'.
 			'</div></td></tr>'.
-			'<tr><td align="center" style="background-color:#eeeeee; color:#444444; font-size:10px; padding-top:5px; padding-bottom:5px;">Derechos reservados Arrecife</td></tr>'.
+			'<tr><td align="center" style="background-color:#eeeeee; color:#444444; font-size:10px; padding-top:5px; padding-bottom:5px;">Derechos reservados Natural Drops</td></tr>'.
 			'</tbody></table></td></tr></tbody></table></div></td></tr></tbody></table>';
 
-		mail($to,$subject,$body,$headers);
+		return mail($to,$subject,$body,$headers);
 	}
 
 

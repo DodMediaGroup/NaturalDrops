@@ -30,21 +30,3 @@
 		?>
 	</div>
 </section>
-
-<section class="section parallax suscription" data-image-src="<?php echo Yii::app()->request->baseUrl; ?>/images/marihuana.jpg">
-	<div class="container efect-bottom">
-		<h1>RECIBE NUESTRA INFORMACIÓN</h1>
-		<form action="#">
-			<div class="form-group">
-				<div class="input">
-					<input type="email" placeholder="Correo electrónico">
-				</div>
-				<div class="button">
-					<button type="submit">Enviar</button>
-				</div>
-			</div>
-		</form>
-	</div>
-</section>
-
-<div class="divisor"></div>

@@ -17,6 +17,8 @@
                     <li class="dropdown topbar-profile">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="rounded-image topbar-profile-image"><img src="<?php echo Yii::app()->request->baseUrl."/images/users/".Yii::app()->user->getState('_image'); ?>"></span> <?php echo Yii::app()->user->getState('_name') ?> <i class="fa fa-caret-down"></i></a>
                         <ul class="dropdown-menu">
+                            <li><a href="<?php echo $this->createUrl('profile/view'); ?>">My Profile</a></li>
+                            <li class="divider"></li>
                             <li><a href="javascript:;" onclick="notify('warning')"><i class="icon-help-2"></i> Help</a></li>
                             <li><a class="md-trigger" data-modal="logout-modal"><i class="icon-logout-1"></i> Logout</a></li>
                         </ul>

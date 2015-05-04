@@ -1,85 +1,45 @@
-<?php
-/* @var $this SiteController */
-/* @var $model ContactForm */
-/* @var $form CActiveForm */
+<article class="section">
+	<div class="container">
+		<header>
+			<h1 class="principal-title btn-green-light efect-bottom">
+				<span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/phone.svg" class="js-img-to-svg" alt="Contacto"></span>
+				CONTACTO
+			</h1>
+		</header>
+		<div class="article">
+			<div class="contact-page">
+				<div class="form">
+					<div class="bracket">
+						Es importante para nosotros estar en contacto contigo
+					</div>
 
-$this->pageTitle=Yii::app()->name . ' - Contact Us';
-$this->breadcrumbs=array(
-	'Contact',
-);
-?>
+					<p class="icon"><span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/phone-circle.svg" alt="" class="js-img-to-svg"></span> <?php echo $phone->value; ?></p>
+					<p class="icon"><span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/message.svg" alt="" class="js-img-to-svg"></span> <?php echo $email->value; ?></p>
+					<p class="icon"><span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/map-circle.svg" alt="" class="js-img-to-svg"></span> <?php echo $address->value; ?></p>
 
-<h1>Contact Us</h1>
+					<span class="border"></span>
 
-<?php if(Yii::app()->user->hasFlash('contact')): ?>
+					<p>Escríbenos:</p>
 
-<div class="flash-success">
-	<?php echo Yii::app()->user->getFlash('contact'); ?>
-</div>
-
-<?php else: ?>
-
-<p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
-</p>
-
-<div class="form">
-
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'contact-form',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); ?>
-
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
-
-	<?php echo $form->errorSummary($model); ?>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name'); ?>
-		<?php echo $form->error($model,'name'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email'); ?>
-		<?php echo $form->error($model,'email'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'subject'); ?>
-		<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'subject'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'body'); ?>
-		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'body'); ?>
-	</div>
-
-	<?php if(CCaptcha::checkRequirements()): ?>
-	<div class="row">
-		<?php echo $form->labelEx($model,'verifyCode'); ?>
-		<div>
-		<?php $this->widget('CCaptcha'); ?>
-		<?php echo $form->textField($model,'verifyCode'); ?>
+					<form id="form-contact" action="<?php echo $this->createUrl('contacto/') ?>">
+						<div class="form-group">
+							<input type="text" placeholder="Nombre" name="name" required>
+						</div>
+						<div class="form-group">
+							<input type="email" placeholder="Correo electrónico" name="email" required>
+						</div>
+						<div class="form-group">
+							<textarea name="subject" placeholder="Asunto" required></textarea>
+						</div>
+						<div class="form-group">
+							<span class="error"></span>
+						</div>
+						<div class="form-group">
+							<button type="submit">ENVIAR</button>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
-		<div class="hint">Please enter the letters as they are shown in the image above.
-		<br/>Letters are not case-sensitive.</div>
-		<?php echo $form->error($model,'verifyCode'); ?>
 	</div>
-	<?php endif; ?>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Submit'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
-
-</div><!-- form -->
-
-<?php endif; ?>
+</article>

@@ -14,25 +14,32 @@
 				<div class="text">
 					<p>Árnica</p>
 					<p>Manzanilla</p>
+					<p><strong>CANNABIS</strong></p>
 					<p>Aloe vera</p>
 					<p>Castaño <small>de Indias</small></p>
 				</div>
 				<div class="product efect-left"></div>
 			</div>
 			<div class="my-col-md-5 my-col-sm-12">
+				<h2>DOLORES E INFLAMACIÓN</h2>
 				<ul>
-					<li>Artritis y Artrosis</li>
-					<li>Dolres musculares y articulares</li>
-					<li>Inflamación</li>
-					<li>Problemas de Circulación</li>
-					<li>Psoriasis</li>
-					<li>Venas varices</li>
-					<li>Quemadura leves</li>
-					<li>Estrés cutáneo y múscular</li>
-					<li>Hematomas</li>
-					<li>Heridas postquirúrgicas</li>
-					<li>Resequedad en la piel</li>
+					<li>Artritis y artrosis</li>
+					<li>Dolores musculares y articulares</li>
 					<li>Lesiones deportivas</li>
+					<li>Inflamación</li>
+					<li>Estrés muscular</li>
+				</ul>
+				<h2>PROBLEMAS DE LA PIEL</h2>
+				<ul>
+					<li>Psoriasis</li>
+					<li>Resequedad</li>
+					<li>Quemaduras leves</li>
+					<li>Estrés cutáneo</li>
+				</ul>
+				<h2>PROBLEMAS CIRCULATORIOS</h2>
+				<ul>
+					<li>Venas varices</li>
+					<li>Hematomas</li>
 				</ul>
 			</div>
 		</div>
@@ -43,7 +50,7 @@
 			<div class="link efect-scale">
 				<a href="<?php echo $this->createUrl('productos/') ?>" class="js-link-hover">
 					<span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/cannabis.svg" alt="" class="js-img-to-svg"></span>
-					<p>ADQUIÉRELA</p>
+					<p>ADQUIERALO</p>
 					<strong>AQUÍ</strong>
 				</a>
 				<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/circle.svg" alt="" class="js-img-to-svg">
@@ -52,7 +59,7 @@
 	</div>
 </section>
 
-<section class="section parallax home_question" data-image-src="<?php echo Yii::app()->request->baseUrl; ?>/images/marihuana.jpg">
+<section class="section parallax home_question" data-image-src="<?php echo Yii::app()->request->baseUrl; ?>/images/backgrounds/imagen-landing-preguntas-frecuentes.jpg">
 	<div class="container efect-bottom">
 		<header>
 			<span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/cannabis.svg" class="js-img-to-svg"></span>
@@ -100,7 +107,7 @@
 	</div>
 </section>
 
-<div class="section parallax divisor" data-image-src="<?php echo Yii::app()->request->baseUrl; ?>/images/rocks_river.jpg"></div>
+<div class="section parallax divisor" data-image-src="<?php echo Yii::app()->request->baseUrl; ?>/images/backgrounds/imagen-landing-separador.jpg"></div>
 
 <section class="section">
 	<div class="container">
@@ -134,21 +141,3 @@
 		?>
 	</div>
 </section>
-
-<section class="section parallax suscription" data-image-src="<?php echo Yii::app()->request->baseUrl; ?>/images/marihuana.jpg">
-	<div class="container efect-bottom">
-		<h1>RECIBE NUESTRA INFORMACIÓN</h1>
-		<form action="#">
-			<div class="form-group">
-				<div class="input">
-					<input type="email" placeholder="Correo electrónico">
-				</div>
-				<div class="button">
-					<button type="submit">Enviar</button>
-				</div>
-			</div>
-		</form>
-	</div>
-</section>
-
-<div class="divisor"></div>

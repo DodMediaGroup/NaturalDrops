@@ -11,6 +11,8 @@ class Controller extends CController
 	 */
 	public $layout='//layouts/main';
 	public $slide = false;
+	public $suscription = false;
+	public $showEmailContact = false;
 
 	public $scripts = array();
 	public $scriptsBase = array(

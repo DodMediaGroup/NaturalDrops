@@ -56,6 +56,8 @@ return array(
 				'natural_admin/<controller:\w+>/<action:\w+>'=>'natural_admin/<controller>/<action>',
 				'natural_admin/<controller:\w+>/<action:\w+>/<id:\d+>'=>'natural_admin/<controller>/<action>',
 
+				'suscripcion/register'=>'suscripcion/register',
+				'suscripcion/verify'=>'suscripcion/verify',
 				'<controller:\w+>/<id:\w+>'=>'<controller>/view',
 				'<controller:\w+>'=>'site/<controller>'
 			),

@@ -20,3 +20,5 @@ var footerLocation = null;
 // STORES
 var countries = [];
 var cities = [];
+
+var showMessage = null;

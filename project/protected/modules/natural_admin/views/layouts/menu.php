@@ -74,3 +74,10 @@
 		<span>Equipo</span>
 	</a>
 </li>
+
+<li>
+	<a href='<?php echo $this->createUrl('variables/admin') ?>' class="<?php echo (count($path) > 1)?((strtolower($path[1]) == 'variables')?'active':''):''; ?>">
+		<i class='icon-layout'></i>
+		<span>Varaibles</span>
+	</a>
+</li>

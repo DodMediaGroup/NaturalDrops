@@ -1,10 +1,13 @@
 @media (max-width: 992px){
 	.principal-menu{
-		ul{
-			li{
-				a{
-					font-size: 18px;
-				}
+		.item-menu{
+			a{
+				font-size: 18px;
+			}
+		}
+		.social{
+			.item-menu{
+				width: 100px;
 			}
 		}
 	}
@@ -16,9 +19,10 @@
 		}
 		.beneficio-product{
 			.text{
+				top: 26%;
 				p{
-					font-size: 28px;
-					line-height: 28px;
+					font-size: 26px;
+					line-height: 26px;
 				}
 			}
 		}
@@ -37,27 +41,53 @@
 			}
 		}
 	}
+	.products{
+		.buttons .col-md-6:first-child{
+			padding: 0px;
+		}
+		.buttons .col-md-6:last-child{
+			padding: 0px;
+			padding-top: 16px;
+		}
+	}
+	.link-marker .panel{
+		max-width: 520px;
+		width: 70%;
+	}
 }
 
 @media (max-width: 855px){
 	.principal-menu{
 		h1{
-
+			left: 12px;
 			width: 105px;
 		}
 		nav{
-			padding-left: 112px;
+			padding-left: 105px;
 		}
-		ul{
-			li{
-				margin-right: 0.4%;
-				a{
-					font-size: 16px;
-				}
+		.item-menu{
+			margin-right: 0%;
+			a{
+				font-size: 16px;
 			}
 		}
 		.social{
 			padding-right: 8px;
+			a{
+				width: 24px;
+			}
+		}
+	}
+	.page-beneficios .producto{
+		.text{
+			padding-left: 215px;
+			&:not(.panel){
+				padding-left: 50px;
+				padding-top: 70px;
+			}
+		}
+		.producto-graf{
+			left: -21%;
 		}
 	}
 }

@@ -16,6 +16,15 @@
 	}
 }
 .home-beneficios{
+	h2{
+		color: @color-green-light;
+		font-family: @font-title;
+		font-weight: 400;
+		margin-top: 20px;
+	}
+	ul{
+		padding-left: 20px;
+	}
 	li{
 		line-height: 24px;
 	}
@@ -42,7 +51,7 @@
 		.text{
 			left: 58%;
 			position: absolute;
-			top: 32%;
+			top: 27%;
 			p{
 				font-family: @font-title;
 				font-size: 35px;
@@ -63,12 +72,17 @@
 					font-size: 18px;
 					text-align: center;
 				}
+				strong{
+					font-family: @font-title;
+					font-size: .9em;
+				}
 			}
 		}
 	}
 	.link-to-shop{
 		background-color: fadeout(@color-purple, 20%);
 		margin-left: 45%;
+		margin-top: 20px;
 		width: 55%;
 		.block{
 			padding: 12px;
@@ -77,7 +91,7 @@
 			&>p{
 				color: @color-white;
 				font-family: @font-title;
-				font-weight: 600;
+				font-weight: 400;
 				line-height: 1.3em;
 				padding-right: 100px;
 			}
@@ -106,6 +120,9 @@
 					z-index: 99;
 					svg{
 						height: 32px;
+						g{
+							opacity: 1 !important;
+						}
 						path{
 							fill: @color-green-light !important;
 						}
@@ -206,6 +223,9 @@
 				z-index: 99;
 				svg{
 					height: 36px;
+					g{
+						opacity: 1 !important;
+					}
 					path{
 						fill: @color-green-light !important;
 					}
@@ -341,7 +361,7 @@
 .blog-article{
 	margin-bottom: 60px;
 	.header{
-		background: url(../images/marihuana.jpg) no-repeat center center;
+		background: url(../images/backgrounds/imagen-landing-blog.jpg) no-repeat center center;
 		background-size: cover;
 		height: 80px;
 	}
@@ -547,7 +567,7 @@
 		}
 	}
 	.contact{
-		background: url(../images/marihuana.jpg) no-repeat center center;
+		background: url(../images/backgrounds/imagen-landing-footer.jpg) no-repeat center center;
 		background-size: cover;
 		.filter{
 			background-color: fadeout(@color-white, 25%);
@@ -593,8 +613,12 @@
 					svg{
 						height: 100%;
 						width: 100%;
+						g{
+							opacity: 1 !important;
+						}
 						path{
 							fill: @color-purple !important;
+							opacity: 1 !important;
 						}
 					}
 				}
@@ -732,12 +756,13 @@
 		width: (100 / 12) * 10%;
 		.text{
 			padding: 15px;
-			padding-left: (100 / 12) * 3.5%;
+			padding-left: 225px;
 			p{
 				font-family: @font-title;
 				font-size: 26px;
 				font-weight: 200;
 				line-height: 1.1em;
+				text-align: justify;
 			}
 			&.panel{
 				background-color: fadeout(@color-purple, 20%);
@@ -750,24 +775,24 @@
 		}
 		.producto-graf{
 			left: -(100 / 12) * 2%;
-			padding-left: 7%;
+			padding-left: 55px;
 			margin-top: -4.5%;
 			position: absolute;
 			top: 0px;
-			width: 55%;
+			width: 335px;
 			.img-prod{
 				animation: .5s left 1;
 				height: auto;
 				left: 0px;
 				position: absolute;
 				top: -28%;
-				width: 42%;
+				width: 190px;
 				z-index: 2;
 			}
 			.circle{
 				height: 70%;
 				position: relative;
-				width: 70%;
+				width: 275px;
 				svg{
 					height: 100%;
 					width: 100%;
@@ -776,7 +801,7 @@
 					left: 50%;
 					margin: auto;
 					position: absolute;
-					top: 20%;
+					top: 13%;
 					transform: translateX(-25%);
 					p{
 						font-family: @font-title;
@@ -798,6 +823,10 @@
 							font-size: .7em;
 							font-weight: 200;
 							text-align: center;
+						}
+						strong{
+							font-family: @font-title;
+							font-size: 1em;
 						}
 					}
 				}
@@ -884,13 +913,23 @@
 	h2{
 		color: @color-gray-dark;
 		font-family: @font-title;
-		font-size: 24px;
+		font-size: 35px;
+		font-weight: 400;
 		line-height: 1em;
 		margin-bottom: 8px;
 		margin-top: 15px;
 	}
+	h3{
+		color: @color-green-light;
+		font-size: 22px;
+		font-weight: 400;
+	}
+	p{
+		margin-bottom: 15px;
+		text-align: justify;
+	}
 	ul{
-		margin: 15px 0px 30px;
+		margin: 15px 0px;
 		padding-left: 28px;
 	}
 	.title{
@@ -934,7 +973,7 @@
 	}
 	.buttons{
 		margin-top: 16px;
-		.col-sm-6{
+		.col-md-6{
 			padding: 0px;
 			a{
 				color: @color-white;
@@ -977,7 +1016,6 @@
 	.panel{
 		background-color: fadeout(@color-purple, 20%);
 		float: right;
-		mix-width: 480px;
 		width: 53%;
 	}
 	.contain{
@@ -1012,9 +1050,13 @@
 				width: 100%;
 				span{
 					display: block;
-					height: 32px;
+					height: 25px;
+					margin-bottom: 8px;
 					text-align: center;
 					svg{
+						g{
+							opacity: 1 !important;
+						}
 						path{
 							fill: @color-green-light !important;
 						}
@@ -1023,9 +1065,9 @@
 				p{
 					color: @color-green-light;
 					font-family: @font-title;
-					font-size: 24px;
+					font-size: 21px;
 					font-weight: 300;
-					line-height: 1.3em;
+					line-height: 1em;
 					padding: 0px;
 					strong{
 						color: @color-green-light;
@@ -1033,6 +1075,9 @@
 						font-size: 1.2em;
 						font-weight: 600;
 						line-height: 1em;
+					}
+					&:last-child{
+						margin: 0px 0px 10px;
 					}
 				}
 			}
@@ -1325,6 +1370,223 @@
 			font-size: 24px;
 			font-weight: 300;
 			line-height: 1em;
+		}
+	}
+}
+
+.my-collapse{
+	.show{
+		cursor: pointer;
+		span{
+			background: url(../images/icons/list-down.svg) no-repeat center center;
+			background-size: contain;
+			display: inline-block;
+			height: 30px;
+			transition: all .1s;
+			transform: rotate(180deg);
+			vertical-align: bottom;
+			width: 8px;
+		}
+		&:hover{
+			span{
+				transform: rotate(0deg);
+			}
+		}
+	}
+	.collapse{
+		display: none;
+		overflow-y: hidden;
+		visibility: visible;
+	}
+	&.active, &.default{
+		.show{
+			span{
+				transform: rotate(0deg);
+			}
+			&:hover{
+				span{
+					transform: rotate(180deg);
+				}
+			}
+		}
+	}
+}
+
+.contact-page{
+	width: 100%;
+	.form{
+		margin: auto;
+		max-width: 470px;
+		padding-left: 24px;
+		vertical-align: top;
+		width: 100%;
+		.bracket{
+			background: url(../images/bracket-left-green.png) no-repeat 3% center,
+						url(../images/bracket-right-green.png) no-repeat 97% center;
+			background-color: fadeout(@color-purple, 20%);
+			background-size: 4px 80%;
+			color: @color-white;
+			font-family: @font-title;
+			font-size: 30px;
+			font-weight: 400;
+			line-height: .95em;
+			margin-bottom: 15px;
+			padding: 12px 5%;
+			text-align: center;
+		}
+		.border{
+			border-bottom: 1px solid @color-gray;
+			display: block;
+			height: 30px;
+		}
+		.error{
+			color: @color-red;
+			display: block;
+			font-size: 14px;
+			text-align: right;
+		}
+		.form-group{
+			text-align: center;
+			button{
+				background: transparent;
+				border: 0px;
+				color: fadeout(@color-purple, 20%);
+				font-family: @font-title;
+				font-size: 30px;
+				font-weight: 400;
+				outline: none;
+			}
+			input, textarea{
+				background: transparent;
+				border: 2px solid @color-gray-light;
+				color: @color-gray;
+				font-family: @font-text;
+				font-size: 16px;
+				margin-bottom: 8px;
+				outline: none;
+				padding: 6px 12px;
+				width: 100%;
+			}
+			textarea{
+				height: 150px;
+			}
+		}
+		p{
+			color: @color-gray-dark;
+			font-family: @font-title;
+			font-size: 26px;
+			font-weight: 400;
+			margin-bottom: 5px;
+			position: relative;
+			&.icon{
+				padding-left: 62px;
+			}
+			span{
+				display: block;
+				height: 40px;
+				left: 12px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-30%);
+				width: 40px;
+				svg{
+					height: 100%;
+					width: 100%;
+					g{
+						opacity: 1 !important;
+					}
+					path{
+						fill: @color-green-light !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+.modal-sale{
+	background: fadeout(#000000, 85%);
+	display: none;
+	height: 100%;
+	position: fixed;
+	width: 100%;
+	z-index: 9888;
+	&.active{
+		display: block;
+	}
+	.form{
+		background: @color-white;
+		border: 2px dashed @color-green-light;
+		left: 0;
+		margin: auto;
+		max-width: 400px;
+		padding: 15px;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 100%;
+		.right{
+			padding-top: 15px;
+			text-align: right;
+		}
+		.error{
+			color: @color-red;
+			display: block;
+			font-size: 14px;
+			text-align: right;
+		}
+		.close{
+			background-color: @color-green-light;
+			border-radius: 50%;
+			color: @color-white;
+			cursor: pointer;
+			display: block;
+			font-size: 15px;
+			font-weight: 600;
+			height: 25px;
+			line-height: 25px;
+			position: absolute;
+			right: 8px;
+			text-align: center;
+			top: 8px;
+			width: 25px;
+		}
+		p{
+			background-color: fadeout(@color-purple, 20%);
+			color: @color-white;
+			font-family: @font-title;
+			font-size: 28px;
+			margin-bottom: 15px;
+			padding: 12px 8%;
+			text-align: center;
+		}
+		label{
+			color: @color-green-light;
+			display: block;
+			font-family: @font-title;
+			font-size: 19px;
+			line-height: 1em;
+			font-weight: 400;
+		}
+		input, select{
+			background: transparent;
+			border: 1px solid @color-gray-light;
+			color: @color-gray;
+			font-size: 16px;
+			outline: none;
+			padding: 4px 12px;
+			margin-bottom: 8px;
+			width: 100%;
+		}
+		button{
+			background-color: fadeout(@color-purple, 20%);
+			border: 0px;
+			color: @color-white;
+			font-family: @font-title;
+			font-size: 28px;
+			line-height: 1em;
+			padding: 6px 12px;
 		}
 	}
 }

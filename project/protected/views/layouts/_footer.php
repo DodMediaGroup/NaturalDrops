@@ -33,18 +33,23 @@
 						</ul>
 						<h2>CONTÁCTANOS</h2>
 						<address>
-							<p>correo@gamil.com</p>
-							<p>Av. Primavera 45 Of. 302</p>
-							<p>(+57) 456 4312</p>
+							<?php $contact = Variables::model()->findByPk(4); ?>
+							<p><?php echo $contact->value; ?></p>
+							<?php $contact = Variables::model()->findByPk(6); ?>
+							<p><?php echo $contact->value; ?></p>
+							<?php $contact = Variables::model()->findByPk(5); ?>
+							<p><?php echo $contact->value; ?></p>
 						</address>
 					</div>
 				</div>
 				<div class="col-xs-6 col-der">
 					<div class="contain social">
 						<div>
-							<h2>ENCUENTRANOS</h2>
-							<a href="#" class="twitter"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/twitter.svg" class="js-img-to-svg"></a>
-							<a href="#" class="facebook"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/facebook.svg" class="js-img-to-svg"></a>
+							<h2>ENCUÉNTRANOS EN:</h2>
+							<?php $instagram = Variables::model()->findByPk(3); ?>
+							<a target="_blank" href="<?php echo ($instagram->value != '')?$instagram->value:'#'; ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/instagram.svg" class="js-img-to-svg"></a>
+							<?php $facebook = Variables::model()->findByPk(2); ?>
+							<a target="_blank" href="<?php echo ($facebook->value != '')?$facebook->value:'#'; ?>"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/facebook.svg" class="js-img-to-svg"></a>
 						</div>
 					</div>
 					<div class="contain form-contact">

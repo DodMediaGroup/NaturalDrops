@@ -12,6 +12,7 @@
 @color-purple: rgb(80, 59, 105);
 //@color-purple-dark: darken(@color-purple, 10%);
 @color-purple-dark: rgb(80, 59, 105);
+@color-red: #CC2C14;
 @color-white: #FFFFFF;
 
 // FONTS
@@ -63,9 +64,11 @@ svg{
 	width: 100%;
 }
 .parallax {
-	background: transparent;
+    background-attachment: fixed;
+	background-position: center top;
+    background-repeat: no-repeat;
 	&.divisor{
-		min-height: 100px;
+		min-height: 150px;
 	}
 }
 .divisor:not(.parallax){

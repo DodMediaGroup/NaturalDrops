@@ -7,12 +7,6 @@
 			</h1>
 		</header>
 		<div class="producto">
-			<div class=" text panel">
-				<p>Natural Drops es una crema natural cuyo principal componente activo es el aceite de cannabis, combinado además con otros elementos de comprobada efectividad como el aloe vera, castaño de indias, manzanilla y árnica.</p>
-			</div>
-			<div class="text">
-				<p>Los componentes activos del cannabis encajan como llaves dentro dentro del sistema endocanabinoide, gracias a los receptores cannabinoides. Estos receptores controlan diversos procesos químicos de nuestro organismo como el dolor, algunas reacciones nerviosas o la infamación.</p>
-			</div>
 			<div class="producto-graf">
 				<img class="img-prod" src="<?php echo Yii::app()->request->baseUrl; ?>/images/product.png" alt="Natural Drops">
 				<div class="circle">
@@ -20,16 +14,23 @@
 					<div class="msj">
 						<p>Árnica</p>
 						<p>Manzanilla</p>
+						<p><strong>CANNABIS</strong></p>
 						<p>Aloe vera</p>
 						<p>Castaño <small>de Indias</small></p>
 					</div>
 				</div>
 			</div>
+			<div class=" text panel">
+				<p>Natural Drops es una crema natural cuyo principal componente activo es el aceite de cannabis, combinado además con otros elementos de comprobada efectividad como el aloe vera, castaño de indias, manzanilla y árnica.</p>
+			</div>
+			<div class="text">
+				<p>Los componentes activos del cannabis encajan como llaves dentro dentro del sistema endocanabinoide, gracias a los receptores cannabinoides. Estos receptores controlan diversos procesos químicos de nuestro organismo como el dolor, algunas reacciones nerviosas o la infamación.</p>
+			</div>
 		</div>
 	</div>
 </section>
 
-<section class="section parallax suscription" data-image-src="<?php echo Yii::app()->request->baseUrl; ?>/images/marihuana.jpg">
+<section class="section parallax suscription" data-image-src="<?php echo Yii::app()->request->baseUrl; ?>/images/backgrounds/imagen-landing-footer.jpg">
 	<div class="container efect-bottom">
 		<p class="sin-border">
 			Comparado con otras alternativas médicas, el Cannabis tiene 20 veces más potencia antiinfamatoria que la aspirina y dos veces más que la hidrocortisona.
@@ -47,7 +48,7 @@
 		</header>
 		<div class="testimonials">
 			<?php foreach ($treatments as $key => $treatment) { ?>
-				<div class="col-md-4 testimony js-show-info efect-bottom">
+				<div class="col-sm-4 testimony js-show-info efect-bottom">
 					<div class="img" style="background-image: url(<?php echo Yii::app()->request->baseUrl; ?>/images/treatments/<?php echo $treatment->image; ?>)"></div>
 					<h3 class="name"><?php echo $treatment->treatment; ?></h3>
 					<div class="filter"></div>
@@ -75,21 +76,3 @@
 		</div>
 	</div>
 </section>
-
-<section class="section parallax suscription" data-image-src="<?php echo Yii::app()->request->baseUrl; ?>/images/marihuana.jpg">
-	<div class="container efect-bottom">
-		<h1>RECIBE NUESTRA INFORMACIÓN</h1>
-		<form action="#">
-			<div class="form-group">
-				<div class="input">
-					<input type="email" placeholder="Correo electrónico">
-				</div>
-				<div class="button">
-					<button type="submit">Enviar</button>
-				</div>
-			</div>
-		</form>
-	</div>
-</section>
-
-<div class="divisor"></div>

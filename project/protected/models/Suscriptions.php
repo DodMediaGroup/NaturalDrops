@@ -1,23 +1,24 @@
 <?php
 
 /**
- * This is the model class for table "variables".
+ * This is the model class for table "suscriptions".
  *
- * The followings are the available columns in table 'variables':
- * @property integer $id_variable
- * @property string $name
- * @property string $value
- * @property integer $editable
+ * The followings are the available columns in table 'suscriptions':
+ * @property integer $id_suscription
+ * @property string $email
+ * @property integer $authorized
+ * @property string $verification_code
+ * @property string $date
  * @property integer $status
  */
-class Variables extends CActiveRecord
+class Suscriptions extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'variables';
+		return 'suscriptions';
 	}
 
 	/**
@@ -28,12 +29,13 @@ class Variables extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, value', 'required'),
-			array('editable, status', 'numerical', 'integerOnly'=>true),
-			array('name, value', 'length', 'max'=>255),
+			array('email, date', 'required'),
+			array('authorized, status', 'numerical', 'integerOnly'=>true),
+			array('email', 'length', 'max'=>250),
+			array('verification_code', 'length', 'max'=>150),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_variable, name, value, editable, status', 'safe', 'on'=>'search'),
+			array('id_suscription, email, authorized, verification_code, date, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -54,10 +56,11 @@ class Variables extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_variable' => 'Id Variable',
-			'name' => 'Name',
-			'value' => 'Value',
-			'editable' => 'Editable',
+			'id_suscription' => 'Id Suscription',
+			'email' => 'Email',
+			'authorized' => 'Authorized',
+			'verification_code' => 'Verification Code',
+			'date' => 'Date',
 			'status' => 'Status',
 		);
 	}
@@ -80,10 +83,11 @@ class Variables extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id_variable',$this->id_variable);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('value',$this->value,true);
-		$criteria->compare('editable',$this->editable);
+		$criteria->compare('id_suscription',$this->id_suscription);
+		$criteria->compare('email',$this->email,true);
+		$criteria->compare('authorized',$this->authorized);
+		$criteria->compare('verification_code',$this->verification_code,true);
+		$criteria->compare('date',$this->date,true);
 		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(
@@ -95,7 +99,7 @@ class Variables extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return Variables the static model class
+	 * @return Suscriptions the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

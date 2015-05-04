@@ -4,15 +4,39 @@ jQuery(document).ready(function($) {
 		$.imgToSvg($(this));
 	});
 
-    // HEADER
-    $.dimentionHeader();
-    //END HEADER
-
-    // SLIDE
-    $('.principal-slide').each(function(index, el) {
-        $.principalSlide();
+    // PARALLAX
+    $('.parallax').each(function(index, el) {
+        $(this).css({
+            backgroundImage: 'url('+$(this).attr('data-image-src')+')'
+        })
+    }).parallax({
+        speed : 0.15
     });
-    // END SLIDE
+    // END PARALLAX
+
+     // EFECT SCROLL
+    $('.efect-bottom').smoove({
+        offset  : '10%',
+        moveY   : '100px',
+    });
+    $('.efect-left').smoove({
+        offset  : '10%',
+        moveX   : '-250px',
+    });
+    $('.efect-right').smoove({
+        offset  : '10%',
+        moveX   : '250px',
+    });
+    $('.efect-circle').smoove({
+        offset  : '10%',
+        opacity : 1,
+        rotate  : '270deg',
+    });
+    $('.efect-scale').smoove({
+        offset  : '10%',
+        scale   : '1.7',
+    });
+    // END EFECT SCROLL
 
     // SHOW MENU
     $('.principal-menu .button').on('click', function(event) {
@@ -31,35 +55,6 @@ jQuery(document).ready(function($) {
         }
     });
     // END SHOW MENU
-
-    // EFECT SCROLL
-    $('.efect-bottom').smoove({
-        offset  : '-30px',
-        moveY   : '100px',
-    });
-    $('.efect-left').smoove({
-        offset  : '-30px',
-        moveX   : '-250px',
-    });
-    $('.efect-right').smoove({
-        offset  : '-30px',
-        moveX   : '250px',
-    });
-    $('.efect-circle').smoove({
-        offset  : '-30px',
-        opacity : 1,
-        rotate  : '270deg',
-    });
-    $('.efect-scale').smoove({
-        offset  : '-30px',
-        scale   : '1.7',
-    });
-    // END EFECT SCROLL
-
-    //CUSTOM SCROLL
-    $('.js-custom-scroll').mCustomScrollbar({
-        theme: 'dark-thin'
-    });
 
     // MAP FOOTER
     if($('#map-footer').length > 0){
@@ -167,10 +162,6 @@ jQuery(document).ready(function($) {
     });
     // END LINK CIRCLE
 
-    // PARALLAX
-    $('.parallax').parallax();
-    // END PARALLAX
-
     // SHOW MAP SALES
     $('.js-tablet-map').on('click', function(event) {
         event.preventDefault();
@@ -189,16 +180,155 @@ jQuery(document).ready(function($) {
         }
     });
     // END SHOW MAP SALES
+
+    //MOSTRAR ITEM SOCIAL
+    $('.show-item-social').on('mouseenter', function(event) {
+        event.preventDefault();
+
+        $('.is-item-social a').text($(this).attr('title')).attr('href', $(this).attr('href'));
+        $('.is-item-social').addClass('active');
+    });
+    $('.social').on('mouseleave', function(event) {
+        event.preventDefault();
+        $(this).find('.is-item-social').removeClass('active');
+    });
+    // END MOSTRAR ITEM SOCIAL
+
+    //MOSTRAR CONTENIDO OCULTO - PRODUCTOS
+    $('.my-collapse .show').on('click', function(event) {
+        event.preventDefault();
+
+        var collapse = $(this).parent('.my-collapse');
+        if(collapse.hasClass('active')){
+            collapse.removeClass('active');
+        }
+        else{
+            collapse.addClass('active');
+        }
+        collapse.find('.collapse').toggle(200);
+
+        //$.reloadParallax();
+    });
+    //END MOSTRAR CONTENIDO OCULTO
+
+    // VALIDAR CAMPOS SOLO NUMERICOS
+    $(document).on('keypress', '.js-input-number', function(event){
+        if(!((event.which <= 57 && event.which >= 48) || event.which == 8))
+            event.preventDefault();
+    });
+    // END SOLO NUMEROS
+
+    //FORMULARIO COMPRA
+    $('#modal_sale').on('click', function(event) {
+        event.preventDefault();
+
+        $('.modal-sale').addClass('active');
+        $('body').css({
+            overflowY: 'hidden'
+        });
+    });
+    $('.modal-sale .close').on('click', function(event) {
+        event.preventDefault();
+
+        $('.modal-sale').removeClass('active');
+        $('body').css({
+            overflowY: 'auto'
+        });
+    });
+    $('#form-modal-sale').on('submit', function(event) {
+        event.preventDefault();
+
+        var error = false;
+        var data = $(this).serializeArray();
+
+        $.each(data, function(index, val) {
+            if(this.value == '')
+                error = true;
+        });
+
+        if(!error)
+            $.sendForm($(this));
+        else
+            $(this).find('.error').html('Complete todos los datos!!!');
+    });
+    //END FORMULARIO COMPRA
+
+    //SUSCRIPTION
+    $('#form-suscription').on('submit', function(event) {
+        event.preventDefault();
+
+        var error = false;
+        var data = $(this).serializeArray();
+
+        $.each(data, function(index, val) {
+            if(this.value == '')
+                error = true;
+        });
+
+        if(!error)
+            $.sendForm($(this));
+    });
+    //END SUSCRIPTION
+
+    //CONTACT
+    $('#form-contact').on('submit', function(event) {
+        event.preventDefault();
+
+        var error = false;
+        var data = $(this).serializeArray();
+
+        $.each(data, function(index, val) {
+            if(this.value == '')
+                error = true;
+        });
+
+        if(!error)
+            $.sendForm($(this));
+        else
+            $(this).find('.error').html('Complete todos los datos!!!');
+    });
+    //END CONTACT
 });
 
 $(window).on('load', function(event) {
     event.preventDefault();
 
+    $.hideModalLoad();
+
+    // HEADER
+    $.dimentionHeader();
+    //END HEADER
+
+    // SLIDE
+    $('.principal-slide').each(function(index, el) {
+        $.principalSlide();
+    });
+    // END SLIDE
+
+    //CUSTOM SCROLL
+    $('.js-custom-scroll').mCustomScrollbar({
+        theme: 'dark-thin'
+    });
+
+    //SHOW MESSAGE
+    if(showMessage != null){
+        $.loadMessage(showMessage.status, showMessage.message);
+    }
+    //END SHOW MESSAGE
+});
+
+$.showModalLoad = function(){
+    $('.modal-loading').addClass('active');
+    $('body').css({
+        overflowY: 'hidden',
+    });
+}
+$.hideModalLoad = function(){
     $('.modal-loading').removeClass('active');
     $('body').css({
         overflowY: 'auto',
     });
-});
+}
 
 $.dimentionHeader = function(){
 	var fullHeight = $(window).outerHeight();
@@ -312,6 +442,7 @@ $.principalSlide = function(){
     $.startSlide();
 }
 // END PRINCIPAL SLIDE
+
 // MAPS
 $.loadMaps = function(div, inLocations){
     var locations = [],
@@ -363,6 +494,7 @@ $.loadMaps = function(div, inLocations){
     return $(div);
 }
 // END MAPS
+
 // MAP FOOTER
 $.showMapFooter = function(){
     $.loadMaps('#map-footer', footerLocation);
@@ -421,6 +553,7 @@ $.showResultStore = function(){
     $('.page-contact .directions .results .mCSB_container').html('');
     $.each(mapLocations, function(index, val) {
         if(this.show){
+            console.log(this);
             var store = $('<div>',{
                 class: 'result',
                 id: 'item-result-'+this.id
@@ -444,7 +577,7 @@ $.showResultStore = function(){
                 }).attr('href', this.website));
             }
 
-            $('.page-contact .directions .results .mCSB_container').append(store);
+            $('.page-contact .directions .results').append(store);
         }
     });
 }
@@ -519,3 +652,45 @@ function showMyPosition(position){
     map.setZoom(15);
 }
 // END MAPS STORES
+
+// RELOAD PARALLAX
+$.reloadParallax = function(){
+    $('.parallax-mirror').remove();
+    $('.link-marker').parallax();
+}
+//END RELOAD PARALLAX
+
+//SEND FORM
+$.sendForm = function(form){
+    $.showModalLoad();
+
+    $.ajax( form.attr('action'), {
+        data: form.serialize(),
+        dataType: 'json',
+        type: 'post',
+        success: function(data){
+            $.loadMessage(data.status, data.message);
+            if(data.status == 'success')
+                form.find('input, textarea').val('');
+            $.hideModalLoad();
+        },
+        error: function(xhr, textStatus, error){
+            $.loadMessage('error', 'Error contactando con el servidor, intenta nuevamente.');
+            $.hideModalLoad();
+        }
+    });
+}
+//END SEND FORM
+
+//SHOW MESSAGE
+$.loadMessage = function(status, message){
+    var block = $('<div>',{
+        class: 'message-alert '+status,
+        text: message
+    });
+    $('body').append(block);
+    setTimeout(function(){
+        block.remove();
+    }, 8000);
+}
+//END SHOW MESSAGE

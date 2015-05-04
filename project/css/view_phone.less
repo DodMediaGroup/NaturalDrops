@@ -3,7 +3,7 @@
 		padding-bottom: 0px;
 		.link-to-shop{
 			overflow-x: hidden;
-			padding: 12px;
+			padding: 20px 12px;
 			width: 100%;
 			.block{
 				width: 100%;
@@ -16,8 +16,11 @@
 			}
 		}
 		.beneficio-product{
+			display: inline-block;
+			left: 50%;
 			margin-bottom: 50px;
-			width: 100%;
+			transform: translateX(-50%);
+			width: 290px;
 			.product{
 				left: 10%;
 			}
@@ -25,7 +28,8 @@
 				margin-left: 70px;
 			}
 			.text{
-				left: 42%;
+				left: 128px;
+				top: 24%;
 			}
 		}
 		.my-col-md-5{
@@ -69,5 +73,28 @@
 				margin-top: 12px;
 			}
 		}
+	}
+	.link-marker .panel{
+		max-width: none;
+	}
+}
+
+@media (max-width: 520px){
+	.link-marker{
+		.contain{
+			width: 100%;
+			p{
+				padding-right: 35%;
+			}
+			.link{
+				right: 12px;
+			}
+		}
+		.panel{
+			max-width: none;
+		}
+	}
+	.my-hidden-xs{
+		display: none !important;
 	}
 }

@@ -19,14 +19,3 @@
 		</div>
 	</div>
 </section>
-
-<section class="section parallax suscription" data-image-src="<?php echo Yii::app()->request->baseUrl; ?>/images/marihuana.jpg">
-	<div class="container efect-bottom">
-		<p>
-			<span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/send.svg" class="js-img-to-svg"></span>
-			TENEMOS LA INTENCIÓN DE DESPEJAR TODAS TUS DUDAS<br>ESCRÍBENOS AL CORREO: HOLA@NATURALDROPS.COM
-		</p>
-	</div>
-</section>
-
-<div class="divisor"></div>

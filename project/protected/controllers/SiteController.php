@@ -28,6 +28,7 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$this->slide = true;
+		$this->suscription = true;
 
 		$testimonials = Testimonials::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_testimony DESC'));
 		$articles = BlogEntries::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_entry DESC'));
@@ -41,6 +42,8 @@ class SiteController extends Controller
 	}
 
 	public function actionNosotros(){
+		$this->suscription = true;
+		
 		$team = Team::model()->findAllByAttributes(array('status'=>1));
 		$this->render('about', array(
 			'page'=>Pages::model()->findByPk(1),
@@ -49,6 +52,8 @@ class SiteController extends Controller
 	}
 
 	public function actionBeneficios(){
+		$this->suscription = true;
+		
 		$treatments = Treatments::model()->findAllByAttributes(array('status'=>1));
 		$this->render('benefits', array(
 			'treatments'=>$treatments
@@ -69,6 +74,8 @@ class SiteController extends Controller
 	}
 
 	public function actionBlog(){
+		$this->suscription = true;
+		
 		$articles = BlogEntries::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_entry DESC'));
 		$this->render('blog', array(
 			'articles'=>$articles
@@ -76,10 +83,81 @@ class SiteController extends Controller
 	}
 
 	public function actionPreguntas_frecuentes(){
+		$this->showEmailContact = true;
+		
 		$questions = Questions::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_question DESC'));
 		$this->render('question', array(
 			'questions'=>$questions
 		));
+	}
+
+	public function actionContacto(){
+		if(Yii::app()->request->isAjaxRequest){
+			$arrayReturn = array(
+				'status'=>'error',
+				'message'=>'No se pudo enviar el mensaje. Intente mas tarde.'
+			);
+			$emailContact = Variables::model()->findByPk(4);
+			$emailContent = '<p>Un usuario envio un mensaje desde el formulario de contacto de la pagina web de Natural Drops.</p><br>'.
+			'<p><strong>Nombre: </strong>'.$_POST['name'].'</p>'.
+			'<p><strong>Correo electrónico: </strong>'.$_POST['email'].'</p>'.
+			'<p><strong>Asunto: </strong>'.$_POST['subject'].'</p><br>';
+
+			if(MyMethods::sentMail('Mensaje contacto web Natural Drops', $_POST['email'], $emailContact->value, $emailContent, array('fromName'=>$_POST['name']))){
+				$arrayReturn = array(
+					'status'=>'success',
+					'message'=>'Su mensaje fue enviado con exito. Muy pronto nos comunicaremos contigo.'
+				);
+			}
+
+			echo CJSON::encode($arrayReturn);
+		}
+		else{
+			$this->suscription = true;
+			
+			$phone = Variables::model()->findByPk(5);
+			$email = Variables::model()->findByPk(4);
+			$address = Variables::model()->findByPk(6);
+
+			$this->render('contact', array(
+				'phone'=>$phone,
+				'email'=>$email,
+				'address'=>$address,
+			));
+		}
+	}
+
+	public function actionAdd_sale(){
+		if(Yii::app()->request->isAjaxRequest){
+			$arrayReturn = array(
+				'status'=>'error',
+				'message'=>'No se pudo hacer la solicitud. Intente mas tarde.'
+			);
+			$emailContact = Variables::model()->findByPk(4);
+			$emailContent = '<p>Un cliente solicito un pedido desde la página web de Natural Drops. Se recomienda contactar ahora mismo.</p><br>'.
+			'<p><strong>Nombre: </strong>'.$_POST['name'].'</p>'.
+			'<p><strong>Correo electrónico: </strong>'.$_POST['email'].'</p>'.
+			'<p><strong>Teléfono: </strong>'.$_POST['phone'].'</p>'.
+			'<p><strong>Producto: </strong>'.$_POST['product'].'</p>'.
+			'<p><strong>Cantidad: </strong>'.$_POST['quantity'].'</p><br>';
+
+			if(MyMethods::sentMail('Compra productos web Natural Drops', $_POST['email'], $emailContact->value, $emailContent, array('fromName'=>$_POST['name']))){
+				$arrayReturn = array(
+					'status'=>'success',
+					'message'=>'Gracias por comprar nuestros productos. En breve nos comunicaremos contigo.'
+				);
+			}
+			else{
+				$arrayReturn = array(
+					'status'=>'error',
+					'message'=>'Ocurrio un error al enviar la solicitud. Intentelo mas tarde.'
+				);
+			}
+
+			echo CJSON::encode($arrayReturn);
+		}
+		else
+			throw new CHttpException(404,'The requested page does not exist.');
 	}
 
 	/**
@@ -101,7 +179,7 @@ class SiteController extends Controller
 	/**
 	 * Displays the contact page
 	 */
-	public function actionContact()
+	/*public function actionContact()
 	{
 		$model=new ContactForm;
 		if(isset($_POST['ContactForm']))
@@ -122,12 +200,12 @@ class SiteController extends Controller
 			}
 		}
 		$this->render('contact',array('model'=>$model));
-	}
+	}*/
 
 	/**
 	 * Displays the login page
 	 */
-	public function actionLogin()
+	/*public function actionLogin()
 	{
 		$model=new LoginForm;
 
@@ -153,9 +231,9 @@ class SiteController extends Controller
 	/**
 	 * Logs out the current user and redirect to homepage.
 	 */
-	public function actionLogout()
+	/*public function actionLogout()
 	{
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
-	}
+	}*/
 }

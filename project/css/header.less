@@ -8,6 +8,9 @@
 		max-height: 800px;
 		min-height: 600px;
 	}
+	&:not(.slide-container){
+		background-image: url(../images/backgrounds/imagen-landing-footer.jpg);
+	}
 }
 
 .principal-logo{
@@ -21,6 +24,52 @@
 	display: block;
 	margin-top: 60px;
 	position: relative;
+	h1{
+		left: 15px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 9;
+	}
+	ul{
+		display: table-cell;
+		padding: 0px;
+	}
+	.item-menu{
+		background: url('../images/bracket-left-green.png') 3% center no-repeat,
+			url('../images/bracket-right-green.png') 97% center no-repeat;
+		background-size: 4px 85%;
+		display: inline-block;
+		list-style: none;
+		margin-right: 3px;
+		padding: 0px 6px;
+		transition: all .2s;
+		a{
+			color: @color-green-dark;
+			display: block;
+			font-family: @font-title;
+			font-size: 22px;
+			font-weight: 300;
+			line-height: 22px;
+			padding: 10px 4px 5px;
+			text-decoration: none;
+		}
+		&:hover{
+			background-position: 0% center,
+								100% center;
+		}
+	}
+	nav{
+		background-color: @color-white;
+		display: table;
+		height: 56px;
+		overflow-x: hidden;
+		padding-left: 130px;
+		padding-top: 10px;
+		position: relative;
+		vertical-align: top;
+		width: 100%;
+	}
 	.social{
 		display: table-cell;
 		padding-top: 5px;
@@ -37,49 +86,29 @@
 				}
 			}
 		}
-	}
-	h1{
-		left: 15px;
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-	ul{
-		display: table-cell;
-		padding: 0px;
-		li{
-			background: url('../images/bracket-left-green.png') 3% center no-repeat,
-				url('../images/bracket-right-green.png') 97% center no-repeat;
-			background-size: 4px 85%;
-			display: inline-block;
-			list-style: none;
-			margin-right: 3px;
-			padding: 0px 6px;
-			transition: all .2s;
-			a{
-				color: @color-green-dark;
-				display: block;
-				font-family: @font-title;
-				font-size: 22px;
-				font-weight: 300;
-				line-height: 22px;
-				padding: 10px 4px 5px;
-				text-decoration: none;
+		.item-menu{
+			background: url(../images/bracket-left-green-dark.svg) 5% center no-repeat,
+						url(../images/bracket-right-green-dark.svg) 95% center no-repeat;
+			background-color: @color-green-light;
+			background-size: 5px 58%;
+			bottom: 100%;
+			height: 100%;
+			margin: 0px;
+			padding-top: 10px;
+			position: absolute;
+			right: 0;
+			transition: all .4s;
+			width: 115px;
+			&.active{
+				transform: translateY(100%);
 			}
-			&:hover{
-				background-position: 0% center,
-									100% center;
+			a{
+				color: @color-white;
+				padding-top: 10px;
+				text-align: center;
+				width: 100%;
 			}
 		}
-	}
-	nav{
-		background-color: @color-white;
-		display: table;
-		height: 56px;
-		padding-left: 130px;
-		padding-top: 10px;
-		vertical-align: top;
-		width: 100%;
 	}
 	.menu_responsive{
 		background: url(../images/logos/logo.svg) no-repeat 8px 8px;

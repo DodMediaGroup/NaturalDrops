@@ -43,6 +43,8 @@ class BlogController extends Controller
      */
     public function actionView($id)
     {
+        $this->suscription = true;
+        
         $this->render('view',array(
             'article'=>$this->loadModel($id),
         ));
