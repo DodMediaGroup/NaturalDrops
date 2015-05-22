@@ -58,8 +58,10 @@ return array(
 
 				'suscripcion/register'=>'suscripcion/register',
 				'suscripcion/verify'=>'suscripcion/verify',
+				'add_sale'=>'site/add_sale',
+				'change_language'=>'site/change_language',
 				'<controller:\w+>/<id:\w+>'=>'<controller>/view',
-				'<controller:\w+>'=>'site/<controller>'
+				'/<id:\w+>'=>'site/page'
 			),
 		),
 

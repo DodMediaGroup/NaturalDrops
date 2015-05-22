@@ -14,6 +14,11 @@ jQuery(document).ready(function($) {
     });
     // END PARALLAX
 
+    //CUSTOM SCROLL
+    $('.js-custom-scroll').mCustomScrollbar({
+        theme: 'dark-thin'
+    });
+
      // EFECT SCROLL
     $('.efect-bottom').smoove({
         offset  : '10%',
@@ -82,7 +87,6 @@ jQuery(document).ready(function($) {
                 }
             });
             $.reDrawMap();
-            console.log(countries);
         });
         $('#stores-cities').change(function(event) {
             var city = $(this).val();
@@ -97,7 +101,6 @@ jQuery(document).ready(function($) {
                 }
             });
             $.reDrawMap();
-            console.log(cities);
         });
         $(document).on('click', '.results .result', function(event) {
             event.preventDefault();
@@ -305,16 +308,14 @@ $(window).on('load', function(event) {
     });
     // END SLIDE
 
-    //CUSTOM SCROLL
-    $('.js-custom-scroll').mCustomScrollbar({
-        theme: 'dark-thin'
-    });
-
     //SHOW MESSAGE
     if(showMessage != null){
         $.loadMessage(showMessage.status, showMessage.message);
     }
     //END SHOW MESSAGE
+
+    if($('.section.products').length && $.getUrlVars()["sale"] == 'true')
+        $('#modal_sale').click();
 });
 
 $.showModalLoad = function(){
@@ -376,6 +377,10 @@ $.nextSlide = function(){
     var item = slideItems[slideItemActive];
 
     $('.principal-slide .item-slide.active').addClass('change');
+
+    $('.background-slide .slide.active').addClass('change');
+    $('.background-slide .slide:nth-child('+(parseInt(slideItemActive)+1)+')').addClass('active');
+
     setTimeout(function() {
         $('.principal-slide .item-slide.active').removeClass('active change');
         item.addClass('active');
@@ -387,9 +392,14 @@ $.nextSlide = function(){
     }, (slideTime/5));
 
     $('.principal-slide .pagination-item').removeClass('active');
-    $('.principal-slide .pagination-item:nth-child('+(slideItemActive+1)+')').addClass('active');
+    
+    $('.principal-slide .pagination-item:nth-child('+(parseInt(slideItemActive)+1)+')').addClass('active');
 
-    if((slideItemActive+1) >= slideItems.length)
+    setTimeout(function(){
+        $('.background-slide .slide.change').removeClass('active change');
+    }, (slideTime));
+
+    if((parseInt(slideItemActive)+1) >= slideItems.length)
         slideItemActive = 0;
     else
         slideItemActive++;
@@ -497,7 +507,7 @@ $.loadMaps = function(div, inLocations){
 
 // MAP FOOTER
 $.showMapFooter = function(){
-    $.loadMaps('#map-footer', footerLocation);
+    $.loadMaps('#map-footer .google-map', footerLocation);
 }
 // END MAP FOOTER
 
@@ -577,7 +587,7 @@ $.showResultStore = function(){
                 }).attr('href', this.website));
             }
 
-            $('.page-contact .directions .results').append(store);
+            $('.page-contact .directions .results .mCSB_container').append(store);
         }
     });
 }
@@ -694,3 +704,15 @@ $.loadMessage = function(status, message){
     }, 8000);
 }
 //END SHOW MESSAGE
+
+//READ URL
+$.getUrlVars = function() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,
+        function(m,key,value) {
+            vars[key] = value;
+        }
+    );
+    return vars;
+}
+//END READ URL

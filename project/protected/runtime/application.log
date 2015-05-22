@@ -2670,3 +2670,780 @@ Stack trace:
 REQUEST_URI=/dodmediagroup/projects/natural_drops/project/images/admin/users/default.png
 HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/natural_admin/profile/update
 ---
+2015/05/10 00:22:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/slide/slide.jpg".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('images/slide/sl...')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/images/slide/slide.jpg
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/
+---
+2015/05/10 00:33:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/slide/slide.jpg".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('images/slide/sl...')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/images/slide/slide.jpg
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/
+---
+2015/05/10 01:54:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/favicon.ico".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('images/favicon....')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/images/favicon.ico
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/natural_admin/login
+---
+2015/05/10 02:55:36 [error] [exception.CException] exception 'CException' with message 'Property "Slide.image" is not defined.' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:130
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/db/ar/CActiveRecord.php(145): CComponent->__get('image')
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/views/slide/_form.php(32): CActiveRecord->__get('image')
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(126): require('/opt/lampp/htdo...')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(95): CBaseController->renderInternal('/opt/lampp/htdo...', Array, true)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): CBaseController->renderFile('/opt/lampp/htdo...', Array, true)
+#5 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/views/slide/update.php(5): CController->renderPartial('_form', Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(126): require('/opt/lampp/htdo...')
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(95): CBaseController->renderInternal('/opt/lampp/htdo...', Array, true)
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): CBaseController->renderFile('/opt/lampp/htdo...', Array, true)
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): CController->renderPartial('update', Array, true)
+#10 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/controllers/SlideController.php(129): CController->render('update', Array)
+#11 [internal function]: SlideController->actionUpdate('5')
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SlideController), Array)
+#13 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SlideController), Object(ReflectionMethod), Array)
+#14 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(291): CFilterChain->run()
+#21 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('update')
+#23 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('natural_admin/s...')
+#24 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#25 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#26 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/natural_admin/slide/update/5
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/natural_admin/slide/admin
+---
+2015/05/10 03:12:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/controllers/SlideController.php:240
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/controllers/SlideController.php(125): SlideController->loadModel('')
+#1 [internal function]: SlideController->actionUpdate('')
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SlideController), Array)
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SlideController), Object(ReflectionMethod), Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(291): CFilterChain->run()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('update')
+#13 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('natural_admin/s...')
+#14 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#15 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/natural_admin/slide/update?id=
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/natural_admin/slide/admin
+---
+2015/05/13 05:34:30 [error] [php] include(Languages.php): failed to open stream: No existe el archivo o el directorio (/opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/YiiBase.php:432)
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/layouts/main.php(65): spl_autoload_call()
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(126): require()
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(95): SiteController->renderInternal()
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(784): SiteController->renderFile()
+#4 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(41): SiteController->render()
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams()
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): SiteController->runAction()
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): SiteController->runActionWithFilters()
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): SiteController->run()
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CWebApplication->run()
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/layouts/main.php (65)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php (41)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php (14)
+2015/05/13 05:56:13 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "redirec".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:266
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(173): CComponent->__call('redirec', Array)
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(173): SiteController->redirec('index')
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(49): SiteController->actionChange_language()
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('change_language')
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/change_lan...')
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/change_language/?language=2
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/
+---
+2015/05/13 05:57:13 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "redirec".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:266
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(173): CComponent->__call('redirec', Array)
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(173): SiteController->redirec('/dodmediagroup/...')
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(49): SiteController->actionChange_language()
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('change_language')
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/change_lan...')
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/change_language/?language=2
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/
+---
+2015/05/13 06:35:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "products".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(270): CController->missingAction('products')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('products')
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/products')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/products
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/
+---
+2015/05/13 06:44:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CViewAction.php:112
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CViewAction.php(123): CViewAction->resolveView('index')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(76): CViewAction->run()
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CAction->runWithParams(Array)
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CViewAction))
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#9 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/about
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/
+---
+2015/05/13 06:44:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested view "index" was not found.' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CViewAction.php:112
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CViewAction.php(123): CViewAction->resolveView('index')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(76): CViewAction->run()
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CAction->runWithParams(Array)
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CViewAction))
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CViewAction), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#9 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/about
+---
+2015/05/13 06:54:15 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "page_beneficios".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:266
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(48): CComponent->__call('page_beneficios', Array)
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(48): SiteController->page_beneficios()
+#2 [internal function]: SiteController->actionPage('benefits')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/benefits
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/about
+---
+2015/05/13 06:55:24 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "page_beneficios".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:266
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(49): CComponent->__call('page_beneficios', Array)
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(49): SiteController->page_beneficios()
+#2 [internal function]: SiteController->actionPage('benefits')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/benefits
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/about
+---
+2015/05/13 06:55:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php:52
+Stack trace:
+#0 [internal function]: SiteController->actionPage('benefitsw')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/benefitsw
+---
+2015/05/13 06:58:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/favicon.ico".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('images/favicon....')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/images/favicon.ico
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/natural_admin/login
+---
+2015/05/13 07:11:36 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "page_beneficios".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:266
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): CComponent->__call('page_beneficios', Array)
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): SiteController->page_beneficios()
+#2 [internal function]: SiteController->actionPage('beneficios')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/beneficios
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/nosotros
+---
+2015/05/13 07:13:14 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "page_beneficios".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:266
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): CComponent->__call('page_beneficios', Array)
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): SiteController->page_beneficios()
+#2 [internal function]: SiteController->actionPage('benefits')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/benefits
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/about
+---
+2015/05/13 07:19:37 [error] [php] Object of class CHttpCookie could not be converted to int (/opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/benefits.php:52)
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): SiteController->renderFile()
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): SiteController->renderPartial()
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(224): SiteController->render()
+#3 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): SiteController->page_beneficios()
+#4 unknown(0): SiteController->actionPage()
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams()
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): SiteController->runAction()
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): SiteController->run()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CWebApplication->run()
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/benefits
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/benefits.php (52)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php (224)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php (50)
+2015/05/13 07:31:34 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "benefits/english".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php:878
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/benefits.php(86): CController->renderPartial('benefits/englis...')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(126): require('/opt/lampp/htdo...')
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(95): CBaseController->renderInternal('/opt/lampp/htdo...', Array, true)
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): CBaseController->renderFile('/opt/lampp/htdo...', Array, true)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): CController->renderPartial('benefits', Array, true)
+#5 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(224): CController->render('benefits', Array)
+#6 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): SiteController->page_beneficios()
+#7 [internal function]: SiteController->actionPage('benefits')
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#14 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#15 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#16 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/benefits
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/benefits
+---
+2015/05/13 07:33:22 [error] [php] Undefined variable: page (/opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/benefits/espanol.php:6)
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): SiteController->renderFile()
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/benefits.php(1): SiteController->renderPartial()
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(126): require()
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): SiteController->renderFile()
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): SiteController->renderPartial()
+#6 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(224): SiteController->render()
+#7 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): SiteController->page_beneficios()
+#8 unknown(0): SiteController->actionPage()
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams()
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): SiteController->runAction()
+#13 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): SiteController->runActionWithFilters()
+#14 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): SiteController->run()
+#15 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#17 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CWebApplication->run()
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/beneficios
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/benefits/espanol.php (6)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/benefits.php (1)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php (224)
+2015/05/13 07:47:02 [error] [exception.CException] exception 'CException' with message 'Property "Treatments.language0" is not defined.' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:130
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/db/ar/CActiveRecord.php(145): CComponent->__get('language0')
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/views/treatments/admin.php(71): CActiveRecord->__get('language0')
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(126): require('/opt/lampp/htdo...')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(95): CBaseController->renderInternal('/opt/lampp/htdo...', Array, true)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): CBaseController->renderFile('/opt/lampp/htdo...', Array, true)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#6 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/controllers/TreatmentsController.php(81): CController->render('admin', Array)
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(49): TreatmentsController->actionAdmin()
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(291): CFilterChain->run()
+#15 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('admin')
+#17 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('natural_admin/t...')
+#18 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/admin
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/admin
+---
+2015/05/13 07:48:27 [error] [exception.CException] exception 'CException' with message 'Property "Treatments.language0" is not defined.' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:130
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/db/ar/CActiveRecord.php(145): CComponent->__get('language0')
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/views/treatments/admin.php(71): CActiveRecord->__get('language0')
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(126): require('/opt/lampp/htdo...')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(95): CBaseController->renderInternal('/opt/lampp/htdo...', Array, true)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): CBaseController->renderFile('/opt/lampp/htdo...', Array, true)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#6 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/controllers/TreatmentsController.php(81): CController->render('admin', Array)
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(49): TreatmentsController->actionAdmin()
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(291): CFilterChain->run()
+#15 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('admin')
+#17 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('natural_admin/t...')
+#18 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/admin
+---
+2015/05/13 07:48:30 [error] [exception.CException] exception 'CException' with message 'Property "Treatments.language0" is not defined.' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:130
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/db/ar/CActiveRecord.php(145): CComponent->__get('language0')
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/views/treatments/admin.php(71): CActiveRecord->__get('language0')
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(126): require('/opt/lampp/htdo...')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(95): CBaseController->renderInternal('/opt/lampp/htdo...', Array, true)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): CBaseController->renderFile('/opt/lampp/htdo...', Array, true)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#6 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/controllers/TreatmentsController.php(81): CController->render('admin', Array)
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(49): TreatmentsController->actionAdmin()
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(291): CFilterChain->run()
+#15 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('admin')
+#17 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('natural_admin/t...')
+#18 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/admin
+---
+2015/05/13 07:49:06 [error] [exception.CException] exception 'CException' with message 'Property "Treatments.language0" is not defined.' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:130
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/db/ar/CActiveRecord.php(145): CComponent->__get('language0')
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/views/treatments/admin.php(71): CActiveRecord->__get('language0')
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(126): require('/opt/lampp/htdo...')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(95): CBaseController->renderInternal('/opt/lampp/htdo...', Array, true)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): CBaseController->renderFile('/opt/lampp/htdo...', Array, true)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): CController->renderPartial('admin', Array, true)
+#6 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/modules/natural_admin/controllers/TreatmentsController.php(81): CController->render('admin', Array)
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(49): TreatmentsController->actionAdmin()
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#13 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#14 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(291): CFilterChain->run()
+#15 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('admin')
+#17 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('natural_admin/t...')
+#18 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#19 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#20 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/natural_admin/treatments/admin
+---
+2015/05/13 07:55:35 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "page_productos".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:266
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): CComponent->__call('page_productos', Array)
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): SiteController->page_productos()
+#2 [internal function]: SiteController->actionPage('products')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/products
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/benefits
+---
+2015/05/13 08:01:24 [error] [php] Undefined variable: page (/opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/products.php:1)
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): SiteController->renderFile()
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): SiteController->renderPartial()
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(217): SiteController->render()
+#3 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): SiteController->page_productos()
+#4 unknown(0): SiteController->actionPage()
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams()
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): SiteController->runAction()
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): SiteController->run()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CWebApplication->run()
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/productos
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/products.php (1)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php (217)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php (50)
+2015/05/13 08:10:15 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "page_puntos_venta".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:266
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): CComponent->__call('page_puntos_ven...', Array)
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): SiteController->page_puntos_venta()
+#2 [internal function]: SiteController->actionPage('sales_points')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/sales_points
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/products
+---
+2015/05/13 08:15:19 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "page_blog".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:266
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): CComponent->__call('page_blog', Array)
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): SiteController->page_blog()
+#2 [internal function]: SiteController->actionPage('blog')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/blog
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/about
+---
+2015/05/13 08:17:33 [error] [exception.CDbException] exception 'CDbException' with message 'Table "blog_entries" does not have a column named "language".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/db/schema/CDbCommandBuilder.php:697
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/db/ar/CActiveRecord.php(1540): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, Array, Array, '`t`.')
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(221): CActiveRecord->findAllByAttributes(Array, Array)
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(50): SiteController->page_blog()
+#3 [internal function]: SiteController->actionPage('blog')
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/blog
+---
+2015/05/13 08:27:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "medical_marijuana_whats_the_use_".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(270): CController->missingAction('medical_marijua...')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('medical_marijua...')
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('blog/medical_ma...')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/blog/medical_marijuana_whats_the_use_
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/blog
+---
+2015/05/13 08:28:41 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "page_preguntas_frecuentes".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:266
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(51): CComponent->__call('page_preguntas_...', Array)
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(51): SiteController->page_preguntas_frecuentes()
+#2 [internal function]: SiteController->actionPage('questions')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/questions
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/sales_points
+---
+2015/05/13 08:31:02 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "page_preguntas_frecuentes".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:266
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(51): CComponent->__call('page_preguntas_...', Array)
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(51): SiteController->page_preguntas_frecuentes()
+#2 [internal function]: SiteController->actionPage('questions')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/questions
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/blog/medical_marijuana_whats_the_use_
+---
+2015/05/13 08:32:57 [error] [exception.CDbException] exception 'CDbException' with message 'Table "questions" does not have a column named "language".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/db/schema/CDbCommandBuilder.php:697
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/db/ar/CActiveRecord.php(1540): CDbCommandBuilder->createColumnCriteria(Object(CMysqlTableSchema), Array, Array, Array, '`t`.')
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(228): CActiveRecord->findAllByAttributes(Array, Array)
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(51): SiteController->page_preguntas_frecuentes()
+#3 [internal function]: SiteController->actionPage('questions')
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#12 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/questions
+---
+2015/05/13 08:45:08 [error] [exception.CException] exception 'CException' with message 'SiteController and its behaviors do not have a method or closure named "page_contacto".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CComponent.php:266
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(51): CComponent->__call('page_contacto', Array)
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(51): SiteController->page_contacto()
+#2 [internal function]: SiteController->actionPage('contacto')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#11 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/contacto
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/questions
+---
+2015/05/13 09:01:46 [error] [php] Object of class CHttpCookie could not be converted to int (/opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/contact.php:14)
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): SiteController->renderFile()
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): SiteController->renderPartial()
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(241): SiteController->render()
+#3 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(51): SiteController->page_contacto()
+#4 unknown(0): SiteController->actionPage()
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs()
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams()
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): SiteController->runAction()
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): SiteController->run()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CWebApplication->run()
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/contact
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/contact.php (14)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php (241)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php (51)
+2015/05/13 09:04:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php:54
+Stack trace:
+#0 [internal function]: SiteController->actionPage('change_language')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('page')
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('site/page')
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#9 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/change_language/?language=2
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/
+---
+2015/05/13 09:11:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php:483
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(270): CController->missingAction('view')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): CController->run('view')
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('suscripcion/vie...')
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#4 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/suscripcion/register
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/
+---
+2015/05/13 09:29:06 [error] [php] Undefined variable: slide (/opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/layouts/_slide.php:4)
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): SiteController->renderFile()
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/layouts/main.php(89): SiteController->renderPartial()
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(126): require()
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(784): SiteController->renderFile()
+#5 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(41): SiteController->render()
+#6 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams()
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): SiteController->runAction()
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): SiteController->run()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#13 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CWebApplication->run()
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/layouts/_slide.php (4)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/layouts/main.php (89)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php (41)
+2015/05/13 09:52:00 [error] [php] Undefined variable: page (/opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/home/english.php:6)
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): SiteController->renderFile()
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/index.php(7): SiteController->renderPartial()
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(126): require()
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): SiteController->renderFile()
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): SiteController->renderPartial()
+#6 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(49): SiteController->render()
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams()
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): SiteController->runAction()
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): SiteController->runActionWithFilters()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): SiteController->run()
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CWebApplication->run()
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/home/english.php (6)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/index.php (7)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php (49)
+2015/05/13 09:52:25 [error] [php] Undefined variable: question (/opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/home/english.php:67)
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): SiteController->renderFile()
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/index.php(9): SiteController->renderPartial()
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(126): require()
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): SiteController->renderFile()
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): SiteController->renderPartial()
+#6 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(49): SiteController->render()
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams()
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): SiteController->runAction()
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): SiteController->runActionWithFilters()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): SiteController->run()
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CWebApplication->run()
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/home/english.php (67)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/index.php (9)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php (49)
+2015/05/13 09:52:26 [error] [php] Undefined variable: question (/opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/home/english.php:67)
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): SiteController->renderFile()
+#1 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/index.php(9): SiteController->renderPartial()
+#2 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(126): require()
+#3 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(869): SiteController->renderFile()
+#5 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(782): SiteController->renderPartial()
+#6 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php(49): SiteController->render()
+#7 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#8 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(308): CInlineAction->runWithParams()
+#9 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(286): SiteController->runAction()
+#10 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CController.php(265): SiteController->runActionWithFilters()
+#11 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(282): SiteController->run()
+#12 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CWebApplication->run()
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/home/english.php (67)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/views/site/index.php (9)
+in /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/protected/controllers/SiteController.php (49)
+2015/05/13 20:07:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/slide/default.jpg".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('images/slide/de...')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/images/slide/default.jpg
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/
+---
+2015/05/13 20:09:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/slide/default.jpg".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('images/slide/de...')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/images/slide/default.jpg
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/
+---
+2015/05/13 20:10:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/slide/default.jpg".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('images/slide/de...')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/images/slide/default.jpg
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/
+---
+2015/05/13 20:10:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/slide/default.jpg".' in /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php:286
+Stack trace:
+#0 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/web/CWebApplication.php(141): CWebApplication->runController('images/slide/de...')
+#1 /opt/lampp/htdocs/dodmediagroup/frameworks/yii/1.1.16/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /opt/lampp/htdocs/dodmediagroup/projects/natural_drops/project/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/dodmediagroup/projects/natural_drops/project/images/slide/default.jpg
+HTTP_REFERER=http://localhost:8080/dodmediagroup/projects/natural_drops/project/
+---

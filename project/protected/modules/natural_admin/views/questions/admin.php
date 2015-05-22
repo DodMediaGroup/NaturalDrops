@@ -31,6 +31,7 @@
 									<th>Pregunta</th>
 									<th>Rta. Precisa</th>
 									<th>Rta. Larga</th>
+									<th>Idioma</th>
 									<th>Estado</th>
 								</tr>
 					        </thead>
@@ -42,6 +43,7 @@
 									<th>Pregunta</th>
 									<th>Rta. Precisa</th>
 									<th>Rta. Larga</th>
+									<th>Idioma</th>
 									<th>Estado</th>
 					            </tr>
 					        </tfoot>
@@ -65,6 +67,7 @@
 											<td><?php echo $question->question; ?></td>
 											<td><?php echo $question->precise; ?></td>
 											<td><?php echo $question->reply; ?></td>
+											<td><span class="label label-primary"><?php echo $question->language0->name; ?></span></td>
 											<td><span class="label label-<?php echo($question->status == 1)?"success":"warning" ?>"><?php echo ($question->status == 1)?'Activo':'Oculto'; ?></span></td>
 										</tr>
 									<?php }

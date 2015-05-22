@@ -5426,7 +5426,8 @@ footer .footer-links a:last-child {
 .img-table{
   display: inline-block;
   margin-right: 15px;
-  max-height: 200px;
+  max-height: 100px;
+  max-width: 80px;
   position: relative;
 }
 .img-table .delete{
@@ -5444,6 +5445,6 @@ footer .footer-links a:last-child {
   width: 24px;
 }
 .img-table img{
-  max-height: 200px;
+  max-height: 100px;
   max-width: 100%;
 }

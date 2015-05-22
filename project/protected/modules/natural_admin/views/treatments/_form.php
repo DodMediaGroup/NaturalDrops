@@ -33,6 +33,10 @@
 								<?php echo $form->labelEx($model,'use'); ?>
 		        				<?php echo $form->textField($model,'use',array('class'=>'form-control','maxlength'=>255,'placeholder'=>'Instrucciones de uso','required'=>true)); ?>
 							</div>
+							<div class="form-group">
+								<?php echo $form->labelEx($model,'language'); ?>
+		        				<?php echo $form->dropDownList($model,'language', MyMethods::getListSelect('Languages', 'id_language', 'name'), array('class'=>'form-control')); ?>
+							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">

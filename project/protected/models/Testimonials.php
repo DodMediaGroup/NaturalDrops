@@ -8,7 +8,11 @@
  * @property string $name
  * @property string $testimony
  * @property string $image
+ * @property integer $language
  * @property integer $status
+ *
+ * The followings are the available model relations:
+ * @property Languages $language0
  */
 class Testimonials extends CActiveRecord
 {
@@ -29,11 +33,11 @@ class Testimonials extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name, testimony, image', 'required'),
-			array('status', 'numerical', 'integerOnly'=>true),
+			array('language, status', 'numerical', 'integerOnly'=>true),
 			array('name, image', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_testimony, name, testimony, image, status', 'safe', 'on'=>'search'),
+			array('id_testimony, name, testimony, image, language, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -45,6 +49,7 @@ class Testimonials extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'language0' => array(self::BELONGS_TO, 'Languages', 'language'),
 		);
 	}
 
@@ -58,6 +63,7 @@ class Testimonials extends CActiveRecord
 			'name' => 'Name',
 			'testimony' => 'Testimony',
 			'image' => 'Image',
+			'language' => 'Language',
 			'status' => 'Status',
 		);
 	}
@@ -84,6 +90,7 @@ class Testimonials extends CActiveRecord
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('testimony',$this->testimony,true);
 		$criteria->compare('image',$this->image,true);
+		$criteria->compare('language',$this->language);
 		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(

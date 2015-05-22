@@ -1,20 +1,32 @@
+<?php
+	$menu = Menus::model()->findByAttributes(array('language'=>Yii::app()->request->cookies['language'], 'status'=>1));
+	if($menu == null)
+		$menu = Menus::model()->findByPk(1);
+
+	$text = '<span></span><strong>encuentra la</strong><br>tienda más cercana';
+	if(Yii::app()->request->cookies['language'] == '2')
+		$text = '<span></span><strong>find the</strong><br>nearest store';
+?>
+
 <section class="section principal-footer">
 	<div id="map-footer" class="map">
+		<div class="google-map"></div>
 		<a href="<?php echo $this->createUrl('puntos_venta/') ?>" class="link">
-			<p><span></span><strong>encuentra la</strong><br>tienda más cercana</p>
+			<p><?php echo $text; ?></p>
 		</a>
 		<script>
-			footerLocation = [{
-		        icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
-		        lat: 6.248365,
-		        lng: -75.594243,
-		        html: '<div class="text map-overlay">'+
-		        		'<p>OFICINA</p>'+
-		        		'<p><strong>PRINCIPAL</strong></p>'+
-					'</div>',
-		        animation: google.maps.Animation.DROP,
-		        title: 'Oficina Principal'
-		    }];
+			<?php
+		    $stores = Stores::model()->findAllByAttributes(array('status'=>1), array('limit'=>1));
+		    foreach ($stores as $key => $store) { ?>
+				footerLocation.push({
+					lat: <?php echo $store->lat; ?>,
+					lng: <?php echo $store->lng; ?>,
+					icon: "<?php echo Yii::app()->request->baseUrl; ?>/images/icon-map.svg",
+					html: '',
+			        animation: google.maps.Animation.DROP,
+			        show: true
+				});
+			<?php } ?>
 		</script>
 	</div>
 	<div class="contact">
@@ -24,18 +36,13 @@
 					<div class="contain">
 						<h2>MENÚ</h2>
 						<ul>
-							<li><a href="<?php echo $this->createUrl('nosotros/') ?>">Nosotros</a></li>
-							<li><a href="<?php echo $this->createUrl('beneficios/') ?>">Beneficios</a></li>
-							<li><a href="<?php echo $this->createUrl('productos/') ?>">Productos</a></li>
-							<li><a href="<?php echo $this->createUrl('puntos_venta/') ?>">Puntos de venta</a></li>
-							<li><a href="<?php echo $this->createUrl('blog/') ?>">Blog</a></li>
-							<li><a href="<?php echo $this->createUrl('preguntas_frecuentes/') ?>">Preguntas frecuentes</a></li>
-						</ul>
+							<?php foreach ($menu->menuItems as $key => $item) { ?>
+								<li><a href="<?php echo $this->createUrl($item->page0->navigation.'/') ?>"><?php echo $item->page0->name; ?></a></li>
+							<?php } ?>
+						</ul><br>
 						<h2>CONTÁCTANOS</h2>
 						<address>
 							<?php $contact = Variables::model()->findByPk(4); ?>
-							<p><?php echo $contact->value; ?></p>
-							<?php $contact = Variables::model()->findByPk(6); ?>
 							<p><?php echo $contact->value; ?></p>
 							<?php $contact = Variables::model()->findByPk(5); ?>
 							<p><?php echo $contact->value; ?></p>
@@ -55,10 +62,11 @@
 					<div class="contain form-contact">
 						<div>
 							<h2>ESCRÍBENOS</h2>
-							<form action="#">
-								<input type="text" placeholder="Nombre">
-								<input type="text" placeholder="Correo electrónico">
-								<textarea placeholder="Comentario"></textarea>
+							<form id="form-contact" action="<?php echo $this->createUrl('contacto/') ?>">
+								<input type="text" placeholder="Nombre" name="name" required>
+								<input type="text" placeholder="Correo electrónico" name="email" required>
+								<textarea placeholder="Comentario" name="subject" required></textarea>
+								<button type="submit"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/send.svg" class="js-img-to-svg"></button>
 							</form>
 						</div>
 					</div>

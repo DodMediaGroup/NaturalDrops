@@ -3,7 +3,7 @@
 		<header>
 			<h1 class="principal-title btn-green-light efect-bottom">
 				<span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/questions.svg" class="js-img-to-svg" alt="Blogs"></span>
-				PREGUNTAS FRECUENTES
+				<?php echo MyMethods::myStrtoupper($page->name); ?>
 			</h1>
 		</header>
 		<div class="article">

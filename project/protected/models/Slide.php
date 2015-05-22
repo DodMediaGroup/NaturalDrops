@@ -6,10 +6,13 @@
  * The followings are the available columns in table 'slide':
  * @property integer $id_slide
  * @property string $link
+ * @property string $background
+ * @property integer $language
  * @property integer $status
  *
  * The followings are the available model relations:
  * @property ImagesSlide[] $imagesSlides
+ * @property Languages $language0
  */
 class Slide extends CActiveRecord
 {
@@ -29,11 +32,12 @@ class Slide extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('status', 'numerical', 'integerOnly'=>true),
-			array('link', 'length', 'max'=>255),
+			array('background', 'required'),
+			array('language, status', 'numerical', 'integerOnly'=>true),
+			array('link, background', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_slide, link, status', 'safe', 'on'=>'search'),
+			array('id_slide, link, background, language, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -46,6 +50,7 @@ class Slide extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'imagesSlides' => array(self::HAS_MANY, 'ImagesSlide', 'slide'),
+			'language0' => array(self::BELONGS_TO, 'Languages', 'language'),
 		);
 	}
 
@@ -57,6 +62,8 @@ class Slide extends CActiveRecord
 		return array(
 			'id_slide' => 'Id Slide',
 			'link' => 'Link',
+			'background' => 'Background',
+			'language' => 'Language',
 			'status' => 'Status',
 		);
 	}
@@ -81,6 +88,8 @@ class Slide extends CActiveRecord
 
 		$criteria->compare('id_slide',$this->id_slide);
 		$criteria->compare('link',$this->link,true);
+		$criteria->compare('background',$this->background,true);
+		$criteria->compare('language',$this->language);
 		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(

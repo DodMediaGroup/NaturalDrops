@@ -32,6 +32,7 @@
 									<th>Titulo</th>
 									<th>Fecha</th>
 									<th>Usuario</th>
+									<th>Idioma</th>
 									<th>Estado</th>
 								</tr>
 					        </thead>
@@ -44,6 +45,7 @@
 									<th>Titulo</th>
 									<th>Fecha</th>
 									<th>Usuario</th>
+									<th>Idioma</th>
 									<th>Estado</th>
 					            </tr>
 					        </tfoot>
@@ -69,6 +71,7 @@
 											<td><?php echo $entry->title; ?></td>
 											<td><?php echo $entry->date; ?></td>
 											<td><?php echo $entry->user0->name; ?></td>
+											<td><span class="label label-primary"><?php echo $entry->language0->name; ?></span></td>
 											<td><span class="label label-<?php echo($entry->status == 1)?"success":"warning" ?>"><?php echo ($entry->status == 1)?'Activo':'Oculto'; ?></span></td>
 										</tr>
 									<?php }

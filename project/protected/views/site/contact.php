@@ -3,19 +3,23 @@
 		<header>
 			<h1 class="principal-title btn-green-light efect-bottom">
 				<span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/phone.svg" class="js-img-to-svg" alt="Contacto"></span>
-				CONTACTO
+				<?php echo MyMethods::myStrtoupper($page->name); ?>
 			</h1>
 		</header>
 		<div class="article">
 			<div class="contact-page">
 				<div class="form">
 					<div class="bracket">
-						Es importante para nosotros estar en contacto contigo
+						<?php
+							if(Yii::app()->request->cookies['language'] == "2")
+								echo "It is important for us to be in touch with you";
+							else
+								echo "Es importante para nosotros estar en contacto contigo";
+						?>
 					</div>
 
 					<p class="icon"><span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/phone-circle.svg" alt="" class="js-img-to-svg"></span> <?php echo $phone->value; ?></p>
 					<p class="icon"><span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/message.svg" alt="" class="js-img-to-svg"></span> <?php echo $email->value; ?></p>
-					<p class="icon"><span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/map-circle.svg" alt="" class="js-img-to-svg"></span> <?php echo $address->value; ?></p>
 
 					<span class="border"></span>
 

@@ -46,11 +46,23 @@
 		}
 		.social{
 			display: none;
+			width: 100%;
 		}
 		.button{
 			display: block;
 		}
+		.select-language:not(.responsive){
+			display: none;
+		}
+		.select-language.responsive{
+			bottom: 15px;
+			display: block;
+			top: initial;
+			width: 100%;
+			z-index: 9999;
+		}
 		.menu_responsive{
+			display: block;
 			ul{
 				display: block;
 			}
@@ -82,8 +94,7 @@
 				left: 100px;
 				top: 25%;
 				p{
-					font-size: 23px;
-					line-height: 23px;
+					font-size: 20px;
 				}
 			}
 		}
@@ -165,6 +176,16 @@
 			}
 			.text, .text:not(.panel){
 				padding: 12px;
+			}
+			.text.link{
+				padding: 0px;
+				.link-to-shop{
+					background-color: fadeout(@color-purple, 20%);
+					.block{
+						background-color: transparent;
+						width: 89%;
+					}
+				}
 			}
 		}
 	}

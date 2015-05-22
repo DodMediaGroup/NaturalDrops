@@ -28,6 +28,10 @@
         				<?php echo $form->textField($model,'title',array('class'=>'form-control','maxlength'=>255,'placeholder'=>'Título','required'=>true)); ?>
 					</div>
 					<div class="form-group">
+						<?php echo $form->labelEx($model,'language'); ?>
+        				<?php echo $form->dropDownList($model,'language', MyMethods::getListSelect('Languages', 'id_language', 'name'), array('class'=>'form-control')); ?>
+					</div>
+					<div class="form-group">
 						<div class="imag-before-upload" style="background-image: url(<?php echo Yii::app()->request->baseUrl; ?>/images/admin/gray.png); max-width: 180px;">
 							<?php if(!$model->isNewRecord && $model->image != ""){ ?>
 								<div class="img" style="background-image: url(<?php echo Yii::app()->request->baseUrl; ?>/images/articles/<?php echo $model->image; ?>)"></div>

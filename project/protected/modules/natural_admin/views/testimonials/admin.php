@@ -31,6 +31,7 @@
 									<th></th>
 									<th>Nombre</th>
 									<th>Testimonio</th>
+									<th>Idioma</th>
 									<th>Estado</th>
 								</tr>
 					        </thead>
@@ -42,6 +43,7 @@
 									<th></th>
 									<th>Nombre</th>
 									<th>Testimonio</th>
+									<th>Idioma</th>
 									<th>Estado</th>
 					            </tr>
 					        </tfoot>
@@ -65,6 +67,7 @@
 											<td><div class="img-circl img-table-rep" style="background-image:url(<?php echo Yii::app()->request->baseUrl; ?>/images/<?php echo ($testimony->image != ""?('testimonials/'.$testimony->image):'logo.png'); ?>);"></div></td>
 											<td><?php echo $testimony->name; ?></td>
 											<td><?php echo $testimony->testimony; ?></td>
+											<td><span class="label label-primary"><?php echo $testimony->language0->name; ?></span></td>
 											<td><span class="label label-<?php echo($testimony->status == 1)?"success":"warning" ?>"><?php echo ($testimony->status == 1)?'Activo':'Oculto'; ?></span></td>
 										</tr>
 									<?php }

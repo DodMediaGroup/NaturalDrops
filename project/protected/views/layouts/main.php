@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/vendor/custom_scrollbar/jquery.mCustomScrollbar.min.css">
 	
-	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css">
+	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main_01.css">
 	
 	<link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/logos/favicon.ico">
 
@@ -61,6 +61,19 @@
 		</div>
 	</div>
 
+	<?php if(!(isset(Yii::app()->request->cookies['language']))){
+		$languages = Languages::model()->findAllByAttributes(array('status'=>1));
+	?>
+		<div class="modal-select-language">
+			<p>
+				<span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logos/logo.png"></span>
+				<?php foreach ($languages as $key => $language) { ?>
+					<a class="<?php echo ($language->id_language == 1)?'close':''; ?>" href="<?php echo $this->createUrl('change_language/?language='.$language->id_language) ?>"><?php echo MyMethods::myStrtoupper($language->name); ?></a>
+				<?php } ?>
+			</p>
+		</div>
+	<?php } ?>
+
 	<?php
         $message = Yii::app()->user->getFlash('message');
         if($message != ""){ ?>
@@ -71,7 +84,7 @@
     ?>
 
 	<?php $backgroundSlide = Variables::model()->findByPk(1); ?>
-	<header class="principal-header <?php echo ($this->slide)?'slide-container':''; ?>" style="<?php echo ($this->slide)?('background-image:url('.Yii::app()->request->baseUrl.'/images/slide/'.$backgroundSlide->value.')'):''; ?>">
+	<header class="principal-header <?php echo ($this->slide)?'slide-container':''; ?>">
 		<?php $this->renderPartial('//layouts/_menu'); ?>
 		<?php if($this->slide){
 			$this->renderPartial('//layouts/_slide');
@@ -80,17 +93,21 @@
 
 	<?php echo $content; ?>
 
-	<?php if($this->suscription){ ?>
+	<?php if($this->suscription){
+		$text = 'RECIBE MÁS INFORMACIÓN';
+		if(Yii::app()->request->cookies['language'] == '2')
+			$text = 'GET MORE INFORMATION';
+	?>
 		<section class="section parallax suscription" data-image-src="<?php echo Yii::app()->request->baseUrl; ?>/images/backgrounds/imagen-landing-footer.jpg">
 			<div class="container efect-bottom">
-				<h1>RECIBE MÁS INFORMACIÓN</h1>
+				<h1><?php echo $text; ?></h1>
 				<form id="form-suscription" action="<?php echo $this->createUrl('suscripcion/register') ?>">
 					<div class="form-group">
 						<div class="input">
 							<input type="email" name="email" placeholder="Correo electrónico" required>
 						</div>
 						<div class="button">
-							<button type="submit">Enviar</button>
+							<button type="submit"><?php echo (Yii::app()->request->cookies['language'] == '2')?'Send':'Enviar'; ?></button>
 						</div>
 					</div>
 				</form>
@@ -101,12 +118,15 @@
 
 	<?php if($this->showEmailContact){
 		$contactEmail = Variables::model()->findByPk(4);
+		$text = 'TENEMOS LA INTENCIÓN DE DESPEJAR TODAS TUS DUDAS<br>ESCRÍBENOS AL CORREO:';
+		if(Yii::app()->request->cookies['language'] == '2')
+			$text = 'WE PLAN TO CLEAR ALL YOUR DOUBTS<br>WRITE TO US TO EMAIL:';
 	?>
 		<section class="section parallax suscription" data-image-src="<?php echo Yii::app()->request->baseUrl; ?>/images/backgrounds/imagen-landing-footer.jpg">
 			<div class="container efect-bottom">
 				<p>
 					<span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/send.svg" class="js-img-to-svg"></span>
-					TENEMOS LA INTENCIÓN DE DESPEJAR TODAS TUS DUDAS<br>ESCRÍBENOS AL CORREO: <?php echo MyMethods::myStrtoupper($contactEmail->value); ?>
+					<?php echo $text.' '.MyMethods::myStrtoupper($contactEmail->value); ?>
 				</p>
 			</div>
 		</section>

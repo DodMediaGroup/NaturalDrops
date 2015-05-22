@@ -97,6 +97,7 @@ class SlideController extends Controller
     public function actionCreate()
     {
         $model=new Slide;
+        $model->background = 'default.jpg';
         $model->save();
 
         $this->redirect(array('update','id'=>$model->id_slide));
@@ -123,6 +124,34 @@ class SlideController extends Controller
         $this->writeScripts();
 
         $model=$this->loadModel($id);
+
+        if(isset($_POST['Slide'])){
+            $errors = false;
+            $model->attributes=$_POST['Slide'];
+            if($model->validate(null, false)){
+                if(($_FILES['image']['size'] > 0)){
+                    $server = $_SERVER['DOCUMENT_ROOT'].Yii::app()->request->baseUrl.'/images/';
+                    $currentImage = $model->background;
+                    
+                    $uploadLogo = MyMethods::uploadImage($_FILES['image'], 800, 'slide/');
+
+                    if(!$uploadLogo['status']){
+                        $model->addError('background', $uploadLogo['message']);
+                        $errors = true;
+                    }
+                    else{
+                        $model->background = $uploadLogo['imageName'];
+                        if($currentImage != "" && $currentImage != 'default.jpg'){
+                            @unlink($_SERVER['DOCUMENT_ROOT'].Yii::app()->request->baseUrl."/images/slide/".$currentImage);
+                        }
+                    }
+                }
+
+                if(!$errors){
+                    $model->save();
+                }
+            }
+        }
 
         $this->render('update',array(
             'model'=>$model,

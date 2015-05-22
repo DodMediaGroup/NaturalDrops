@@ -10,10 +10,13 @@
  * @property string $image
  * @property string $date
  * @property string $source
+ * @property string $navigation
+ * @property integer $language
  * @property integer $user
  * @property integer $status
  *
  * The followings are the available model relations:
+ * @property Languages $language0
  * @property Users $user0
  */
 class BlogEntries extends CActiveRecord
@@ -34,12 +37,12 @@ class BlogEntries extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('title, article, date, user', 'required'),
-			array('user, status', 'numerical', 'integerOnly'=>true),
-			array('title, image, source', 'length', 'max'=>255),
+			array('title, article, date, navigation, user', 'required'),
+			array('language, user, status', 'numerical', 'integerOnly'=>true),
+			array('title, image, source, navigation', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_entry, title, article, image, date, source, user, status', 'safe', 'on'=>'search'),
+			array('id_entry, title, article, image, date, source, navigation, language, user, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -51,6 +54,7 @@ class BlogEntries extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'language0' => array(self::BELONGS_TO, 'Languages', 'language'),
 			'user0' => array(self::BELONGS_TO, 'Users', 'user'),
 		);
 	}
@@ -67,6 +71,8 @@ class BlogEntries extends CActiveRecord
 			'image' => 'Image',
 			'date' => 'Date',
 			'source' => 'Source',
+			'navigation' => 'Navigation',
+			'language' => 'Language',
 			'user' => 'User',
 			'status' => 'Status',
 		);
@@ -96,6 +102,8 @@ class BlogEntries extends CActiveRecord
 		$criteria->compare('image',$this->image,true);
 		$criteria->compare('date',$this->date,true);
 		$criteria->compare('source',$this->source,true);
+		$criteria->compare('navigation',$this->navigation,true);
+		$criteria->compare('language',$this->language);
 		$criteria->compare('user',$this->user);
 		$criteria->compare('status',$this->status);
 

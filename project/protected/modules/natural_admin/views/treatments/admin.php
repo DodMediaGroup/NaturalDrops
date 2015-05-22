@@ -31,6 +31,7 @@
 									<th></th>
 									<th>Tratamiento</th>
 									<th>Intrucción de uso</th>
+									<th>Idioma</th>
 									<th>Estado</th>
 								</tr>
 					        </thead>
@@ -42,6 +43,7 @@
 									<th></th>
 									<th>Tratamiento</th>
 									<th>Intrucción de uso</th>
+									<th>Idioma</th>
 									<th>Estado</th>
 					            </tr>
 					        </tfoot>
@@ -66,6 +68,7 @@
 											<td><div class="img-circl img-table-rep" style="background-image:url(<?php echo Yii::app()->request->baseUrl; ?>/images/<?php echo ($treatment->image != ""?('treatments/'.$treatment->image):'admin/gray.png'); ?>);"></div></td>
 											<td><?php echo $treatment->treatment; ?></td>
 											<td><?php echo $treatment->use; ?></td>
+											<td><span class="label label-primary"><?php echo $treatment->language0->name; ?></span></td>
 											<td><span class="label label-<?php echo($treatment->status == 1)?"success":"warning" ?>"><?php echo ($treatment->status == 1)?'Activo':'Oculto'; ?></span></td>
 										</tr>
 									<?php }

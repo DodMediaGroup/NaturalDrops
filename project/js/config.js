@@ -15,7 +15,7 @@ var tratInfo = null;
 var mapLocations = [];
 var map = null;
 // MAP FOOTER
-var footerLocation = null;
+var footerLocation = [];
 
 // STORES
 var countries = [];

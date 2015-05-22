@@ -15,4 +15,11 @@ return array(
 	'username' => 'dodmedia_sergio',
 	'password' => ')$f)@J&Iv[I&',
 	'charset' => 'utf8',*/
+
+	//DATABASE PRODUCTION
+	/*'connectionString' => 'mysql:host=naturaldrops.co.mysql;dbname=naturaldrops_co',
+	'emulatePrepare' => true,
+	'username' => 'naturaldrops_co',
+	'password' => 'DzxJifW6',
+	'charset' => 'utf8',*/
 );

@@ -3,7 +3,7 @@
 		<header>
 			<h1 class="principal-title btn-green-light efect-bottom">
 				<span><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/cannabis.svg" class="js-img-to-svg" alt="Beneficios"></span>
-				NOSOTROS
+				<?php echo MyMethods::myStrtoupper($page->title); ?>
 			</h1>
 		</header>
 		<div class="article">

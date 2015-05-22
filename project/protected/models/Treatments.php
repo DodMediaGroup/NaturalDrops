@@ -10,7 +10,11 @@
  * @property string $benefits
  * @property string $use
  * @property string $image
+ * @property integer $language
  * @property integer $status
+ *
+ * The followings are the available model relations:
+ * @property Languages $language0
  */
 class Treatments extends CActiveRecord
 {
@@ -31,11 +35,11 @@ class Treatments extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('treatment, description, benefits, use, image', 'required'),
-			array('status', 'numerical', 'integerOnly'=>true),
+			array('language, status', 'numerical', 'integerOnly'=>true),
 			array('treatment, use, image', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_treatment, treatment, description, benefits, use, image, status', 'safe', 'on'=>'search'),
+			array('id_treatment, treatment, description, benefits, use, image, language, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -47,6 +51,7 @@ class Treatments extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'language0' => array(self::BELONGS_TO, 'Languages', 'language'),
 		);
 	}
 
@@ -62,6 +67,7 @@ class Treatments extends CActiveRecord
 			'benefits' => 'Benefits',
 			'use' => 'Use',
 			'image' => 'Image',
+			'language' => 'Language',
 			'status' => 'Status',
 		);
 	}
@@ -90,6 +96,7 @@ class Treatments extends CActiveRecord
 		$criteria->compare('benefits',$this->benefits,true);
 		$criteria->compare('use',$this->use,true);
 		$criteria->compare('image',$this->image,true);
+		$criteria->compare('language',$this->language);
 		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(

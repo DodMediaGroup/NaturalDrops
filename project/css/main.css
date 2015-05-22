@@ -153,6 +153,8 @@ svg .line_2 {
   background-attachment: fixed;
   background-position: center top;
   background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 .parallax.divisor {
   min-height: 150px;
@@ -318,6 +320,7 @@ li {
   display: block;
   margin-top: 60px;
   position: relative;
+  z-index: 10;
 }
 .principal-menu h1 {
   left: 15px;
@@ -372,6 +375,7 @@ li {
   display: table-cell;
   padding-top: 5px;
   vertical-align: top;
+  width: 115px;
 }
 .principal-menu .social a {
   display: inline-block;
@@ -411,11 +415,34 @@ li {
   text-align: center;
   width: 100%;
 }
+.principal-menu .select-language {
+  position: absolute;
+  right: 12px;
+  text-align: center;
+  top: -25px;
+  width: 115px;
+}
+.principal-menu .select-language.responsive {
+  display: none;
+}
+.principal-menu .select-language a,
+.principal-menu .select-language span {
+  color: #ffffff;
+  font-family: 'yanone_kaffeesatz', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  text-shadow: 0px 0px 2px #333;
+}
+.principal-menu .select-language span {
+  font-size: 20px;
+  vertical-align: top;
+}
 .principal-menu .menu_responsive {
   background: url(../images/logos/logo.svg) no-repeat 8px 8px;
   background-color: rgba(159, 194, 58, 0.95);
   -webkit-background-size: 70px auto;
   background-size: 70px auto;
+  display: none;
   height: 100%;
   left: 0px;
   opacity: 0;
@@ -433,9 +460,9 @@ li {
 .principal-menu .menu_responsive ul {
   position: relative;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-55%);
+  -ms-transform: translateY(-55%);
+  transform: translateY(-55%);
 }
 .principal-menu .menu_responsive ul li {
   background: transparent;
@@ -494,6 +521,7 @@ li {
 .principal-slide {
   margin-top: 30px;
   position: relative;
+  z-index: 5;
 }
 .principal-slide .item-slide {
   height: 100%;
@@ -578,6 +606,32 @@ li {
   background-color: #9fc23a;
   border: 1px solid #ffffff;
 }
+.background-slide {
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+}
+.background-slide .slide {
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  -webkit-transition: all 2.5s;
+  transition: all 2.5s;
+  width: 100%;
+  z-index: 1;
+}
+.background-slide .slide.active {
+  opacity: 1;
+  z-index: 3;
+}
+.background-slide .slide.change {
+  opacity: 0;
+}
 .section {
   padding: 45px 0px;
 }
@@ -626,9 +680,9 @@ li {
 }
 .home-beneficios .beneficio-product .text p {
   font-family: 'yanone_kaffeesatz', sans-serif;
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 200;
-  line-height: 35px;
+  line-height: 1em;
 }
 .home-beneficios .beneficio-product .text p:nth-child(1) {
   padding-left: 12px;
@@ -647,27 +701,28 @@ li {
 }
 .home-beneficios .beneficio-product .text p strong {
   font-family: 'yanone_kaffeesatz', sans-serif;
-  font-size: .9em;
+  font-size: 1em;
+  line-height: .8em;
 }
-.home-beneficios .link-to-shop {
+.link-to-shop {
   background-color: rgba(80, 59, 105, 0.8);
   margin-left: 45%;
   margin-top: 20px;
   width: 55%;
 }
-.home-beneficios .link-to-shop .block {
+.link-to-shop .block {
   padding: 12px;
   position: relative;
   width: 459px;
 }
-.home-beneficios .link-to-shop .block > p {
+.link-to-shop .block > p {
   color: #ffffff;
   font-family: 'yanone_kaffeesatz', sans-serif;
   font-weight: 400;
   line-height: 1.3em;
   padding-right: 100px;
 }
-.home-beneficios .link-to-shop .block .link {
+.link-to-shop .block .link {
   height: 150px;
   position: absolute;
   right: -10%;
@@ -677,13 +732,13 @@ li {
   transform: translateY(-50%);
   width: 150px;
 }
-.home-beneficios .link-to-shop .block .link svg {
+.link-to-shop .block .link svg {
   height: 100%;
   -webkit-transition: all 1.2s ease;
   transition: all 1.2s ease;
   width: 100%;
 }
-.home-beneficios .link-to-shop .block .link a {
+.link-to-shop .block .link a {
   bottom: 0px;
   display: block;
   height: 92px;
@@ -695,29 +750,29 @@ li {
   width: 100%;
   z-index: 99;
 }
-.home-beneficios .link-to-shop .block .link a svg {
+.link-to-shop .block .link a svg {
   height: 32px;
 }
-.home-beneficios .link-to-shop .block .link a svg g {
+.link-to-shop .block .link a svg g {
   opacity: 1 !important;
 }
-.home-beneficios .link-to-shop .block .link a svg path {
+.link-to-shop .block .link a svg path {
   fill: #9fc23a !important;
 }
-.home-beneficios .link-to-shop .block .link a p,
-.home-beneficios .link-to-shop .block .link a strong {
+.link-to-shop .block .link a p,
+.link-to-shop .block .link a strong {
   color: #9fc23a;
   font-family: 'yanone_kaffeesatz', sans-serif;
   line-height: 26px;
 }
-.home-beneficios .link-to-shop .block .link a p {
+.link-to-shop .block .link a p {
   font-size: 24px;
   font-weight: 300;
 }
-.home-beneficios .link-to-shop .block .link a strong {
+.link-to-shop .block .link a strong {
   font-size: 28px;
 }
-.home-beneficios .link-to-shop .block .link.hover > svg {
+.link-to-shop .block .link.hover > svg {
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
@@ -1121,6 +1176,9 @@ li {
 .principal-footer .map {
   position: relative;
 }
+.principal-footer .map .google-map {
+  height: 100%;
+}
 .principal-footer .map .link {
   background-color: #9fc23a;
   bottom: 0px;
@@ -1214,10 +1272,13 @@ li {
   background-color: rgba(255, 255, 255, 0.6);
   padding-bottom: 12px;
 }
+.principal-footer .contact .col-der .form-contact > div {
+  position: relative;
+}
 .principal-footer .contact .col-der .form-contact input,
 .principal-footer .contact .col-der .form-contact textarea {
   border: 0px;
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 5px;
   outline: none;
   padding: 3px 8px;
@@ -1227,6 +1288,22 @@ li {
   margin-bottom: 0px;
   height: 55px;
   resize: none;
+}
+.principal-footer .contact .col-der .form-contact button {
+  background-color: #9fc23a;
+  border: 0px;
+  border-radius: 50%;
+  bottom: -5px;
+  display: block;
+  height: 32px;
+  outline: none;
+  position: absolute;
+  right: -5px;
+  width: 32px;
+}
+.principal-footer .contact .col-der .form-contact button svg {
+  height: 100%;
+  width: 60%;
 }
 .principal-footer .contact address p {
   font-style: normal;
@@ -1343,7 +1420,10 @@ li {
   padding: 15px;
   padding-left: 225px;
 }
-.page-beneficios .producto .text p {
+.page-beneficios .producto .text.link {
+  padding-top: 0px;
+}
+.page-beneficios .producto .text:not(.link) p {
   font-family: 'yanone_kaffeesatz', sans-serif;
   font-size: 26px;
   font-weight: 200;
@@ -1396,7 +1476,7 @@ li {
 }
 .page-beneficios .producto .producto-graf .circle .msj p {
   font-family: 'yanone_kaffeesatz', sans-serif;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 200;
   line-height: 1em;
 }
@@ -1419,6 +1499,16 @@ li {
 .page-beneficios .producto .producto-graf .circle .msj p strong {
   font-family: 'yanone_kaffeesatz', sans-serif;
   font-size: 1em;
+}
+.page-beneficios .link-to-shop {
+  background-color: transparent;
+  margin-left: 0px;
+  margin-top: 0px;
+  width: 100%;
+}
+.page-beneficios .link-to-shop .block {
+  background-color: rgba(80, 59, 105, 0.8);
+  width: 95%;
 }
 .treatments .testimonials {
   display: table;
@@ -2188,6 +2278,43 @@ li {
   line-height: 1em;
   padding: 6px 12px;
 }
+.modal-select-language {
+  background-color: #ffffff;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 9999;
+}
+.modal-select-language p {
+  background: url(../images/backgrounds/imagen-idioma.png) no-repeat center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  padding: 20px 30px;
+  position: absolute;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  top: 50%;
+  width: 100%;
+}
+.modal-select-language p a {
+  background-color: rgba(80, 59, 105, 0.8);
+  color: #ffffff;
+  display: inline-block;
+  font-family: 'yanone_kaffeesatz', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1em;
+  padding: 10px 30px;
+  text-decoration: none;
+}
+.modal-select-language p span {
+  font-size: 56px;
+  line-height: 1em;
+  padding: 10px 25px;
+}
 @media (max-width: 992px) {
   .principal-menu .item-menu a {
     font-size: 18px;
@@ -2204,8 +2331,7 @@ li {
     top: 26%;
   }
   .home-beneficios .beneficio-product .text p {
-    font-size: 26px;
-    line-height: 26px;
+    font-size: 24px;
   }
   .page-beneficios .producto .text.panel p {
     font-size: 28px;
@@ -2217,7 +2343,7 @@ li {
     top: 16%;
   }
   .page-beneficios .producto .producto-graf .circle .msj p {
-    font-size: 30px;
+    font-size: 26px;
   }
   .products .buttons .col-md-6:first-child {
     padding: 0px;
@@ -2246,10 +2372,17 @@ li {
     font-size: 16px;
   }
   .principal-menu .social {
-    padding-right: 8px;
+    padding-right: 0px;
+    width: 90px;
   }
   .principal-menu .social a {
     width: 24px;
+  }
+  .home-beneficios .beneficio-product .text p {
+    font-size: 21px;
+  }
+  .page-beneficios .producto {
+    margin-bottom: 0px;
   }
   .page-beneficios .producto .text {
     padding-left: 215px;
@@ -2257,6 +2390,9 @@ li {
   .page-beneficios .producto .text:not(.panel) {
     padding-left: 50px;
     padding-top: 70px;
+  }
+  .page-beneficios .producto .text.link {
+    padding-top: 0px;
   }
   .page-beneficios .producto .producto-graf {
     left: -21%;
@@ -2314,8 +2450,22 @@ li {
   }
   .principal-menu .social {
     display: none;
+    width: 100%;
   }
   .principal-menu .button {
+    display: block;
+  }
+  .principal-menu .select-language:not(.responsive) {
+    display: none;
+  }
+  .principal-menu .select-language.responsive {
+    bottom: 15px;
+    display: block;
+    top: initial;
+    width: 100%;
+    z-index: 9999;
+  }
+  .principal-menu .menu_responsive {
     display: block;
   }
   .principal-menu .menu_responsive ul {
@@ -2348,8 +2498,7 @@ li {
     top: 25%;
   }
   .home-beneficios .beneficio-product .text p {
-    font-size: 23px;
-    line-height: 23px;
+    font-size: 20px;
   }
   .testimonials .testimony {
     width: 50%;
@@ -2413,6 +2562,16 @@ li {
   .page-beneficios .producto .text,
   .page-beneficios .producto .text:not(.panel) {
     padding: 12px;
+  }
+  .page-beneficios .producto .text.link {
+    padding: 0px;
+  }
+  .page-beneficios .producto .text.link .link-to-shop {
+    background-color: rgba(80, 59, 105, 0.8);
+  }
+  .page-beneficios .producto .text.link .link-to-shop .block {
+    background-color: transparent;
+    width: 89%;
   }
 }
 @media (max-width: 600px) {
@@ -2500,5 +2659,9 @@ li {
   }
   .my-hidden-xs {
     display: none !important;
+  }
+  .modal-select-language p span {
+    display: block;
+    width: 100%;
   }
 }

@@ -30,9 +30,19 @@ class SiteController extends Controller
 		$this->slide = true;
 		$this->suscription = true;
 
-		$testimonials = Testimonials::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_testimony DESC'));
-		$articles = BlogEntries::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_entry DESC'));
-		$question = Questions::model()->findByAttributes(array('status'=>1), array('order'=>'rand()'));
+		//unset(Yii::app()->request->cookies['language']);
+
+		$testimonials = Testimonials::model()->findAllByAttributes(array('status'=>1, 'language'=>Yii::app()->request->cookies['language']), array('order'=>'t.id_testimony DESC'));
+		if(count($testimonials) == 0)
+			$testimonials = Testimonials::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_testimony DESC'));
+		
+		$articles = BlogEntries::model()->findAllByAttributes(array('status'=>1, 'language'=>Yii::app()->request->cookies['language']), array('order'=>'t.id_entry DESC'));
+		if(count($articles) == 0)
+			$articles = BlogEntries::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_entry DESC'));
+
+		$question = Questions::model()->findByAttributes(array('status'=>1, 'language'=>Yii::app()->request->cookies['language']), array('order'=>'rand()'));
+		if($question == null)
+			$question = Questions::model()->findByAttributes(array('status'=>1), array('order'=>'rand()'));
 
 		$this->render('index', array(
 			'testimonials'=>$testimonials,
@@ -41,90 +51,17 @@ class SiteController extends Controller
 		));
 	}
 
-	public function actionNosotros(){
-		$this->suscription = true;
-		
-		$team = Team::model()->findAllByAttributes(array('status'=>1));
-		$this->render('about', array(
-			'page'=>Pages::model()->findByPk(1),
-			'team'=>$team
-		));
-	}
+	public function actionPage($id){
+		$page = PagesSite::model()->findByAttributes(array('navigation'=>$id, 'status'=>1));
+		if($page != null){
+			$controllerPage = 'page_'.(($page->principal == '')?$page->navigation:$page->principal0->navigation);
+			if($id != 'blog')
+				Yii::app()->request->cookies['language'] = new CHttpCookie('language', $page->language);
 
-	public function actionBeneficios(){
-		$this->suscription = true;
-		
-		$treatments = Treatments::model()->findAllByAttributes(array('status'=>1));
-		$this->render('benefits', array(
-			'treatments'=>$treatments
-		));
-	}
-
-	public function actionProductos(){
-		$this->render('products', array(
-
-		));
-	}
-
-	public function actionPuntos_venta(){
-		$stores = Stores::model()->findAllByAttributes(array('status'=>1));
-		$this->render('sales', array(
-			'stores'=>$stores
-		));
-	}
-
-	public function actionBlog(){
-		$this->suscription = true;
-		
-		$articles = BlogEntries::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_entry DESC'));
-		$this->render('blog', array(
-			'articles'=>$articles
-		));
-	}
-
-	public function actionPreguntas_frecuentes(){
-		$this->showEmailContact = true;
-		
-		$questions = Questions::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_question DESC'));
-		$this->render('question', array(
-			'questions'=>$questions
-		));
-	}
-
-	public function actionContacto(){
-		if(Yii::app()->request->isAjaxRequest){
-			$arrayReturn = array(
-				'status'=>'error',
-				'message'=>'No se pudo enviar el mensaje. Intente mas tarde.'
-			);
-			$emailContact = Variables::model()->findByPk(4);
-			$emailContent = '<p>Un usuario envio un mensaje desde el formulario de contacto de la pagina web de Natural Drops.</p><br>'.
-			'<p><strong>Nombre: </strong>'.$_POST['name'].'</p>'.
-			'<p><strong>Correo electrónico: </strong>'.$_POST['email'].'</p>'.
-			'<p><strong>Asunto: </strong>'.$_POST['subject'].'</p><br>';
-
-			if(MyMethods::sentMail('Mensaje contacto web Natural Drops', $_POST['email'], $emailContact->value, $emailContent, array('fromName'=>$_POST['name']))){
-				$arrayReturn = array(
-					'status'=>'success',
-					'message'=>'Su mensaje fue enviado con exito. Muy pronto nos comunicaremos contigo.'
-				);
-			}
-
-			echo CJSON::encode($arrayReturn);
+			$this->$controllerPage();
 		}
-		else{
-			$this->suscription = true;
-			
-			$phone = Variables::model()->findByPk(5);
-			$email = Variables::model()->findByPk(4);
-			$address = Variables::model()->findByPk(6);
-
-			$this->render('contact', array(
-				'phone'=>$phone,
-				'email'=>$email,
-				'address'=>$address,
-			));
-		}
+		else
+			throw new CHttpException(404,'The requested page does not exist.');
 	}
 
 	public function actionAdd_sale(){
@@ -160,6 +97,25 @@ class SiteController extends Controller
 			throw new CHttpException(404,'The requested page does not exist.');
 	}
 
+	public function actionChange_language(){
+		if(isset($_GET['language'])){
+			$language = Languages::model()->findByAttributes(array('id_language'=>$_GET['language'], 'status'=>1));
+
+			if($language != null){
+				$cookie = new CHttpCookie('language', $_GET['language']);
+				$cookie->expire = time() + (60*60*2);
+
+				Yii::app()->request->cookies['language'] = $cookie;
+
+				$this->redirect(Yii::app()->homeUrl);
+			}
+			else
+				throw new CHttpException(404,'The requested page does not exist.');
+		}
+		else
+			throw new CHttpException(404,'The requested page does not exist.');
+	}
+
 	/**
 	 * This is the action to handle external exceptions.
 	 */
@@ -176,64 +132,123 @@ class SiteController extends Controller
 		}
 	}
 
-	/**
-	 * Displays the contact page
-	 */
-	/*public function actionContact()
-	{
-		$model=new ContactForm;
-		if(isset($_POST['ContactForm']))
-		{
-			$model->attributes=$_POST['ContactForm'];
-			if($model->validate())
-			{
-				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
-				$subject='=?UTF-8?B?'.base64_encode($model->subject).'?=';
-				$headers="From: $name <{$model->email}>\r\n".
-					"Reply-To: {$model->email}\r\n".
-					"MIME-Version: 1.0\r\n".
-					"Content-Type: text/plain; charset=UTF-8";
-
-				mail(Yii::app()->params['adminEmail'],$subject,$model->body,$headers);
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
-				$this->refresh();
-			}
-		}
-		$this->render('contact',array('model'=>$model));
-	}*/
-
-	/**
-	 * Displays the login page
-	 */
-	/*public function actionLogin()
-	{
-		$model=new LoginForm;
-
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-
-		// collect user input data
-		if(isset($_POST['LoginForm']))
-		{
-			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
-		}
-		// display the login form
-		$this->render('login',array('model'=>$model));
+	function page_nosotros(){
+		$this->suscription = true;
+		
+		$team = Team::model()->findAllByAttributes(array('status'=>1));
+		$page = Pages::model()->findByAttributes(array('principal'=>1, 'language'=>Yii::app()->request->cookies['language']));
+		if($page == null)
+			$page = Pages::model()->findByPk(1);
+		$this->render('about', array(
+			'page'=>$page,
+			'team'=>$team
+		));
 	}
 
-	/**
-	 * Logs out the current user and redirect to homepage.
-	 */
-	/*public function actionLogout()
-	{
-		Yii::app()->user->logout();
-		$this->redirect(Yii::app()->homeUrl);
-	}*/
+	function page_beneficios(){
+		$this->suscription = true;
+		
+		$treatments = Treatments::model()->findAllByAttributes(array('status'=>1, 'language'=>Yii::app()->request->cookies['language']));
+		if(count($treatments) == 0)
+			$treatments = Treatments::model()->findAllByAttributes(array('status'=>1, 'language'=>1));
+		$page = PagesSite::model()->findByAttributes(array('principal'=>4, 'language'=>Yii::app()->request->cookies['language']));
+		if($page == null)
+			$page = PagesSite::model()->findByPk(4);
+
+		$this->render('benefits', array(
+			'page'=>$page,
+			'treatments'=>$treatments
+		));
+	}
+
+	function page_productos(){
+		$page = PagesSite::model()->findByAttributes(array('principal'=>6, 'language'=>Yii::app()->request->cookies['language']));
+		if($page == null)
+			$page = PagesSite::model()->findByPk(6);
+		$this->render('products', array(
+			'page'=>$page,
+		));
+	}
+
+	function page_puntos_venta(){
+		$stores = Stores::model()->findAllByAttributes(array('status'=>1));
+		$page = PagesSite::model()->findByAttributes(array('principal'=>8, 'language'=>Yii::app()->request->cookies['language']));
+		if($page == null)
+			$page = PagesSite::model()->findByPk(8);
+		$this->render('sales', array(
+			'page'=>$page,
+			'stores'=>$stores
+		));
+	}
+
+	function page_blog(){
+		$this->suscription = true;
+		
+		$articles = BlogEntries::model()->findAllByAttributes(array('status'=>1, 'language'=>Yii::app()->request->cookies['language']), array('order'=>'t.id_entry DESC'));
+		if(count($articles) == 0)
+			$articles = BlogEntries::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_entry DESC'));
+		$page = PagesSite::model()->findByAttributes(array('principal'=>10, 'language'=>Yii::app()->request->cookies['language']));
+		if($page == null)
+			$page = PagesSite::model()->findByPk(10);
+		$this->render('blog', array(
+			'page'=>$page,
+			'articles'=>$articles
+		));
+	}
+
+	function page_preguntas_frecuentes(){
+		$this->showEmailContact = true;
+		
+		$questions = Questions::model()->findAllByAttributes(array('status'=>1, 'language'=>Yii::app()->request->cookies['language']), array('order'=>'t.id_question DESC'));
+		if(count($questions) == 0)
+			$questions = Questions::model()->findAllByAttributes(array('status'=>1), array('order'=>'t.id_question DESC'));
+		$page = PagesSite::model()->findByAttributes(array('principal'=>12, 'language'=>Yii::app()->request->cookies['language']));
+		if($page == null)
+			$page = PagesSite::model()->findByPk(12);
+		$this->render('question', array(
+			'page'=>$page,
+			'questions'=>$questions
+		));
+	}
+
+	function page_contacto(){
+		if(Yii::app()->request->isAjaxRequest){
+			$arrayReturn = array(
+				'status'=>'error',
+				'message'=>'No se pudo enviar el mensaje. Intente mas tarde.'
+			);
+			$emailContact = Variables::model()->findByPk(4);
+			$emailContent = '<p>Un usuario envio un mensaje desde el formulario de contacto de la pagina web de Natural Drops.</p><br>'.
+			'<p><strong>Nombre: </strong>'.$_POST['name'].'</p>'.
+			'<p><strong>Correo electrónico: </strong>'.$_POST['email'].'</p>'.
+			'<p><strong>Asunto: </strong>'.$_POST['subject'].'</p><br>';
+
+			if(MyMethods::sentMail('Mensaje contacto web Natural Drops', $_POST['email'], $emailContact->value, $emailContent, array('fromName'=>$_POST['name']))){
+				$arrayReturn = array(
+					'status'=>'success',
+					'message'=>'Tu mensaje fue enviado con exito. Muy pronto nos comunicaremos contigo.'
+				);
+			}
+
+			echo CJSON::encode($arrayReturn);
+		}
+		else{
+			$this->suscription = true;
+			
+			$phone = Variables::model()->findByPk(5);
+			$email = Variables::model()->findByPk(4);
+			$address = Variables::model()->findByPk(6);
+
+			$page = PagesSite::model()->findByAttributes(array('principal'=>14, 'language'=>Yii::app()->request->cookies['language']));
+			if($page == null)
+				$page = PagesSite::model()->findByPk(14);
+
+			$this->render('contact', array(
+				'page'=>$page,
+				'phone'=>$phone,
+				'email'=>$email,
+				'address'=>$address,
+			));
+		}
+	}
 }

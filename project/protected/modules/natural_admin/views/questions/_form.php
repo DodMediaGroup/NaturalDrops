@@ -30,6 +30,10 @@
 						<?php echo $form->labelEx($model,'precise'); ?>
         				<?php echo $form->textField($model,'precise',array('class'=>'form-control','maxlength'=>255,'placeholder'=>'Respuesta corta y precisa','required'=>true)); ?>
 					</div>
+					<div class="form-group">
+						<?php echo $form->labelEx($model,'language'); ?>
+        				<?php echo $form->dropDownList($model,'language', MyMethods::getListSelect('Languages', 'id_language', 'name'), array('class'=>'form-control')); ?>
+					</div>
 				</div>
 			</div>
 		</div>

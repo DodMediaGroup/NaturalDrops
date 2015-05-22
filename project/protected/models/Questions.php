@@ -8,7 +8,11 @@
  * @property string $question
  * @property string $precise
  * @property string $reply
+ * @property integer $language
  * @property integer $status
+ *
+ * The followings are the available model relations:
+ * @property Languages $language0
  */
 class Questions extends CActiveRecord
 {
@@ -29,11 +33,11 @@ class Questions extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('question, precise, reply', 'required'),
-			array('status', 'numerical', 'integerOnly'=>true),
+			array('language, status', 'numerical', 'integerOnly'=>true),
 			array('question, precise', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id_question, question, precise, reply, status', 'safe', 'on'=>'search'),
+			array('id_question, question, precise, reply, language, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -45,6 +49,7 @@ class Questions extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'language0' => array(self::BELONGS_TO, 'Languages', 'language'),
 		);
 	}
 
@@ -58,6 +63,7 @@ class Questions extends CActiveRecord
 			'question' => 'Question',
 			'precise' => 'Precise',
 			'reply' => 'Reply',
+			'language' => 'Language',
 			'status' => 'Status',
 		);
 	}
@@ -84,6 +90,7 @@ class Questions extends CActiveRecord
 		$criteria->compare('question',$this->question,true);
 		$criteria->compare('precise',$this->precise,true);
 		$criteria->compare('reply',$this->reply,true);
+		$criteria->compare('language',$this->language);
 		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(
